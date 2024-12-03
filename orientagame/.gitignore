@@ -1,2 +1,15 @@
 # Godot 4+ specific ignores
 /android/
+# Escludi cache e metadati
+.godot/
+.import/
+.mono/
+*.tmp
+
+# Escludi file binari e cache specifici
+*.bin
+*.cache
+
+# Escludi file di sistema
+.DS_Store
+Thumbs.db
