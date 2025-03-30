@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="OrientaGame"
-run/main_scene="res://node_2d.tscn"
+run/main_scene="res://Outside.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
 config/icon="res://icon.svg"
 

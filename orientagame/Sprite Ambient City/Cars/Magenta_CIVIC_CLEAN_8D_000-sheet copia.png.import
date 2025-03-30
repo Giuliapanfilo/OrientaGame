@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5ue5gjo2k1pn"
-path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+uid="uid://105e1qquhu5w"
+path="res://.godot/imported/Magenta_CIVIC_CLEAN_8D_000-sheet copia.png-6344bf23810f9f739391f7abfe48e3ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+source_file="res://Sprite Ambient City/Cars/Magenta_CIVIC_CLEAN_8D_000-sheet copia.png"
+dest_files=["res://.godot/imported/Magenta_CIVIC_CLEAN_8D_000-sheet copia.png-6344bf23810f9f739391f7abfe48e3ed.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

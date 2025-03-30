@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5ue5gjo2k1pn"
-path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+uid="uid://dp83loy7pt7gs"
+path="res://.godot/imported/Bob_idle_anim_16x16.png-d4879a9eba54ac9b8659d7f5bd294a39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+source_file="res://Characters_NPC/Bob_idle_anim_16x16.png"
+dest_files=["res://.godot/imported/Bob_idle_anim_16x16.png-d4879a9eba54ac9b8659d7f5bd294a39.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
