@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjgb6br0gnurb"]
+
+[ext_resource type="Script" uid="uid://lrbhjps1g8ti" path="res://Interaction/interaction_manager.gd" id="1_j22pa"]
+
+[node name="InteractionManager" type="Node3D"]
+script = ExtResource("1_j22pa")
+
+[node name="Label" type="Label3D" parent="."]
+text = "[E] to interact"
+metadata/_edit_use_anchors_ = true

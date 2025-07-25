@@ -1,26 +1,17 @@
-[gd_resource type="TileSet" load_steps=37 format=3 uid="uid://l00i0g6eclcr"]
+[gd_resource type="TileSet" load_steps=29 format=3 uid="uid://l00i0g6eclcr"]
 
-[ext_resource type="Texture2D" uid="uid://8srafvdkto61" path="res://Sprite Ambient Base/fences copia.png" id="1_b2rkf"]
-[ext_resource type="Texture2D" uid="uid://d1ba1blgc74wj" path="res://Pixel Kingdom - Village Bonus copia/Street Lantern.png" id="1_k0gpf"]
-[ext_resource type="Texture2D" uid="uid://dqcw68yoxmqpm" path="res://Sprite Ambient Base/plains.png" id="2_f827s"]
-[ext_resource type="Texture2D" uid="uid://hugdw0p1yrk" path="res://Sprite Ambient City/Cars/Black_CIVIC_CLEAN_8D_000-sheet copia.png" id="3_f7qvc"]
-[ext_resource type="Texture2D" uid="uid://drqbn2ny2e42l" path="res://Sprite Ambient City/Cars/Blue_CIVIC_CLEAN_8D_000-sheet copia.png" id="4_p05t1"]
-[ext_resource type="Texture2D" uid="uid://dway2w1hn7mb1" path="res://Sprite Ambient City/Cars/Brown_CIVIC_CLEAN_8D_000-sheet copia.png" id="5_f6dpc"]
-[ext_resource type="Texture2D" uid="uid://36p3tautfsw7" path="res://Sprite Ambient City/Cars/Green_CIVIC_CLEAN_8D_000-sheet copia.png" id="6_f4ot5"]
-[ext_resource type="Texture2D" uid="uid://105e1qquhu5w" path="res://Sprite Ambient City/Cars/Magenta_CIVIC_CLEAN_8D_000-sheet copia.png" id="7_tnakv"]
-[ext_resource type="Texture2D" uid="uid://diuhu5i3g2hli" path="res://Sprite Ambient City/Cars/Red_CIVIC_CLEAN_8D_000-sheet copia.png" id="8_mxw0t"]
-[ext_resource type="Texture2D" uid="uid://cy6d2sv44yhg8" path="res://Sprite Ambient City/Cars/White_CIVIC_CLEAN_8D_000-sheet copia.png" id="9_5pvoi"]
-[ext_resource type="Texture2D" uid="uid://dlr371jy2or7g" path="res://Sprite Ambient City/Cars/Yellow_CIVIC_CLEAN_8D_000-sheet copia.png" id="10_gowvp"]
-[ext_resource type="Texture2D" uid="uid://d3c0ydst8avr6" path="res://Sprite Ambient City/Tilemap copia.png" id="11_d1bma"]
-[ext_resource type="Texture2D" uid="uid://bv4011dt3ctkm" path="res://Sprite Ambient City/Room_Builder_free_16x16 copia.png" id="11_f2084"]
-[ext_resource type="Texture2D" uid="uid://fmrwuhiuxayq" path="res://Sprite Object Base/objects copia.png" id="12_8x3qs"]
-[ext_resource type="Texture2D" uid="uid://7upwjgvv0sek" path="res://Spriete Ambient Interiors/Interiors_free_16x16 copia.png" id="12_w545i"]
-[ext_resource type="Texture2D" uid="uid://duo2ngj002oko" path="res://Sprite Ambient Base/grass copia.png" id="13_eceht"]
-[ext_resource type="Texture2D" uid="uid://bwfvyxl8shcw8" path="res://Sprite Ambient Base/decor_8x8 copia.png" id="14_qg6lv"]
-[ext_resource type="Texture2D" uid="uid://cbhsudwmw2fet" path="res://Sprite Ambient Base/decor_16x16 copia.png" id="15_iaon5"]
+[ext_resource type="Texture2D" uid="uid://hugdw0p1yrk" path="res://Sprite/Sprite Ambient City/Cars/Black_CIVIC_CLEAN_8D_000-sheet copia.png" id="4_yphs8"]
+[ext_resource type="Texture2D" uid="uid://drqbn2ny2e42l" path="res://Sprite/Sprite Ambient City/Cars/Blue_CIVIC_CLEAN_8D_000-sheet copia.png" id="5_76r7h"]
+[ext_resource type="Texture2D" uid="uid://dway2w1hn7mb1" path="res://Sprite/Sprite Ambient City/Cars/Brown_CIVIC_CLEAN_8D_000-sheet copia.png" id="6_mqxfu"]
+[ext_resource type="Texture2D" uid="uid://36p3tautfsw7" path="res://Sprite/Sprite Ambient City/Cars/Green_CIVIC_CLEAN_8D_000-sheet copia.png" id="7_x0fgf"]
+[ext_resource type="Texture2D" uid="uid://105e1qquhu5w" path="res://Sprite/Sprite Ambient City/Cars/Magenta_CIVIC_CLEAN_8D_000-sheet copia.png" id="8_mvcft"]
+[ext_resource type="Texture2D" uid="uid://diuhu5i3g2hli" path="res://Sprite/Sprite Ambient City/Cars/Red_CIVIC_CLEAN_8D_000-sheet copia.png" id="9_iv5ko"]
+[ext_resource type="Texture2D" uid="uid://cy6d2sv44yhg8" path="res://Sprite/Sprite Ambient City/Cars/White_CIVIC_CLEAN_8D_000-sheet copia.png" id="10_udvvl"]
+[ext_resource type="Texture2D" uid="uid://dlr371jy2or7g" path="res://Sprite/Sprite Ambient City/Cars/Yellow_CIVIC_CLEAN_8D_000-sheet copia.png" id="11_kv3tk"]
+[ext_resource type="Texture2D" uid="uid://bv4011dt3ctkm" path="res://Sprite/Sprite Ambient City/Room_Builder_free_16x16 copia.png" id="12_5kwlc"]
+[ext_resource type="Texture2D" uid="uid://d3c0ydst8avr6" path="res://Sprite/Sprite Ambient City/Tilemap copia.png" id="14_0gsya"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rkxem"]
-texture = ExtResource("1_k0gpf")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
@@ -29,7 +20,6 @@ texture = ExtResource("1_k0gpf")
 1:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hq6lc"]
-texture = ExtResource("1_b2rkf")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -48,7 +38,6 @@ texture = ExtResource("1_b2rkf")
 3:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gm00w"]
-texture = ExtResource("2_f827s")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -119,7 +108,7 @@ texture = ExtResource("2_f827s")
 5:11/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mpshw"]
-texture = ExtResource("3_f7qvc")
+texture = ExtResource("4_yphs8")
 8:1/0 = 0
 9:1/0 = 0
 14:1/0 = 0
@@ -224,7 +213,7 @@ texture = ExtResource("3_f7qvc")
 9:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_exf4q"]
-texture = ExtResource("4_p05t1")
+texture = ExtResource("5_76r7h")
 8:1/0 = 0
 9:1/0 = 0
 14:1/0 = 0
@@ -329,7 +318,7 @@ texture = ExtResource("4_p05t1")
 9:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gur8n"]
-texture = ExtResource("5_f6dpc")
+texture = ExtResource("6_mqxfu")
 8:1/0 = 0
 9:1/0 = 0
 14:1/0 = 0
@@ -434,7 +423,7 @@ texture = ExtResource("5_f6dpc")
 9:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_43ind"]
-texture = ExtResource("6_f4ot5")
+texture = ExtResource("7_x0fgf")
 8:1/0 = 0
 9:1/0 = 0
 14:1/0 = 0
@@ -539,7 +528,7 @@ texture = ExtResource("6_f4ot5")
 9:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fch04"]
-texture = ExtResource("7_tnakv")
+texture = ExtResource("8_mvcft")
 8:1/0 = 0
 9:1/0 = 0
 14:1/0 = 0
@@ -644,7 +633,7 @@ texture = ExtResource("7_tnakv")
 9:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_urnc2"]
-texture = ExtResource("8_mxw0t")
+texture = ExtResource("9_iv5ko")
 8:1/0 = 0
 9:1/0 = 0
 14:1/0 = 0
@@ -749,7 +738,7 @@ texture = ExtResource("8_mxw0t")
 9:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1nj7"]
-texture = ExtResource("9_5pvoi")
+texture = ExtResource("10_udvvl")
 8:1/0 = 0
 9:1/0 = 0
 14:1/0 = 0
@@ -854,7 +843,7 @@ texture = ExtResource("9_5pvoi")
 9:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ug2r7"]
-texture = ExtResource("10_gowvp")
+texture = ExtResource("11_kv3tk")
 8:1/0 = 0
 9:1/0 = 0
 14:1/0 = 0
@@ -959,7 +948,7 @@ texture = ExtResource("10_gowvp")
 9:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itgck"]
-texture = ExtResource("11_f2084")
+texture = ExtResource("12_5kwlc")
 5:0/0 = 0
 6:0/0 = 0
 7:0/0 = 0
@@ -1189,7 +1178,6 @@ texture = ExtResource("11_f2084")
 11:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_of3vk"]
-texture = ExtResource("12_w545i")
 1:0/0 = 0
 2:0/0 = 0
 4:0/0 = 0
@@ -2309,7 +2297,7 @@ texture = ExtResource("12_w545i")
 4:32/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4b2v8"]
-texture = ExtResource("11_d1bma")
+texture = ExtResource("14_0gsya")
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
@@ -3804,7 +3792,6 @@ texture = ExtResource("11_d1bma")
 99:47/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6gbw6"]
-texture = ExtResource("12_8x3qs")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -3886,8 +3873,14 @@ texture = ExtResource("12_8x3qs")
 14:4/0 = 0
 15:4/0 = 0
 0:5/0 = 0
+0:5/0/z_index = 1
+0:5/0/y_sort_origin = -1
 1:5/0 = 0
+1:5/0/z_index = 1
+1:5/0/y_sort_origin = -1
 2:5/0 = 0
+2:5/0/z_index = 1
+2:5/0/y_sort_origin = -1
 3:5/0 = 0
 4:5/0 = 0
 5:5/0 = 0
@@ -3902,15 +3895,26 @@ texture = ExtResource("12_8x3qs")
 14:5/0 = 0
 15:5/0 = 0
 0:6/0 = 0
+0:6/0/z_index = 1
+0:6/0/y_sort_origin = -1
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -2.25, 8, 8, -5.625, 8, -5.25, -2.125)
 1:6/0 = 0
+1:6/0/z_index = 1
+1:6/0/y_sort_origin = -1
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.875, 8, -2, 8, 8, -8, 8)
 2:6/0 = 0
+2:6/0/z_index = 1
+2:6/0/y_sort_origin = -1
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.875, -1.125, 4.875, 8, -8, 8, -8, -1.125)
 3:6/0 = 0
 4:6/0 = 0
 5:6/0 = 0
 6:6/0 = 0
 7:6/0 = 0
 8:6/0 = 0
+8:6/0/z_index = 1
 9:6/0 = 0
+9:6/0/z_index = 1
 10:6/0 = 0
 11:6/0 = 0
 12:6/0 = 0
@@ -3918,15 +3922,28 @@ texture = ExtResource("12_8x3qs")
 14:6/0 = 0
 15:6/0 = 0
 0:7/0 = 0
+0:7/0/z_index = 2
+0:7/0/y_sort_origin = -1
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -1.375, 1.875, -5.75, -8)
 1:7/0 = 0
+1:7/0/z_index = 2
+1:7/0/y_sort_origin = -1
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, -8, 3.625, -8, -8, 8, -8)
 2:7/0 = 0
+2:7/0/z_index = 2
+2:7/0/y_sort_origin = -1
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.75, -8, 1.625, 0.875, -8, 4.125, -8, -8)
 3:7/0 = 0
 4:7/0 = 0
 5:7/0 = 0
 6:7/0 = 0
+6:7/0/z_index = 1
 7:7/0 = 0
+7:7/0/z_index = 1
 8:7/0 = 0
+8:7/0/z_index = 1
 9:7/0 = 0
+9:7/0/z_index = 1
 10:7/0 = 0
 11:7/0 = 0
 12:7/0 = 0
@@ -3934,8 +3951,11 @@ texture = ExtResource("12_8x3qs")
 14:7/0 = 0
 15:7/0 = 0
 0:8/0 = 0
+0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, -1.25, 3.875, -1.25, 3.625, -8)
 1:8/0 = 0
+1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 3.25, -8, 3.375, -8, -8, 8, -8)
 2:8/0 = 0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.125, -8, -4, 1.5, -8, 2, -8, -8)
 3:8/0 = 0
 4:8/0 = 0
 5:8/0 = 0
@@ -4015,18 +4035,15 @@ texture = ExtResource("12_8x3qs")
 15:12/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fl1m5"]
-texture = ExtResource("13_eceht")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fo2fc"]
-texture = ExtResource("14_qg6lv")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w76mi"]
-texture = ExtResource("15_iaon5")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -4049,6 +4066,7 @@ texture = ExtResource("15_iaon5")
 3:4/0 = 0
 
 [resource]
+physics_layer_0/collision_layer = 1
 sources/6 = SubResource("TileSetAtlasSource_6gbw6")
 sources/7 = SubResource("TileSetAtlasSource_fl1m5")
 sources/8 = SubResource("TileSetAtlasSource_fo2fc")

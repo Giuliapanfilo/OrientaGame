@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkjtwmr2vhvvh"]
+
+[ext_resource type="PackedScene" uid="uid://d4d0xj1mkvscx" path="res://Scene/Esterno/CAFETERIAcan_001.glb" id="1_ii2gl"]
+
+[node name="Can" type="Node3D"]
+
+[node name="CAFETERIAcan_0012" parent="." instance=ExtResource("1_ii2gl")]
+transform = Transform3D(10.59, 0, 0, 0, 10.59, 0, 0, 0, 10.59, 0, 0, 0)

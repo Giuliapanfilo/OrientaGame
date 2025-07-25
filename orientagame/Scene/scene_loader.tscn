@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cisx6frjaqxv5"]
+
+[ext_resource type="Script" uid="uid://dt2pbjya17u8s" path="res://scene_loader.gd" id="1_m4udi"]
+[ext_resource type="PackedScene" uid="uid://cbrrkiulk8gem" path="res://Nodi/Player.tscn" id="2_1nqad"]
+[ext_resource type="PackedScene" uid="uid://chqnuytnniok6" path="res://Scene/pianterreno.tscn" id="2_45hil"]
+
+[node name="SceneLoader" type="Node"]
+script = ExtResource("1_m4udi")
+first_scene = ExtResource("2_45hil")
+
+[node name="Player" parent="." instance=ExtResource("2_1nqad")]
+
+[node name="CurrentScene" type="Node3D" parent="."]

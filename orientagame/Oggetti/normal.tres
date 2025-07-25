@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://8xpit4ior4ok"]
+
+[ext_resource type="Texture2D" uid="uid://ccf2ny5modhuj" path="res://Oggetti/COMPUTERtable_ImphenziaPalette01-256-Gradient.png" id="1_ma2go"]
+
+[resource]
+resource_name = "normal "
+cull_mode = 2
+albedo_texture = ExtResource("1_ma2go")
+roughness = 0.5

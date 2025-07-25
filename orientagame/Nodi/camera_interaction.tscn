@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmgr7xla5f2ar"]
+
+[ext_resource type="Script" uid="uid://boyots2eyr3ao" path="res://Nodi/camera_interaction.gd" id="1_uua2q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mxh4k"]
+size = Vector3(3.54456, 1, 1.73242)
+
+[node name="CameraInteraction" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_uua2q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00872803, 0, 0)
+shape = SubResource("BoxShape3D_mxh4k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
