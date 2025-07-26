@@ -68,7 +68,8 @@ Interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/main.dialogue")
+locale/translations=PackedStringArray("res://Dialogue/characterName.en.translation")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/main.dialogue", "res://Dialogue/scena1.dialogue", "res://Dialogue/scena2.dialogue", "res://Dialogue/scena3.dialogue", "res://Dialogue/scena4.dialogue")
 
 [layer_names]
 
