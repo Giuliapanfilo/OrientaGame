@@ -1,0 +1,31 @@
+~ start
+
+Marisa: "...Sì? Che vuoi?"
+[i](Sguardo giudicante)[/i]
+Marisa: "Allora?!"
+Marisa: "Parla, su. Non ho tutto il giorno!"
+
+player_name: "Vorrei iscrivermi all’università!"
+
+Marisa: "...Ugh. Sempre la stessa storia."
+Marisa: "Dimostrami che sei degno dell’iscrizione. Preparati... a una battaglia amministrativa!"
+
+(→ Parte la battaglia stile Pokémon)
+(Al termine, Marisa sconfitta)
+
+Marisa: "Mpf. Sei più preparato di quanto sembri."
+Marisa: "Va bene. Hai vinto. Puoi scegliere il tuo indirizzo di studio."
+
+(→ Schermata scelta corso: Informatica – ITPS – ICD)
+
+Marisa: "Ora ti mostro come ci si iscrive! Mi raccomando presta attenzione!"
+
+(Slide interagibili)
+
+Marisa: "Perfetto. Questo è il tuo numero di matricola. Memorizzalo bene."
+Marisa: "Anche se tanto... finirai per dimenticarlo proprio quando ti servirà."
+Marisa: "E ora vattene. Ho altro da fare. Porta con te questo, ormai non ci serve più!"
+
+player_name: "Va bene... Grazie per tutto, anche per la fiducia..."
+
+=> END

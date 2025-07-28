@@ -1,0 +1,23 @@
+~ start
+
+Rosa: "Ciao! Come posso aiutarti?"
+
+player_name: "Mi seervirebbero i libri per il primo semestre del primo anno di [indirizzo scelto]"
+
+Rosa: "Ah, i libri per il primo semestre? Ottima scelta."
+Rosa: "Per fortuna qualcuno ti ha già detto quali servono... di solito tocca agli studenti capirlo da soli, sai?"
+Rosa: "Va bene, mi servono i tuoi dati."
+
+(→ Il giocatore fornisce: matricola)
+
+Rosa: "Perfetto. Allora: puoi tenerli per due settimane."
+Rosa: "Se ti servono più a lungo, vieni prima della scadenza e li rinnoviamo."
+Rosa: "[b]Trattali bene[/b], mi raccomando: sono le ultime copie. Sei stato fortunatissimo!"
+Rosa: "Oggi li hanno chiesti in tantissimi."
+
+Voci in lontananza (1): "NON HO ANCORA PRESO I LIBRI! ME NE SONO DIMENTICATO!"
+Voci in lontananza (2): "CAVOLO! ANCH'IO! CORRIAMO A PRENDERLI!"
+
+player_name: "Meglio stare attenti!"
+
+=> END

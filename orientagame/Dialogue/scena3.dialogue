@@ -1,0 +1,16 @@
+~ start
+
+Antonio: "Ce l’hai fatta! Non molti sopravvivono al primo incontro con la Dott.ssa Severina..."
+Antonio: "Ora inizia la parte divertente: [b]esplora il campus![/b]"
+Antonio: "Ma prima... hai già dato un’occhiata ai libri per il primo semestre?"
+
+player_name: "No..."
+
+Antonio: "Sapevo di NON poter contare su di te..."
+Antonio: "[b]Corri subito in biblioteca a prendere i testi![/b]"
+Antonio: "I titoli consigliati dai prof sono tutti sul sito del dipartimento: sezione [u]'Studiare'[/u], voce [u]'Piano di studi e scheda insegnamento'[/u]. Una figata, vero?"
+Antonio: "Ma muoviti, prima che finiscano tutte le copie. Vai, vai!"
+
+player_name: "CORRO! Ciao e grazie ancora!"
+
+=> END

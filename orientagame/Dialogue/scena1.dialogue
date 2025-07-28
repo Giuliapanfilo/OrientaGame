@@ -1,0 +1,22 @@
+~ start
+
+Tizio Sconosciuto: “Ehilà! Finalmente… ti stavo aspettando. O forse no… ma sei qui, e tanto basta.”
+Tizio Sconosciuto: “Piacere, io sono Antonio!”
+Antonio: “Uno studente [shake rate=20 level=10][b]LEGGENDARIO[/b][/shake]…”
+Antonio: “Almeno così dicono.”
+Antonio: “In pochi mi vedono, e ancora meno mi credono.”
+Antonio: “Ma oggi ho deciso di aiutarti. Perché hai lo sguardo confuso di chi ha appena varcato le soglie dell’universo universitario. E fidati, è un labirinto.”
+
+Antonio: "Ci troviamo fuori dal Dipartimento di Informatica, Università degli Studi di Bari Aldo Moro. Questo sarà il tuo campo base."
+Antonio: "Ma dimmi un po’... come ti chiami?"
+
+@input player_name
+Player_name: "Player_name"
+
+Antonio: "[player_name]? Bel nome! Scolpiscilo[wait=1] nella memoria, qui tutto inizia con un nome scritto su un modulo."
+Antonio: "E proprio di moduli si parla: devi iscriverti ufficialmente. La segreteria è al piano terra, ala sinistra. Una stanza cupa… e popolata da una creatura formidabile."
+Antonio: "Ecco qui il modulo precompilato. [u][b]Consegna questo alla segretaria.[/b][/u] Ma… sii pronto. Le sue richieste non sono mai banali."
+
+Player_name: "Grazie. Vado subito!"
+
+=> END
