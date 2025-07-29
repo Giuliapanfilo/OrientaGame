@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://csn7twkfbrf05"]
+
+[ext_resource type="Script" uid="uid://b6h5whqj8f8gg" path="res://game.gd" id="1_gg6ed"]
+[ext_resource type="PackedScene" uid="uid://cqjs1xpx7gwlt" path="res://UI/fade_transition.tscn" id="2_t5u7j"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_gg6ed")
+
+[node name="ColorRect" parent="." instance=ExtResource("2_t5u7j")]

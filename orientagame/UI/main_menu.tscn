@@ -1,0 +1,157 @@
+[gd_scene load_steps=11 format=3 uid="uid://c63co1eqheldf"]
+
+[ext_resource type="Texture2D" uid="uid://dr31orgvn4msr" path="res://UI/Elements/Ground.PNG" id="1_cafmx"]
+[ext_resource type="Script" uid="uid://oaylydqp1y2s" path="res://UI/main_menu.gd" id="1_mmlvu"]
+[ext_resource type="Texture2D" uid="uid://cv40jeq4ljxep" path="res://UI/Elements/Button.PNG" id="4_cafmx"]
+[ext_resource type="Texture2D" uid="uid://bc3kkydy8u7vp" path="res://UI/Elements/ButtonSelected.PNG" id="5_tcix6"]
+[ext_resource type="LabelSettings" uid="uid://u1t7bqg5rvys" path="res://UI/label_settings_NOTPressed.tres" id="6_mmlvu"]
+[ext_resource type="LabelSettings" uid="uid://chn3wv4fpjoxo" path="res://UI/label_settings_Pressed.tres" id="7_aorne"]
+[ext_resource type="Texture2D" uid="uid://bc25747bnkywl" path="res://UI/Elements/Gear.PNG" id="9_cafmx"]
+[ext_resource type="Texture2D" uid="uid://mbp3ptafsg8u" path="res://UI/Elements/LogoStatico.PNG" id="10_cafmx"]
+[ext_resource type="Texture2D" uid="uid://ia5p8o1uu4w5" path="res://UI/Elements/GearSelected.PNG" id="10_tcix6"]
+[ext_resource type="PackedScene" uid="uid://cqjs1xpx7gwlt" path="res://UI/fade_transition.tscn" id="12_aorne"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_mmlvu")
+
+[node name="Ground" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+texture = ExtResource("1_cafmx")
+
+[node name="Logo" type="TextureRect" parent="."]
+offset_left = -127.0
+offset_top = 35.0
+offset_right = 1025.0
+offset_bottom = 683.0
+scale = Vector2(0.886464, 0.886464)
+texture = ExtResource("10_cafmx")
+
+[node name="BottonManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="TextureButton" parent="BottonManager"]
+layout_mode = 0
+offset_left = 740.0
+offset_top = 82.0
+offset_right = 1892.0
+offset_bottom = 730.0
+scale = Vector2(0.224182, 0.224182)
+texture_normal = ExtResource("4_cafmx")
+texture_hover = ExtResource("5_tcix6")
+flip_h = true
+
+[node name="StartLabel" type="Label" parent="BottonManager/Start"]
+layout_mode = 0
+offset_left = 249.797
+offset_top = 147.202
+offset_right = 922.797
+offset_bottom = 538.202
+scale = Vector2(0.916159, 0.916159)
+text = "Gioca"
+label_settings = ExtResource("6_mmlvu")
+
+[node name="StartLabelPressed" type="Label" parent="BottonManager/Start"]
+visible = false
+layout_mode = 0
+offset_left = 249.797
+offset_top = 147.202
+offset_right = 922.797
+offset_bottom = 538.202
+scale = Vector2(0.916159, 0.916159)
+text = "Gioca"
+label_settings = ExtResource("7_aorne")
+
+[node name="Survey" type="TextureButton" parent="BottonManager"]
+layout_mode = 0
+offset_left = 778.0
+offset_top = 213.0
+offset_right = 1930.0
+offset_bottom = 861.0
+scale = Vector2(0.220501, 0.220501)
+texture_normal = ExtResource("4_cafmx")
+texture_hover = ExtResource("5_tcix6")
+
+[node name="SurveyLabel" type="Label" parent="BottonManager/Survey"]
+layout_mode = 0
+offset_left = 340.134
+offset_top = 154.194
+offset_right = 1156.13
+offset_bottom = 545.194
+scale = Vector2(0.878576, 0.878576)
+text = "Quiz"
+label_settings = ExtResource("6_mmlvu")
+
+[node name="SurveyLabelPressed" type="Label" parent="BottonManager/Survey"]
+visible = false
+layout_mode = 0
+offset_left = 340.134
+offset_top = 149.659
+offset_right = 1156.13
+offset_bottom = 540.659
+scale = Vector2(0.878576, 0.878576)
+text = "Quiz"
+label_settings = ExtResource("7_aorne")
+
+[node name="Quit" type="TextureButton" parent="BottonManager"]
+layout_mode = 0
+offset_left = 740.0
+offset_top = 349.0
+offset_right = 1892.0
+offset_bottom = 997.0
+scale = Vector2(0.225704, 0.225704)
+texture_normal = ExtResource("4_cafmx")
+texture_hover = ExtResource("5_tcix6")
+flip_h = true
+
+[node name="QuitLabel" type="Label" parent="BottonManager/Quit"]
+layout_mode = 0
+offset_left = 292.418
+offset_top = 155.07
+offset_right = 1108.42
+offset_bottom = 546.07
+scale = Vector2(0.878576, 0.878576)
+text = "Esci"
+label_settings = ExtResource("6_mmlvu")
+
+[node name="QuitLabelPressed" type="Label" parent="BottonManager/Quit"]
+visible = false
+layout_mode = 0
+offset_left = 292.418
+offset_top = 155.07
+offset_right = 1108.42
+offset_bottom = 546.07
+scale = Vector2(0.878576, 0.878576)
+text = "Esci"
+label_settings = ExtResource("7_aorne")
+
+[node name="Options" type="TextureButton" parent="BottonManager"]
+layout_mode = 1
+offset_left = 790.0
+offset_top = 494.0
+offset_right = 1942.0
+offset_bottom = 1142.0
+scale = Vector2(0.177434, 0.177434)
+texture_normal = ExtResource("9_cafmx")
+texture_hover = ExtResource("10_tcix6")
+
+[node name="Fade_transition" parent="." instance=ExtResource("12_aorne")]
+visible = false
+
+[node name="Fade_timer" type="Timer" parent="Fade_transition"]
+
+[connection signal="mouse_entered" from="BottonManager/Start" to="." method="_on_start_mouse_entered"]
+[connection signal="mouse_exited" from="BottonManager/Start" to="." method="_on_start_mouse_exited"]
+[connection signal="pressed" from="BottonManager/Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="BottonManager/Survey" to="." method="_on_survey_mouse_entered"]
+[connection signal="mouse_exited" from="BottonManager/Survey" to="." method="_on_survey_mouse_exited"]
+[connection signal="pressed" from="BottonManager/Survey" to="." method="_on_survey_pressed"]
+[connection signal="mouse_entered" from="BottonManager/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="BottonManager/Quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="BottonManager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="BottonManager/Options" to="." method="_on_options_pressed"]
+[connection signal="timeout" from="Fade_transition/Fade_timer" to="." method="_on_fade_timer_timeout"]
