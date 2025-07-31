@@ -36,12 +36,18 @@ func _sort_by_distance_to_player(area1, area2):
 	var area2_to_player = player.global_position.distance_to(area2.global_position)
 	return area1_to_player < area2_to_player
 	
+func interact_if_possible():
+	if active_areas.size() > 0 && can_interact:
+		can_interact = false
+		label.hide()
+		
+		await active_areas[0].interact.call()
+		
+		can_interact = true
+		
+		print("interagisco 2")
+
 func _input(event):
 	if event.is_action_pressed("Interact") && can_interact:
-		if active_areas.size() > 0:
-			can_interact = false
-			label.hide()
-			
-			await active_areas[0].interact.call()
-			
-			can_interact = true
+		interact_if_possible()
+		print("interagisco 1")

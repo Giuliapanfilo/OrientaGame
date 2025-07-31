@@ -56,7 +56,7 @@ _data = {
 [node name="ColorRect" type="ColorRect"]
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(30.0226, 17.4954)
+scale = Vector2(261.228, 152.228)
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 

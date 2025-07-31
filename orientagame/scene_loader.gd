@@ -4,14 +4,14 @@ extends Node
 @onready var current_scene = $CurrentScene
 @onready var player := $Player
 
-func _ready() -> void:
+#func _ready() -> void:
 	# Se esiste già un'altra istanza attiva (cioè non sono "me stesso" nel singleton)
-	if SceneLoader != self:
-		print("⚠️ Duplicate. destroying this one:", self.name)
-		queue_free()
-
-	swap(first_scene)
-	print("🚀 swap called on ready with: ", first_scene)
+	#if SceneLoader != self:
+		#print("⚠️ Duplicate. destroying this one:", self.name)
+		#queue_free()
+#
+	#swap(first_scene)
+	#print("🚀 swap called on ready with: ", first_scene)
 
 
 func swap(destination: PackedScene) -> void:

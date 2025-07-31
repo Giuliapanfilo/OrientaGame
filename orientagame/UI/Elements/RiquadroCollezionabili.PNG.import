@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dghrfta20k82x"
-path="res://.godot/imported/SfondoBase.PNG-a9297e486587ecd3062815b5249c1211.ctex"
+uid="uid://dv8jmtbtqh87g"
+path="res://.godot/imported/RiquadroCollezionabili.PNG-e51a7ed1f072bdd61067f196a99f31fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Elements/SfondoBase.PNG"
-dest_files=["res://.godot/imported/SfondoBase.PNG-a9297e486587ecd3062815b5249c1211.ctex"]
+source_file="res://UI/Elements/RiquadroCollezionabili.PNG"
+dest_files=["res://.godot/imported/RiquadroCollezionabili.PNG-e51a7ed1f072bdd61067f196a99f31fe.ctex"]
 
 [params]
 

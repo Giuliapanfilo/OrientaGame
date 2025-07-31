@@ -1,0 +1,282 @@
+[gd_scene load_steps=19 format=3 uid="uid://dy5uwe0v2uu3t"]
+
+[ext_resource type="Script" uid="uid://c275ple1eug10" path="res://UI/option_menu.gd" id="1_mwbc5"]
+[ext_resource type="PackedScene" uid="uid://cqjs1xpx7gwlt" path="res://UI/fade_transition.tscn" id="1_s48l4"]
+[ext_resource type="Texture2D" uid="uid://boo708oh8l3il" path="res://UI/Elements/SfondoTrasparente.PNG" id="2_mwbc5"]
+[ext_resource type="Script" uid="uid://b6oyvjh5v0qrx" path="res://UI/scaler.gd" id="3_t3obd"]
+[ext_resource type="Texture2D" uid="uid://dwddp7p05q5ve" path="res://UI/Elements/IntestazioneMenu.PNG" id="4_b7ygn"]
+[ext_resource type="LabelSettings" uid="uid://brryaiyls24kv" path="res://UI/label_settings_Title.tres" id="5_we8wg"]
+[ext_resource type="Texture2D" uid="uid://dpy5h8gnlmwhj" path="res://UI/Elements/SfondobaseProporzionato.PNG" id="6_jpdkt"]
+[ext_resource type="Texture2D" uid="uid://cnuo8ktyoc8l0" path="res://UI/Elements/Flag.PNG" id="7_5gqfw"]
+[ext_resource type="Texture2D" uid="uid://t7cq03trj1tn" path="res://UI/Elements/NotFlag.PNG" id="8_aa7wy"]
+[ext_resource type="Texture2D" uid="uid://ce6oh7oog4yum" path="res://UI/Elements/FlagSelected.PNG" id="9_ediq4"]
+[ext_resource type="Texture2D" uid="uid://qjumeufbmmme" path="res://UI/Elements/NotFlagSelected.PNG" id="10_xqotp"]
+[ext_resource type="Texture2D" uid="uid://cv40jeq4ljxep" path="res://UI/Elements/Button.PNG" id="11_k66uh"]
+[ext_resource type="Texture2D" uid="uid://bc3kkydy8u7vp" path="res://UI/Elements/ButtonSelected.PNG" id="12_j0j5w"]
+[ext_resource type="LabelSettings" uid="uid://u1t7bqg5rvys" path="res://UI/label_settings_NOTPressed.tres" id="13_4tvcy"]
+[ext_resource type="LabelSettings" uid="uid://chn3wv4fpjoxo" path="res://UI/label_settings_Pressed.tres" id="14_1w4r8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_15f0e"]
+font_size = 240
+font_color = Color(0.00392157, 0.368627, 0.588235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwbc5"]
+bg_color = Color(0.00392157, 0.368627, 0.588235, 1)
+border_width_right = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3obd"]
+border_width_right = 200
+
+[node name="Option Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mwbc5")
+
+[node name="ColorRect" parent="." instance=ExtResource("1_s48l4")]
+visible = false
+layout_mode = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.7291, 4.7291)
+color = Color(0, 0, 0, 0.392157)
+
+[node name="GroundContainer" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="TransparentGround" type="TextureRect" parent="CanvasLayer/GroundContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_mwbc5")
+expand_mode = 3
+
+[node name="Scaler" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+script = ExtResource("3_t3obd")
+
+[node name="TitleMenu" type="TextureRect" parent="CanvasLayer/Scaler"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("4_b7ygn")
+
+[node name="Title" type="Label" parent="CanvasLayer/Scaler/TitleMenu"]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 16.0
+offset_right = 1389.0
+offset_bottom = 358.0
+scale = Vector2(0.232726, 0.232726)
+text = "Opzioni"
+label_settings = ExtResource("5_we8wg")
+
+[node name="BaseGround" type="TextureRect" parent="CanvasLayer/Scaler"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("6_jpdkt")
+
+[node name="Musica" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 117.0
+offset_right = 1090.0
+offset_bottom = 459.0
+scale = Vector2(0.232726, 0.232726)
+text = "Musica"
+label_settings = ExtResource("5_we8wg")
+
+[node name="BarraMusica" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 101.0
+offset_right = 487.0
+offset_bottom = 443.0
+scale = Vector2(7.83366, 0.296331)
+text = "-"
+label_settings = SubResource("LabelSettings_15f0e")
+
+[node name="MusicSlider" type="HSlider" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 140.0
+offset_right = 670.0
+offset_bottom = 156.0
+scale = Vector2(2.46935, 2.46935)
+theme_override_styles/slider = SubResource("StyleBoxFlat_mwbc5")
+max_value = 1.0
+step = 0.01
+value = 1.0
+ticks_on_borders = true
+
+[node name="Music" type="AudioStreamPlayer" parent="CanvasLayer/Scaler/BaseGround/MusicSlider"]
+bus = &"Music"
+
+[node name="Suono" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 220.0
+offset_right = 1092.0
+offset_bottom = 562.0
+scale = Vector2(0.232726, 0.232726)
+text = "Suono"
+label_settings = ExtResource("5_we8wg")
+
+[node name="BarraSuoni" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 208.0
+offset_right = 487.0
+offset_bottom = 550.0
+scale = Vector2(7.83366, 0.296331)
+text = "-"
+label_settings = SubResource("LabelSettings_15f0e")
+
+[node name="SFXSlider" type="HSlider" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 247.0
+offset_right = 478.0
+offset_bottom = 263.0
+scale = Vector2(2.46935, 2.46935)
+theme_override_styles/slider = SubResource("StyleBoxFlat_t3obd")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SFX" type="AudioStreamPlayer" parent="CanvasLayer/Scaler/BaseGround/SFXSlider"]
+bus = &"SFX"
+
+[node name="Joystick" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 331.0
+offset_right = 1092.0
+offset_bottom = 673.0
+scale = Vector2(0.232726, 0.232726)
+text = "Joystick"
+label_settings = ExtResource("5_we8wg")
+
+[node name="JoystickActive" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 326.0
+offset_right = 1609.0
+offset_bottom = 974.0
+scale = Vector2(0.129649, 0.129649)
+texture_normal = ExtResource("7_5gqfw")
+texture_pressed = ExtResource("8_aa7wy")
+texture_hover = ExtResource("9_ediq4")
+
+[node name="JoystickDeactive" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
+visible = false
+layout_mode = 0
+offset_left = 457.0
+offset_top = 326.0
+offset_right = 1609.0
+offset_bottom = 974.0
+scale = Vector2(0.129649, 0.129649)
+texture_normal = ExtResource("8_aa7wy")
+texture_pressed = ExtResource("7_5gqfw")
+texture_hover = ExtResource("10_xqotp")
+
+[node name="Save" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 445.0
+offset_right = 1372.0
+offset_bottom = 1093.0
+scale = Vector2(0.226043, 0.226043)
+texture_normal = ExtResource("11_k66uh")
+texture_hover = ExtResource("12_j0j5w")
+
+[node name="SaveLabel" type="Label" parent="CanvasLayer/Scaler/BaseGround/Save"]
+layout_mode = 0
+offset_left = 247.74
+offset_top = 168.11
+offset_right = 1268.74
+offset_bottom = 510.11
+scale = Vector2(0.807853, 0.807853)
+text = "Salva"
+label_settings = ExtResource("13_4tvcy")
+
+[node name="SaveLabelPressed" type="Label" parent="CanvasLayer/Scaler/BaseGround/Save"]
+visible = false
+layout_mode = 0
+offset_left = 225.62
+offset_top = 154.838
+offset_right = 1328.62
+offset_bottom = 523.838
+scale = Vector2(0.807853, 0.807853)
+text = "Salva"
+label_settings = ExtResource("14_1w4r8")
+
+[node name="Exit" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 448.0
+offset_right = 1812.0
+offset_bottom = 1096.0
+scale = Vector2(0.226043, 0.226043)
+texture_normal = ExtResource("11_k66uh")
+texture_hover = ExtResource("12_j0j5w")
+flip_h = true
+
+[node name="ExitLabel" type="Label" parent="CanvasLayer/Scaler/BaseGround/Exit"]
+layout_mode = 0
+offset_left = 305.252
+offset_top = 132.718
+offset_right = 760.252
+offset_bottom = 474.718
+text = "Esci"
+label_settings = ExtResource("13_4tvcy")
+
+[node name="ExitLabelPressed" type="Label" parent="CanvasLayer/Scaler/BaseGround/Exit"]
+visible = false
+layout_mode = 0
+offset_left = 300.828
+offset_top = 128.294
+offset_right = 791.828
+offset_bottom = 497.294
+text = "Esci"
+label_settings = ExtResource("14_1w4r8")
+
+[connection signal="value_changed" from="CanvasLayer/Scaler/BaseGround/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Scaler/BaseGround/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/JoystickActive" to="." method="_on_joystick_active_pressed"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/JoystickDeactive" to="." method="_on_joystick_deactive_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Scaler/BaseGround/Save" to="." method="_on_save_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Scaler/BaseGround/Save" to="." method="_on_save_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Save" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Scaler/BaseGround/Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Scaler/BaseGround/Exit" to="." method="_on_exit_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Exit" to="." method="_on_exit_pressed"]
