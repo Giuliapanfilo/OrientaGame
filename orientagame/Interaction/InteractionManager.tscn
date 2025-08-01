@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjgb6br0gnurb"]
+[gd_scene load_steps=9 format=3 uid="uid://cjgb6br0gnurb"]
 
 [ext_resource type="Script" uid="uid://lrbhjps1g8ti" path="res://Interaction/interaction_manager.gd" id="1_j22pa"]
+[ext_resource type="Texture2D" uid="uid://be4ot8awe6pda" path="res://UI/Elements/E.PNG" id="2_j22pa"]
+[ext_resource type="Texture2D" uid="uid://c8s240ycdvf1l" path="res://UI/Elements/ESelected.PNG" id="4_7g38r"]
+[ext_resource type="Texture2D" uid="uid://6u2s4xq4tf4e" path="res://UI/Elements/SfondoBaseGrande.PNG" id="4_8r1jt"]
+[ext_resource type="Script" uid="uid://cwsp2s5bgejb4" path="res://UI/scalerGameplay.gd" id="4_qpssi"]
+[ext_resource type="Texture2D" uid="uid://p8hbs2lss34l" path="res://UI/Elements/Burger.png" id="5_7g38r"]
+[ext_resource type="Texture2D" uid="uid://c2r5vceg32arv" path="res://UI/Elements/BurgerSelected.png" id="6_xjx25"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8r1jt"]
+font_size = 150
+font_color = Color(0.666667, 1, 1, 1)
+outline_size = 20
+outline_color = Color(0.00392157, 0.368627, 0.6, 0.392157)
 
 [node name="InteractionManager" type="Node3D"]
 script = ExtResource("1_j22pa")
@@ -8,3 +20,63 @@ script = ExtResource("1_j22pa")
 [node name="Label" type="Label3D" parent="."]
 text = "[E] to interact"
 metadata/_edit_use_anchors_ = true
+
+[node name="Scaler" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_qpssi")
+
+[node name="InteractionButton" type="TextureButton" parent="Scaler"]
+layout_mode = 0
+offset_left = 924.0
+offset_top = 515.0
+offset_right = 2076.0
+offset_bottom = 1163.0
+scale = Vector2(0.192993, 0.192993)
+size_flags_horizontal = 8
+size_flags_vertical = 10
+texture_normal = ExtResource("2_j22pa")
+texture_hover = ExtResource("4_7g38r")
+
+[node name="Box" type="TextureRect" parent="Scaler"]
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 1164.0
+offset_bottom = 661.0
+scale = Vector2(0.293036, 0.105849)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4_8r1jt")
+
+[node name="Label" type="Label" parent="Scaler/Box"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -552.112
+offset_right = 599.888
+offset_bottom = 205.0
+grow_horizontal = 2
+scale = Vector2(0.682903, 1.0944)
+text = "Dov'eri rimasto:"
+label_settings = SubResource("LabelSettings_8r1jt")
+
+[node name="PauseButton" type="TextureButton" parent="Scaler"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 890.0
+offset_right = 1914.0
+offset_bottom = 593.0
+grow_horizontal = 0
+scale = Vector2(0.207898, 0.207898)
+size_flags_horizontal = 8
+size_flags_vertical = 2
+texture_normal = ExtResource("5_7g38r")
+texture_hover = ExtResource("6_xjx25")
+
+[connection signal="pressed" from="Scaler/InteractionButton" to="." method="_on_interaction_button_pressed"]
+[connection signal="pressed" from="Scaler/PauseButton" to="." method="_on_pause_button_pressed"]

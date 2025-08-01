@@ -32,6 +32,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mwbc5")
@@ -276,7 +278,7 @@ label_settings = ExtResource("14_1w4r8")
 [connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/JoystickDeactive" to="." method="_on_joystick_deactive_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/Scaler/BaseGround/Save" to="." method="_on_save_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Scaler/BaseGround/Save" to="." method="_on_save_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Save" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Save" to="." method="_on_save_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/Scaler/BaseGround/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Scaler/BaseGround/Exit" to="." method="_on_exit_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Exit" to="." method="_on_exit_pressed"]

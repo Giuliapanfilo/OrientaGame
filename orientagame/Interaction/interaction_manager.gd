@@ -1,9 +1,11 @@
 extends Node3D
 
-
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var label: Label3D = $Label
 
+var can_move = true
+
+var joystick_enabled := true
 
 const base_text = "[E] to "
 
@@ -46,8 +48,27 @@ func interact_if_possible():
 		can_interact = true
 		
 		print("interagisco 2")
+	else:
+		print("non sono entrato nell'if")
 
 func _input(event):
 	if event.is_action_pressed("Interact") && can_interact:
 		interact_if_possible()
 		print("interagisco 1")
+
+
+func _on_interaction_button_pressed() -> void:
+	print("Interagisco")
+	interact_if_possible()
+
+
+func _on_pause_button_pressed() -> void:
+	#Blocco movimento personaggio
+	can_move = false
+	
+	var pause_scene = preload("res://UI/pause_menu.tscn").instantiate()
+	pause_scene.set_previous_scene("res://Interaction/InteractionManager.tscn")
+	
+	get_parent().add_child(pause_scene)
+	get_parent().hide()
+	

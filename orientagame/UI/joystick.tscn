@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c66ddag3osvpv"]
+
+[ext_resource type="Script" uid="uid://rlsrm51qf8ek" path="res://UI/joystick.gd" id="1_1ik32"]
+[ext_resource type="Texture2D" uid="uid://bndtwwhsec260" path="res://UI/Elements/BackJoystick.PNG" id="2_hh151"]
+[ext_resource type="Script" uid="uid://cyelifys5qsqs" path="res://UI/joystick_stick.gd" id="2_swsmr"]
+[ext_resource type="Texture2D" uid="uid://db1qwj7ik8kcc" path="res://UI/Elements/CursoreJoystick.PNG" id="3_wbgrt"]
+
+[node name="Joystick" type="Node2D"]
+script = ExtResource("1_1ik32")
+
+[node name="Button" type="TextureButton" parent="."]
+offset_left = -319.0
+offset_top = -317.0
+offset_right = -311.0
+offset_bottom = -309.0
+scale = Vector2(80.8587, 80.4197)
+metadata/_edit_use_anchors_ = true
+
+[node name="JoystickRing" type="Sprite2D" parent="."]
+texture = ExtResource("2_hh151")
+
+[node name="JoystickStick" type="Sprite2D" parent="."]
+texture = ExtResource("3_wbgrt")
+script = ExtResource("2_swsmr")
+
+[connection signal="button_down" from="Button" to="JoystickStick" method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="JoystickStick" method="_on_button_button_up"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cbrrkiulk8gem"]
+[gd_scene load_steps=53 format=3 uid="uid://cbrrkiulk8gem"]
 
 [ext_resource type="Script" uid="uid://bo552yay54hcq" path="res://Nodi/player.gd" id="1_6kcg6"]
 [ext_resource type="Texture2D" uid="uid://dmpn1jxw33pa" path="res://Characters_NPC/Player animation/Idle Down/player-0 copia.png" id="1_sxl7e"]
@@ -48,6 +48,8 @@
 [ext_resource type="Texture2D" uid="uid://7e0gfkd1838c" path="res://Characters_NPC/Player animation/Move up/player-33 copia.png" id="45_gnd8s"]
 [ext_resource type="Texture2D" uid="uid://c57cs711451gc" path="res://Characters_NPC/Player animation/Move up/player-34 copia.png" id="46_v73qr"]
 [ext_resource type="Texture2D" uid="uid://bufrcaq1wbh0s" path="res://Characters_NPC/Player animation/Move up/player-35 copia.png" id="47_ms7no"]
+[ext_resource type="Script" uid="uid://cwsp2s5bgejb4" path="res://UI/scalerGameplay.gd" id="49_ccn5m"]
+[ext_resource type="PackedScene" uid="uid://c66ddag3osvpv" path="res://UI/joystick.tscn" id="49_li16j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ikj4v"]
 animations = [{
@@ -257,6 +259,17 @@ animation = &"idle_down"
 transform = Transform3D(1, 0, 0, 0, 0.554845, 0.831954, 0, -0.831954, 0.554845, 0, 2.846, 2.089)
 current = true
 fov = 90.0
+
+[node name="Scaler" type="Control" parent="Camera"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("49_ccn5m")
+
+[node name="Joystick" parent="Camera/Scaler" instance=ExtResource("49_li16j")]
+position = Vector2(111, 540)
+scale = Vector2(0.297605, 0.297605)
 
 [node name="CollisionShape2D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24547, -0.346123)

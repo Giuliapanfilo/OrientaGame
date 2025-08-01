@@ -1,30 +1,43 @@
 extends CharacterBody3D
 class_name Player
 
+@onready var joystick: Node2D = $Camera/Scaler/Joystick
+
 @export var speed := 3.0
 @export var gravity := 9.8
 @export var sprite : AnimatedSprite3D
 
-var can_move = true
-
 var last_direction = "down"
 var last_action = "idle"
 
-func _physics_process(delta):
-	var direction = Vector3.ZERO
+func _process(_delta):
+	$Camera/Scaler/Joystick.visible = InteractionManager.joystick_enabled
 
+
+func _physics_process(delta):
+	var direction = joystick.posVector
+
+		# Input da tastiera
 	if Input.is_action_pressed("ui_right"):
 		direction.x += 1
-		last_direction = "right"
 	if Input.is_action_pressed("ui_left"):
 		direction.x -= 1
-		last_direction = "left"
 	if Input.is_action_pressed("ui_down"):
 		direction.z += 1
-		last_direction = "down"
 	if Input.is_action_pressed("ui_up"):
 		direction.z -= 1
-		last_direction = "up"
+
+	# Se il joystick è stato mosso più della deadzone
+	if joystick.posVector.length() > 0.1:
+		direction.x += joystick.posVector.x
+		direction.z += joystick.posVector.z
+
+	# Determina la direzione principale per l'animazione
+	if abs(direction.x) > abs(direction.z):
+		last_direction = "right" if direction.x > 0 else "left"
+	elif abs(direction.z) > 0:
+		last_direction = "down" if direction.z > 0 else "up"
+
 
 	direction = direction.normalized()
 	velocity.x = direction.x * speed
@@ -39,5 +52,5 @@ func _physics_process(delta):
 	else:
 		velocity.y = 0
 
-	if can_move:
+	if InteractionManager.can_move:
 		move_and_slide()

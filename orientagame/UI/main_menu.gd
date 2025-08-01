@@ -2,12 +2,17 @@ extends Control
 
 var button_type = null
 
+func _ready() -> void:
+	InteractionManager.hide()
+	
+
 
 func _on_start_pressed():
 	button_type = "start"
 	$CanvasLayer/Fade_transition.show()
 	$CanvasLayer/Fade_transition/Fade_timer.start()
 	$CanvasLayer/Fade_transition/AnimationPlayer.play("fade_in")
+	InteractionManager.show()
 
 
 func _on_survey_pressed() -> void:
@@ -60,6 +65,9 @@ func _on_quit_mouse_exited() -> void:
 func _on_fade_timer_timeout() -> void:
 	print("il timer è scaduto")
 	if button_type == "start" :
+		#Sblocco movimento player
+		InteractionManager.can_move = true
+		
 		SceneLoader.swap(SceneLoader.first_scene)
 		queue_free()
 	
