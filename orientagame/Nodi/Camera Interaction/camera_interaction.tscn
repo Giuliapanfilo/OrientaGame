@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmgr7xla5f2ar"]
+
+[ext_resource type="Script" uid="uid://boyots2eyr3ao" path="res://Nodi/Camera Interaction/camera_interaction.gd" id="1_uua2q"]
+
+[node name="CameraInteraction" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_uua2q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

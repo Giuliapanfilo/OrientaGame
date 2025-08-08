@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b5gck3blx0rn"
+path="res://.godot/imported/appunti.dialogue-658a9bfc055f47850add9535e28a49fc.tres"
+
+[deps]
+
+source_file="res://Dialogues/Collectibles/appunti.dialogue"
+dest_files=["res://.godot/imported/appunti.dialogue-658a9bfc055f47850add9535e28a49fc.tres"]
+
+[params]
+
+defaults=true

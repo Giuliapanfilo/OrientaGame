@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="Collectible" load_steps=6 format=4 uid="uid://bbojwd6kkp6tk"]
+
+[ext_resource type="Texture2D" uid="uid://cp5s13prkqxjv" path="res://Oggetti/Collezionabili/Libro_texturelibro.png" id="1_tnmye"]
+[ext_resource type="Script" uid="uid://gb1hhvebmrci" path="res://Oggetti/Collezionabili/collectible.gd" id="2_wnvig"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5gvr"]
+resource_name = "libro"
+cull_mode = 2
+albedo_texture = ExtResource("1_tnmye")
+roughness = 0.5
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3rgbp"]
+_surfaces = [{
+"aabb": AABB(-0.847458, -1.1078, -0.313544, 1.80492, 2.2156, 0.627087),
+"format": 34896613377,
+"index_count": 150,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAwACAAQABQAAAAMABgADAAQABQADAAYABgAEAAcABwAEAAIABgAIAAUABwACAAkACQACAAEABwAKAAYABgAKAAgACQALAAcABwALAAoABQAIAAwADAAIAAoABQAMAA0ADQAAAAUADAAKAA4ADQAMAA4ADgAKAAsADQAPAAAAAAAPAAEADQAOABAAEAAPAA0ADgALABEAEAAOABEAEQALABIACQASAAsAEQASABMAFAASAAkAFAATABIACQABABQAFQARABMAEAARABUAFQATABQAFQAWABAAEAAWAA8AFAAXABUAFAABABcAFQAXABYADwAXAAEADwAWABcAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEA"),
+"name": "libro",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAZPAAAP//AABk8P////8AALwMAABV2wAAZPAAAFXbAABk8P//VdsAALwMVAdV2wAAvAz//1XbAAAI6i4FVdsAAAjq0PpV2wAAvAxUB6kkAAC8DAAAqSQAAAjqLgWpJAAAAAAAAAAAAABk8AAAqSQAAAjq0PqpJAAAvAyq+FXbAAC8DKr4qSQAALwM//+pJAAAZPD//6kkAABk8AAAAAAAAGTw//8AAAAAjpzhsdhhAABQ873v02EAAP//k9sEWwAA348LxqhoAABah0O/RZsAAJT4lcLhXQAAEfNarMZjAADdjH3VX5UAAHmF4xRHqQAAJPMXMcORAAC89GkaNo4AAOKDkSvUrAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2wywd"]
+resource_name = "Libro_Cube_001"
+_surfaces = [{
+"aabb": AABB(-0.847458, -1.1078, -0.313544, 1.80492, 2.2156, 0.627087),
+"attribute_data": PackedByteArray("agg8FoYorIdqCKyHhig8Fr+eE97eriXzv54l896uE96c3LTjseVw4/Tls+Oc3FXjseUM1/Tlydac3CjXnNzK1hH5k9NecGQEEflTBF5wpNN65rLj1e9T49XvsuO95m/jeubI1r3mC9fV78jW1e8m15HImPHWwo3yy8OY8dbCeODLw3jghsmN8pHIeOCGyXjgfMpu4TfQeOBCz27hN9CN8kLPjfKGyXjgfMqN8obJjfK7sY/yxbDs2rux7NrFsI/yit9W3H/g+fOK3/nzf+BW3Lksut8pMBLwuSwS8Ckwut+BQhfjCEZm74FCZu8IRhfjjkVZ7SBEXuiORV7oIERZ7c3YquAs2UbjzdhG4yzZquDN2Ebjb9iq4M3YquBv2Ebj+DSKoDE3dKn4NHWpMTeJoNAszo0HVciE3lTUjvoswoOQMAC+ETUO0JAwDNARNQK+"),
+"format": 34896613399,
+"index_count": 150,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkACgAJAAwACgAMAA0ADQAMAA4ADQAOAA8AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAXABQAGAAZABcAGgAZABgAGgAbABkAHAAdAB4AHgAdAB8AHgAfACAAHAAhAB0AIgAhABwAIgAjACEAJAAlACYAJgAlACcAJgAnACgAJAApACUAKgApACQAKgArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEA"),
+"material": SubResource("StandardMaterial3D_m5gvr"),
+"name": "libro",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 84,
+"vertex_data": PackedByteArray("AAAAAP////8AAP//AAD//wAA////////AAAAAAAA//8AAAAAAAD//2Tw//8AAP//AAD//wAA//9k8AAAAAD//7wMAACpJACACOouBakkAIBk8AAAqSQAgLwMVAepJACACOrQ+qkkBIBk8P//qSQEgLwMqvipJACAvAz//6kkAIBk8AAA//8AgAAA/////wCAZPD/////AIAAAAAA//8AgGTwAABV2///vAxUB1Xb//+8DAAAVdv//wjqLgVV2///ZPD//1Xb//8I6tD6Vdv//7wM//9V2///vAyq+FXb//+8DAAAqSRU1QAAAAD//1TVvAwAAFXbVNVk8AAA//9U1WTwAABV21TVAAAAAAAAVNVk8AAAqSRU1WTwAAAAAFTVvAz//1XbVNUAAP//AABU1bwM//+pJFTVZPD//wAAVNVk8P//qSRU1QAA/////1TVZPD//1XbVNVk8P////9U1WTw//+pJP//ZPAAAAAA//9k8AAAqST//2Tw//8AAP//ZPAAAFXb//9k8P///////2Tw//9V2///ZPAAAP////8I6i4FqST//wjq0PpV2///COrQ+qkk//8I6i4FVdv//7wMVAepJAzVCOouBVXbDNUI6i4FqSQM1bwMVAdV2wzVCOrQ+qkknNW8DKr4Vduc1bwMqvipJJzVCOrQ+lXbnNW8DAAAVdtU1bwMVAepJFTVvAwAAKkkVNW8DFQHVdtU1bwM//+pJFTVvAyq+FXbVNW8DP//VdtU1bwMqvipJFTVjpzhsdhhVtNQ873v02FW0///k9sEW1bT348LxqhoVtNah0O/RZudipT4lcLhXZ2KEfNarMZjnYrdjH3VX5WdinmF4xRHqYnCJPMXMcORicK89GkaNo6JwuKDkSvUrInC/z//f/8//3//P/9//z//f////3////9/////f////3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/7//3////9/////f/7//3/+//9//v//f/7//3/+/1VVVFVUVVVVVFVVVVRVVFVUVVRVVVVUVVVVVFVUVVRVVNWqKlTVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqir/v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//38BK3/VASt/1QErf9UBK3/VqtXVKqrV1Sqq1dUqqtXVKqoqqiqqKqoqqiqqKqoqqiqqKqoqqiqqKqoqqiqqKqoq1gEb+tYBG/rWARv61gEb+n6QEEh+kBBIfpAQSH6QEEiAAk8HgAJPB4ACTweAAk8H")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_3rgbp")
+
+[resource]
+script = ExtResource("2_wnvig")
+name = "Libro in prestito"
+description = ""
+mesh = SubResource("ArrayMesh_2wywd")
+metadata/_custom_type_script = "uid://gb1hhvebmrci"

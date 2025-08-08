@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bse528t5p5nns"]
+
+[ext_resource type="PackedScene" uid="uid://ch11nqpyfy4ix" path="res://Scene/Retro/struttura_retro.tscn" id="2_cefek"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0isvt"]
+sky_top_color = Color(0.690977, 0.796471, 0.833889, 1)
+sky_horizon_color = Color(0.480912, 0.687797, 0.795837, 1)
+sky_curve = 0.0349888
+ground_bottom_color = Color(0.313523, 0.55411, 0.41642, 1)
+ground_horizon_color = Color(0.307512, 0.426979, 0.34402, 1)
+ground_curve = 0.121258
+
+[sub_resource type="Sky" id="Sky_wssxf"]
+sky_material = SubResource("ProceduralSkyMaterial_0isvt")
+
+[sub_resource type="Environment" id="Environment_cefek"]
+background_mode = 2
+sky = SubResource("Sky_wssxf")
+
+[node name="RetroDib" type="Node3D"]
+
+[node name="Spawner" type="Marker3D" parent="." groups=["spawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.283354, 0)
+
+[node name="StrutturaRetro" parent="." instance=ExtResource("2_cefek")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cefek")

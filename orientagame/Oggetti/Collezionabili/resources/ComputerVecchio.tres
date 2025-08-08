@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Collectible" load_steps=3 format=3 uid="uid://bdhnvyk4v74vj"]
+
+[ext_resource type="ArrayMesh" uid="uid://icvqu8dm4dp1" path="res://Oggetti/Collezionabili/mesh/oldPC.tres" id="1_620jk"]
+[ext_resource type="Script" uid="uid://gb1hhvebmrci" path="res://Oggetti/Collezionabili/collectible.gd" id="2_s4ipe"]
+
+[resource]
+script = ExtResource("2_s4ipe")
+name = "ComputerVecchio"
+description = "Computer vecchio"
+mesh = ExtResource("1_620jk")
+metadata/_custom_type_script = "uid://gb1hhvebmrci"

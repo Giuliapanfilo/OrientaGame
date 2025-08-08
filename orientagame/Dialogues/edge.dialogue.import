@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://drhqu350c3672"
+path="res://.godot/imported/edge.dialogue-9884cc952c2e51a7c25fc9559d80ac07.tres"
+
+[deps]
+
+source_file="res://Dialogues/edge.dialogue"
+dest_files=["res://.godot/imported/edge.dialogue-9884cc952c2e51a7c25fc9559d80ac07.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,142 @@
+[gd_scene load_steps=21 format=3 uid="uid://chqnuytnniok6"]
+
+[ext_resource type="PackedScene" uid="uid://brk5i3yh1hpie" path="res://Scene/Pianterreno/struttura_pian_terreno.tscn" id="1_6twqq"]
+[ext_resource type="PackedScene" uid="uid://bl2yovaetjo4k" path="res://Nodi/NPC/npc_adam.tscn" id="2_20k26"]
+[ext_resource type="PackedScene" uid="uid://dpgxir70w4mvm" path="res://Nodi/Scene Swapper/scene_swapper.tscn" id="3_nstli"]
+[ext_resource type="PackedScene" uid="uid://dpqucqhq1ivpo" path="res://Scene/Esterno/livello_giardini.tscn" id="4_5qvmw"]
+[ext_resource type="PackedScene" uid="uid://cmgr7xla5f2ar" path="res://Nodi/Camera Interaction/camera_interaction.tscn" id="5_633wg"]
+[ext_resource type="PackedScene" uid="uid://b81l5jqk6cv2m" path="res://Nodi/Pickuppable/pickuppable.tscn" id="6_3f5fs"]
+[ext_resource type="Resource" uid="uid://1xqe1x846cvu" path="res://Oggetti/Collezionabili/resources/Appunti.tres" id="7_5k75e"]
+[ext_resource type="Texture2D" uid="uid://dsqpg2hjo7y20" path="res://Sprite/sparkles.png" id="8_v04g8"]
+[ext_resource type="Resource" uid="uid://bdhnvyk4v74vj" path="res://Oggetti/Collezionabili/resources/OldPc.tres" id="9_5qvmw"]
+[ext_resource type="Resource" uid="uid://b85n6mcuq7xy6" path="res://Oggetti/Collezionabili/resources/Caffe.tres" id="10_633wg"]
+[ext_resource type="Resource" uid="uid://bbojwd6kkp6tk" path="res://Oggetti/Collezionabili/resources/LibroInPrestito.tres" id="11_3f5fs"]
+[ext_resource type="Resource" uid="uid://bqv55172g8mtw" path="res://Oggetti/Collezionabili/resources/TimbroInizio.tres" id="12_5k75e"]
+[ext_resource type="Resource" uid="uid://c6n1db7vj0ode" path="res://Oggetti/Collezionabili/resources/GameBoy.tres" id="13_v04g8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ssw88"]
+size = Vector3(3.30969, 1, 1.73926)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1ohj"]
+atlas = ExtResource("8_v04g8")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i151"]
+atlas = ExtResource("8_v04g8")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44k1k"]
+atlas = ExtResource("8_v04g8")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mw02t"]
+atlas = ExtResource("8_v04g8")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umrb4"]
+atlas = ExtResource("8_v04g8")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j1ohj"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_j1ohj")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_2i151")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_44k1k")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_mw02t")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_umrb4")
+}],
+"loop": true,
+"name": &"sparkle",
+"speed": 5.0
+}]
+
+[node name="ScenaPianTerreno" type="Node3D"]
+
+[node name="Spawn" type="Marker3D" parent="." groups=["spawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.181084, 3.41329)
+
+[node name="StrutturaPianTerreno" parent="." instance=ExtResource("1_6twqq")]
+
+[node name="NPC Adam" parent="." instance=ExtResource("2_20k26")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.438608, 0.474246, 1.01961)
+
+[node name="SwapScaleDxUp" parent="." instance=ExtResource("3_nstli")]
+transform = Transform3D(1.00254, -0.00865323, 0.010362, 0.00833897, 1.00429, 0.0181473, -0.0132166, -0.0227415, 0.797462, 2.09413, 0.531749, 1.22914)
+direzione = 110
+
+[node name="SwapScaleDxDown" parent="." instance=ExtResource("3_nstli")]
+transform = Transform3D(1.00129, -0.00428807, 0.00519445, 0.00423487, 1.00157, 0.0063552, -0.00655449, -0.0079521, 0.797635, 2.12571, 0.558096, 2.13088)
+direzione = 70
+
+[node name="SwapScaleSxUp" parent="." instance=ExtResource("3_nstli")]
+transform = Transform3D(-1.00253, 0.0086414, -0.0103616, 0.00842841, 1.00304, 0.0127323, 0.0131595, 0.0159008, -0.79754, -2.56614, 0.383186, 2.11319)
+direzione = 110
+
+[node name="SwapRetro" parent="." instance=ExtResource("3_nstli")]
+transform = Transform3D(0.00326886, 0.00397321, -0.999987, 0.00212116, 0.99999, 0.00398016, 0.999992, -0.00213414, 0.0032604, -0.109318, 0.421114, 6.06091)
+target_scene = ExtResource("4_5qvmw")
+direzione = 110
+
+[node name="CameraInteraction" parent="." instance=ExtResource("5_633wg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32476, 0.685792, 1.84371)
+secondary_rot = Vector3(-1.428, 0, 0)
+secondary_pos = Vector3(0, 2.21, 0.04)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraInteraction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0526733, 0, -0.166504)
+shape = SubResource("BoxShape3D_ssw88")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CameraInteraction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.91153, 0, -0.166504)
+shape = SubResource("BoxShape3D_ssw88")
+
+[node name="AppuntiMentore" parent="." instance=ExtResource("6_3f5fs")]
+transform = Transform3D(0.749487, 0, -0.662019, 0, 1, 0, 0.662019, 0, 0.749487, 7.37646, 0.406784, 3.15483)
+collectible = ExtResource("7_5k75e")
+is_mesh_visible = false
+mesh_reduction = 0.0523149
+
+[node name="Sparkle" type="AnimatedSprite3D" parent="AppuntiMentore"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0921258, 0)
+modulate = Color(1, 1, 1, 0.592157)
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_j1ohj")
+animation = &"sparkle"
+autoplay = "sparkle"
+speed_scale = 0.35
+
+[node name="OldPc" parent="." instance=ExtResource("6_3f5fs")]
+transform = Transform3D(-0.0156556, 0, -0.999877, 0, 1, 0, 0.999877, 0, -0.0156556, 8.47265, 0.591325, 3.18183)
+collectible = ExtResource("9_5qvmw")
+mesh_reduction = 0.606061
+
+[node name="Caffe" parent="." instance=ExtResource("6_3f5fs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.15183, 0.440122, 3.13795)
+collectible = ExtResource("10_633wg")
+mesh_reduction = 0.032144
+
+[node name="LibroInPrestito" parent="." instance=ExtResource("6_3f5fs")]
+transform = Transform3D(0.87718, -0.480162, -2.09886e-08, 0, -4.37114e-08, 1, -0.480162, -0.87718, -3.83427e-08, 7.98068, 0.427182, 3.20283)
+collectible = ExtResource("11_3f5fs")
+mesh_reduction = 0.0596125
+
+[node name="TimbroInizio" parent="." instance=ExtResource("6_3f5fs")]
+transform = Transform3D(0.865801, 0.0197082, 0.5, -0.0227571, 0.999741, 5.84489e-09, -0.49987, -0.0113786, 0.866025, 7.8116, 0.427182, 3.21416)
+collectible = ExtResource("12_5k75e")
+mesh_reduction = 0.0286287
+
+[node name="GameBoy" parent="." instance=ExtResource("6_3f5fs")]
+transform = Transform3D(0.44172, 0.0100549, -0.897096, -0.0227571, 0.999741, 5.7944e-09, 0.896864, 0.0204153, 0.441835, 7.56724, 0.427182, 3.22532)
+collectible = ExtResource("13_v04g8")
+mesh_reduction = 0.0215054

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c468defrbpsgv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sesml"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sesml"]
+radius = 0.184702
+height = 0.542859
+
+[node name="Mentore" type="CharacterBody3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sesml")
+
+[node name="CollisionShape2D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.07, 0, 0, 0, 1.07, 0, 0, 0, 1.07, 0, 0, -0.346)
+shape = SubResource("CapsuleShape3D_sesml")

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bv5hpsjxfq21j"
+path="res://.godot/imported/Gameboy.dialogue-3e3d37baa88bf158be50bdb603fc86bc.tres"
+
+[deps]
+
+source_file="res://Dialogues/Collectibles/Gameboy.dialogue"
+dest_files=["res://.godot/imported/Gameboy.dialogue-3e3d37baa88bf158be50bdb603fc86bc.tres"]
+
+[params]
+
+defaults=true

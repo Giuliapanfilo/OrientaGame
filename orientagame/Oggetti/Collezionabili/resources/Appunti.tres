@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Collectible" load_steps=3 format=3 uid="uid://1xqe1x846cvu"]
+
+[ext_resource type="ArrayMesh" uid="uid://burgmbgdbtowu" path="res://Oggetti/Collezionabili/mesh/appuntimentore.tres" id="1_sl142"]
+[ext_resource type="Script" uid="uid://gb1hhvebmrci" path="res://Oggetti/Collezionabili/collectible.gd" id="2_bplbj"]
+
+[resource]
+script = ExtResource("2_bplbj")
+name = "Appunti del mentore"
+description = "dujahsuidhauidhuihdsau;shdqiwhduqhwhqui;wdhip h;uiowehd ;quwhd uiwh duiqw; udhqdhio;qhwdhqwuihd uiqhiu hqwidhuiqhdui;qhwi;udh iqwh iuh iuh ui;h ui;dh;qi hui"
+mesh = ExtResource("1_sl142")
+metadata/_custom_type_script = "uid://gb1hhvebmrci"

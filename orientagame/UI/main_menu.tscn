@@ -1,0 +1,206 @@
+[gd_scene load_steps=12 format=3 uid="uid://tu04ljppnwxa"]
+
+[ext_resource type="Texture2D" uid="uid://dr31orgvn4msr" path="res://UI/Elements/Ground.PNG" id="1_cafmx"]
+[ext_resource type="Script" uid="uid://oaylydqp1y2s" path="res://UI/main_menu.gd" id="1_mmlvu"]
+[ext_resource type="Texture2D" uid="uid://cv40jeq4ljxep" path="res://UI/Elements/Button.PNG" id="4_cafmx"]
+[ext_resource type="Script" path="res://UI/scaler.gd" id="4_tcix6"]
+[ext_resource type="Texture2D" uid="uid://bc3kkydy8u7vp" path="res://UI/Elements/ButtonSelected.PNG" id="5_tcix6"]
+[ext_resource type="LabelSettings" uid="uid://chn3wv4fpjoxo" path="res://UI/label_settings_Pressed.tres" id="7_aorne"]
+[ext_resource type="Texture2D" uid="uid://bc25747bnkywl" path="res://UI/Elements/Gear.PNG" id="9_cafmx"]
+[ext_resource type="Texture2D" uid="uid://mbp3ptafsg8u" path="res://UI/Elements/LogoStatico.PNG" id="10_cafmx"]
+[ext_resource type="Texture2D" uid="uid://ia5p8o1uu4w5" path="res://UI/Elements/GearSelected.PNG" id="10_tcix6"]
+[ext_resource type="PackedScene" uid="uid://cqjs1xpx7gwlt" path="res://UI/fade_transition.tscn" id="12_aorne"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cafmx"]
+font_size = 250
+outline_size = 40
+outline_color = Color(0, 0, 0, 0.0627451)
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_mmlvu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GroundContainer" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ground" type="TextureRect" parent="CanvasLayer/GroundContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_cafmx")
+expand_mode = 3
+
+[node name="Scaler" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+script = ExtResource("4_tcix6")
+
+[node name="LogoContainer" type="BoxContainer" parent="CanvasLayer/Scaler"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -169.0
+offset_top = 3.0
+offset_right = 983.0
+offset_bottom = 651.0
+grow_vertical = 2
+scale = Vector2(0.929594, 0.929594)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Logo" type="TextureRect" parent="CanvasLayer/Scaler/LogoContainer"]
+layout_mode = 2
+texture = ExtResource("10_cafmx")
+expand_mode = 3
+
+[node name="ButtonManager" type="BoxContainer" parent="CanvasLayer/Scaler"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 760.0
+offset_top = 12.0
+offset_right = 1912.0
+offset_bottom = 2576.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.238264, 0.238264)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+vertical = true
+
+[node name="Start" type="TextureButton" parent="CanvasLayer/Scaler/ButtonManager"]
+layout_mode = 2
+size_flags_horizontal = 12
+size_flags_vertical = 12
+texture_normal = ExtResource("4_cafmx")
+texture_hover = ExtResource("5_tcix6")
+flip_h = true
+
+[node name="StartLabel" type="Label" parent="CanvasLayer/Scaler/ButtonManager/Start"]
+layout_mode = 0
+offset_left = 249.797
+offset_top = 147.202
+offset_right = 922.797
+offset_bottom = 538.202
+scale = Vector2(0.916159, 0.916159)
+text = "Gioca"
+label_settings = SubResource("LabelSettings_cafmx")
+
+[node name="StartLabelPressed" type="Label" parent="CanvasLayer/Scaler/ButtonManager/Start"]
+visible = false
+layout_mode = 0
+offset_left = 249.797
+offset_top = 147.202
+offset_right = 922.797
+offset_bottom = 538.202
+scale = Vector2(0.916159, 0.916159)
+text = "Gioca"
+label_settings = ExtResource("7_aorne")
+
+[node name="Survey" type="TextureButton" parent="CanvasLayer/Scaler/ButtonManager"]
+layout_mode = 2
+size_flags_horizontal = 12
+size_flags_vertical = 12
+texture_normal = ExtResource("4_cafmx")
+texture_hover = ExtResource("5_tcix6")
+
+[node name="SurveyLabel" type="Label" parent="CanvasLayer/Scaler/ButtonManager/Survey"]
+layout_mode = 0
+offset_left = 340.134
+offset_top = 154.194
+offset_right = 1156.13
+offset_bottom = 545.194
+scale = Vector2(0.878576, 0.878576)
+text = "Quiz"
+label_settings = SubResource("LabelSettings_cafmx")
+
+[node name="SurveyLabelPressed" type="Label" parent="CanvasLayer/Scaler/ButtonManager/Survey"]
+visible = false
+layout_mode = 0
+offset_left = 340.134
+offset_top = 149.659
+offset_right = 1156.13
+offset_bottom = 540.659
+scale = Vector2(0.878576, 0.878576)
+text = "Quiz"
+label_settings = ExtResource("7_aorne")
+
+[node name="Quit" type="TextureButton" parent="CanvasLayer/Scaler/ButtonManager"]
+layout_mode = 2
+size_flags_horizontal = 12
+size_flags_vertical = 12
+texture_normal = ExtResource("4_cafmx")
+texture_hover = ExtResource("5_tcix6")
+flip_h = true
+
+[node name="QuitLabel" type="Label" parent="CanvasLayer/Scaler/ButtonManager/Quit"]
+layout_mode = 0
+offset_left = 292.418
+offset_top = 155.07
+offset_right = 1108.42
+offset_bottom = 546.07
+scale = Vector2(0.878576, 0.878576)
+text = "Esci"
+label_settings = SubResource("LabelSettings_cafmx")
+
+[node name="QuitLabelPressed" type="Label" parent="CanvasLayer/Scaler/ButtonManager/Quit"]
+visible = false
+layout_mode = 0
+offset_left = 292.418
+offset_top = 155.07
+offset_right = 1108.42
+offset_bottom = 546.07
+scale = Vector2(0.878576, 0.878576)
+text = "Esci"
+label_settings = ExtResource("7_aorne")
+
+[node name="Options" type="TextureButton" parent="CanvasLayer/Scaler/ButtonManager"]
+layout_mode = 2
+size_flags_horizontal = 12
+size_flags_vertical = 12
+texture_normal = ExtResource("9_cafmx")
+texture_hover = ExtResource("10_tcix6")
+
+[node name="Fade_transition" parent="CanvasLayer" instance=ExtResource("12_aorne")]
+visible = false
+
+[node name="Fade_timer" type="Timer" parent="CanvasLayer/Fade_transition"]
+
+[connection signal="mouse_entered" from="CanvasLayer/Scaler/ButtonManager/Start" to="." method="_on_start_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Scaler/ButtonManager/Start" to="." method="_on_start_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Scaler/ButtonManager/Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Scaler/ButtonManager/Survey" to="." method="_on_survey_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Scaler/ButtonManager/Survey" to="." method="_on_survey_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Scaler/ButtonManager/Survey" to="." method="_on_survey_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Scaler/ButtonManager/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Scaler/ButtonManager/Quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Scaler/ButtonManager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Scaler/ButtonManager/Options" to="." method="_on_options_pressed"]
+[connection signal="timeout" from="CanvasLayer/Fade_transition/Fade_timer" to="." method="_on_fade_timer_timeout"]

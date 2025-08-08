@@ -1,0 +1,301 @@
+[gd_scene load_steps=15 format=3 uid="uid://bai3d3fxov72d"]
+
+[ext_resource type="Script" uid="uid://dtn52gj6bcsxt" path="res://UI/pause_menu.gd" id="1_6b54m"]
+[ext_resource type="PackedScene" uid="uid://cqjs1xpx7gwlt" path="res://UI/fade_transition.tscn" id="2_03fe5"]
+[ext_resource type="Texture2D" uid="uid://boo708oh8l3il" path="res://UI/Elements/SfondoTrasparente.PNG" id="3_0b5ob"]
+[ext_resource type="Script" path="res://UI/scaler.gd" id="3_6b54m"]
+[ext_resource type="Texture2D" uid="uid://dwddp7p05q5ve" path="res://UI/Elements/IntestazioneMenu.PNG" id="4_nben2"]
+[ext_resource type="LabelSettings" uid="uid://brryaiyls24kv" path="res://UI/label_settings_Title.tres" id="6_6b54m"]
+[ext_resource type="Texture2D" uid="uid://dpy5h8gnlmwhj" path="res://UI/Elements/SfondobaseProporzionato.PNG" id="6_mxjhc"]
+[ext_resource type="Texture2D" uid="uid://cv40jeq4ljxep" path="res://UI/Elements/Button.PNG" id="7_pwekk"]
+[ext_resource type="Texture2D" uid="uid://bc3kkydy8u7vp" path="res://UI/Elements/ButtonSelected.PNG" id="8_onkq6"]
+[ext_resource type="LabelSettings" uid="uid://u1t7bqg5rvys" path="res://UI/label_settings_NOTPressed.tres" id="9_6b54m"]
+[ext_resource type="LabelSettings" uid="uid://chn3wv4fpjoxo" path="res://UI/label_settings_Pressed.tres" id="10_ljfgm"]
+[ext_resource type="Texture2D" uid="uid://bc25747bnkywl" path="res://UI/Elements/Gear.PNG" id="11_dwxn8"]
+[ext_resource type="Texture2D" uid="uid://ia5p8o1uu4w5" path="res://UI/Elements/GearSelected.PNG" id="12_7suen"]
+[ext_resource type="Texture2D" uid="uid://dv8jmtbtqh87g" path="res://UI/Elements/RiquadroCollezionabili.PNG" id="13_onkq6"]
+
+[node name="pause_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6b54m")
+
+[node name="ColorRect" parent="." instance=ExtResource("2_03fe5")]
+visible = false
+layout_mode = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.7291, 4.7291)
+color = Color(0, 0, 0, 0.392157)
+
+[node name="GroundContainer" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="TransparentGround" type="TextureRect" parent="CanvasLayer/GroundContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_0b5ob")
+expand_mode = 3
+
+[node name="Scaler" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+script = ExtResource("3_6b54m")
+
+[node name="TitleMenu" type="TextureRect" parent="CanvasLayer/Scaler"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("4_nben2")
+
+[node name="Title" type="Label" parent="CanvasLayer/Scaler/TitleMenu"]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 16.0
+offset_right = 1210.0
+offset_bottom = 358.0
+scale = Vector2(0.232726, 0.232726)
+text = "Pausa"
+label_settings = ExtResource("6_6b54m")
+
+[node name="BaseGround" type="TextureRect" parent="CanvasLayer/Scaler"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("6_mxjhc")
+
+[node name="Resume" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 108.0
+offset_right = 1866.0
+offset_bottom = 756.0
+scale = Vector2(0.226043, 0.226043)
+texture_normal = ExtResource("7_pwekk")
+texture_hover = ExtResource("8_onkq6")
+
+[node name="ResumeLabel" type="Label" parent="CanvasLayer/Scaler/BaseGround/Resume"]
+layout_mode = 0
+offset_left = 145.99
+offset_top = 168.11
+offset_right = 1166.99
+offset_bottom = 510.11
+scale = Vector2(0.807853, 0.807853)
+text = "Riprendi"
+label_settings = ExtResource("9_6b54m")
+
+[node name="ResumeLabelPressed" type="Label" parent="CanvasLayer/Scaler/BaseGround/Resume"]
+visible = false
+layout_mode = 0
+offset_left = 145.99
+offset_top = 168.11
+offset_right = 1248.99
+offset_bottom = 537.11
+scale = Vector2(0.807853, 0.807853)
+text = "Riprendi"
+label_settings = ExtResource("10_ljfgm")
+
+[node name="Exit" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 243.0
+offset_right = 1822.0
+offset_bottom = 891.0
+scale = Vector2(0.226043, 0.226043)
+texture_normal = ExtResource("7_pwekk")
+texture_hover = ExtResource("8_onkq6")
+flip_h = true
+
+[node name="ExitLabel" type="Label" parent="CanvasLayer/Scaler/BaseGround/Exit"]
+layout_mode = 0
+offset_left = 305.252
+offset_top = 132.718
+offset_right = 760.252
+offset_bottom = 474.718
+text = "Esci"
+label_settings = ExtResource("9_6b54m")
+
+[node name="ExitLabelPressed" type="Label" parent="CanvasLayer/Scaler/BaseGround/Exit"]
+visible = false
+layout_mode = 0
+offset_left = 300.828
+offset_top = 128.294
+offset_right = 791.828
+offset_bottom = 497.294
+text = "Esci"
+label_settings = ExtResource("10_ljfgm")
+
+[node name="Gear" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 750.0
+offset_top = 413.0
+offset_right = 1902.0
+offset_bottom = 1061.0
+scale = Vector2(0.188347, 0.188347)
+texture_normal = ExtResource("11_dwxn8")
+texture_hover = ExtResource("12_7suen")
+
+[node name="Collectible" type="Control" parent="CanvasLayer/Scaler"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CollectibleCollected" type="Control" parent="CanvasLayer/Scaler/Collectible"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CollectiblePanel1" type="TextureRect" parent="CanvasLayer/Scaler/Collectible/CollectibleCollected"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 133.0
+offset_right = 1249.0
+offset_bottom = 781.0
+scale = Vector2(0.292, 0.292)
+texture = ExtResource("13_onkq6")
+
+[node name="CollectiblePanel2" type="TextureRect" parent="CanvasLayer/Scaler/Collectible/CollectibleCollected"]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 133.0
+offset_right = 1453.0
+offset_bottom = 781.0
+scale = Vector2(0.292, 0.292)
+texture = ExtResource("13_onkq6")
+
+[node name="CollectiblePanel3" type="TextureRect" parent="CanvasLayer/Scaler/Collectible/CollectibleCollected"]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 350.0
+offset_right = 1453.0
+offset_bottom = 998.0
+scale = Vector2(0.292, 0.292)
+texture = ExtResource("13_onkq6")
+
+[node name="CollectiblePanel4" type="TextureRect" parent="CanvasLayer/Scaler/Collectible/CollectibleCollected"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 350.0
+offset_right = 1249.0
+offset_bottom = 998.0
+scale = Vector2(0.292, 0.292)
+texture = ExtResource("13_onkq6")
+
+[node name="CollectibleNOTCollected" type="Control" parent="CanvasLayer/Scaler/Collectible"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Collezionabile1" type="TextureButton" parent="CanvasLayer/Scaler/Collectible/CollectibleNOTCollected"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DarkCollectiblePanel1" type="TextureRect" parent="CanvasLayer/Scaler/Collectible/CollectibleNOTCollected/Collezionabile1"]
+modulate = Color(0.421731, 0.421731, 0.421731, 1)
+layout_mode = 0
+offset_left = 97.0
+offset_top = 133.0
+offset_right = 1249.0
+offset_bottom = 781.0
+scale = Vector2(0.292, 0.292)
+texture = ExtResource("13_onkq6")
+
+[node name="Collezionabile2" type="TextureButton" parent="CanvasLayer/Scaler/Collectible/CollectibleNOTCollected"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DarkCollectiblePanel2" type="TextureRect" parent="CanvasLayer/Scaler/Collectible/CollectibleNOTCollected/Collezionabile2"]
+modulate = Color(0.421731, 0.421731, 0.421731, 1)
+layout_mode = 0
+offset_left = 301.0
+offset_top = 133.0
+offset_right = 1453.0
+offset_bottom = 781.0
+scale = Vector2(0.292, 0.292)
+texture = ExtResource("13_onkq6")
+
+[node name="Collezionabile3" type="TextureButton" parent="CanvasLayer/Scaler/Collectible/CollectibleNOTCollected"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DarkCollectiblePanel3" type="TextureRect" parent="CanvasLayer/Scaler/Collectible/CollectibleNOTCollected/Collezionabile3"]
+modulate = Color(0.421731, 0.421731, 0.421731, 1)
+layout_mode = 0
+offset_left = 301.0
+offset_top = 350.0
+offset_right = 1453.0
+offset_bottom = 998.0
+scale = Vector2(0.292, 0.292)
+texture = ExtResource("13_onkq6")
+
+[node name="Collezionabile4" type="TextureButton" parent="CanvasLayer/Scaler/Collectible/CollectibleNOTCollected"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DarkCollectiblePanel4" type="TextureRect" parent="CanvasLayer/Scaler/Collectible/CollectibleNOTCollected/Collezionabile4"]
+modulate = Color(0.421731, 0.421731, 0.421731, 1)
+layout_mode = 0
+offset_left = 97.0
+offset_top = 350.0
+offset_right = 1249.0
+offset_bottom = 998.0
+scale = Vector2(0.292, 0.292)
+texture = ExtResource("13_onkq6")
+
+[node name="LeftArrow" type="Label" parent="CanvasLayer/Scaler/Collectible"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 261.0
+offset_right = 265.0
+offset_bottom = 603.0
+scale = Vector2(0.249963, 0.43279)
+text = "<"
+label_settings = ExtResource("9_6b54m")
+
+[node name="RightArrow" type="Label" parent="CanvasLayer/Scaler/Collectible"]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 261.0
+offset_right = 721.0
+offset_bottom = 603.0
+scale = Vector2(0.249963, 0.43279)
+text = ">"
+label_settings = ExtResource("9_6b54m")
+
+[connection signal="mouse_entered" from="CanvasLayer/Scaler/BaseGround/Resume" to="." method="_on_resume_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Scaler/BaseGround/Resume" to="." method="_on_resume_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Resume" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Scaler/BaseGround/Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Scaler/BaseGround/Exit" to="." method="_on_exit_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Gear" to="." method="_on_gear_pressed"]

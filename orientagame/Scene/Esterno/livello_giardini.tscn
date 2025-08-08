@@ -1,0 +1,218 @@
+[gd_scene load_steps=28 format=3 uid="uid://dpqucqhq1ivpo"]
+
+[ext_resource type="Script" uid="uid://dhgb0o1x3kusr" path="res://Scene/Esterno/livello_giardini.gd" id="1_m4ui0"]
+[ext_resource type="Script" uid="uid://datdd1dirbgu1" path="res://Nodi/percorsi_npc.gd" id="2_xwsjn"]
+[ext_resource type="PackedScene" uid="uid://dlyq5fytid4wx" path="res://Scene/Esterno/struttura_giardini.tscn" id="5_2fmqh"]
+[ext_resource type="PackedScene" uid="uid://chqnuytnniok6" path="res://Scene/Pianterreno/livello_pianterreno.tscn" id="5_gyw00"]
+[ext_resource type="PackedScene" uid="uid://bse528t5p5nns" path="res://Scene/Retro/RetroDib.tscn" id="6_2fmqh"]
+[ext_resource type="PackedScene" uid="uid://dpgxir70w4mvm" path="res://Nodi/Scene Swapper/scene_swapper.tscn" id="6_bndii"]
+[ext_resource type="PackedScene" uid="uid://cmgr7xla5f2ar" path="res://Nodi/Camera Interaction/camera_interaction.tscn" id="7_7bxep"]
+[ext_resource type="Script" uid="uid://cs4nhixmy3y0e" path="res://Scene/Esterno/tutorial.gd" id="7_m4ui0"]
+[ext_resource type="PackedScene" uid="uid://mq8ukg1022ts" path="res://Nodi/Confini/confini.tscn" id="8_vffra"]
+[ext_resource type="PackedScene" uid="uid://bl2yovaetjo4k" path="res://Nodi/NPC/npc_adam.tscn" id="8_xwsjn"]
+[ext_resource type="PackedScene" uid="uid://c468defrbpsgv" path="res://Nodi/NPC/mentore.tscn" id="9_fwne3"]
+[ext_resource type="PackedScene" uid="uid://b81l5jqk6cv2m" path="res://Nodi/Pickuppable/pickuppable.tscn" id="11_gyw00"]
+[ext_resource type="Resource" uid="uid://c6n1db7vj0ode" path="res://Oggetti/Collezionabili/resources/GameBoy.tres" id="12_2fmqh"]
+
+[sub_resource type="Curve3D" id="Curve3D_bndii"]
+bake_interval = 8.65
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.671662, 0, 9.11484, 0, 0, 0, 0, 0, 0, 0.0401247, 0, 15.5921, 0, 0, 0, 0, 0, 0, 4.59556, 0, 21.144, 0, 0, 0, 0, 0, 0, 12.1382, 0, 26.9174, 0, 0, 0, 0, 0, 0, 11.0252, 0, 34.7091),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c8aa1"]
+sky_top_color = Color(0.495406, 0.567488, 0.667837, 1)
+sky_horizon_color = Color(0.784124, 0.794394, 0.810481, 1)
+ground_horizon_color = Color(0.784124, 0.794394, 0.810481, 1)
+
+[sub_resource type="Sky" id="Sky_pkpkv"]
+sky_material = SubResource("ProceduralSkyMaterial_c8aa1")
+
+[sub_resource type="Environment" id="Environment_ypben"]
+background_mode = 2
+sky = SubResource("Sky_pkpkv")
+tonemap_mode = 2
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pkpkv"]
+size = Vector3(4.22119, 0.900635, 26.807)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ypben"]
+size = Vector3(8.57616, 1.91504, 5.5925)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t7a3l"]
+size = Vector3(1.98975, 3.65625, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_op7dc"]
+size = Vector3(2.05469, 3.65625, 21.0554)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxcg"]
+size = Vector3(6.55188, 3.65625, 12.1624)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4pblc"]
+size = Vector3(2.05469, 3.65625, 8.23276)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t57kq"]
+size = Vector3(2.05469, 3.65625, 27.6877)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kpg17"]
+size = Vector3(19.3857, 3.65625, 2.43262)
+
+[sub_resource type="Curve3D" id="Curve3D_t7a3l"]
+bake_interval = 13.45
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.171515, 0.015977, -0.151745, 0, 0, 0, 0, 0, 0, -7.12368, 0.0159778, -7.10812, 0, 0, 0, 0, 0, 0, -11.2306, 0.0121862, -12.4598, 0, 0, 0, 0, 0, 0, -12.669, 0.0153521, -17.5835, 0, 0, 0, 0, 0, 0, -15.0854, 0.021638, -20.4219),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_t57kq"]
+bake_interval = 11.6
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6.89691, 0.167233, 45.3029, 0, 0, 0, 0, 0, 0, 8.69275, 0.713943, 44.5945, 0, 0, 0, 0, 0, 0, 13.7679, 0.307664, 44.9947),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[node name="LivelloGiardini" type="Node3D"]
+script = ExtResource("1_m4ui0")
+
+[node name="Spawn" type="Marker3D" parent="." groups=["spawn"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.2511, 0.875442, 47.0065)
+
+[node name="NPCs" type="Node3D" parent="."]
+
+[node name="PathFollowers" type="Node" parent="NPCs" node_paths=PackedStringArray("NPCs")]
+script = ExtResource("2_xwsjn")
+NPCs = [NodePath("../../Tutorial/Mentore"), NodePath("../../Tutorial/NPC Adam")]
+
+[node name="Path3D" type="Path3D" parent="NPCs/PathFollowers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.899823, 0.705496, 0.0630112)
+curve = SubResource("Curve3D_bndii")
+
+[node name="Path3D2" type="Path3D" parent="NPCs/PathFollowers"]
+curve = SubResource("Curve3D_bndii")
+
+[node name="Path3D3" type="Path3D" parent="NPCs/PathFollowers"]
+curve = SubResource("Curve3D_bndii")
+
+[node name="Path3D4" type="Path3D" parent="NPCs/PathFollowers"]
+curve = SubResource("Curve3D_bndii")
+
+[node name="Path3D5" type="Path3D" parent="NPCs/PathFollowers"]
+curve = SubResource("Curve3D_bndii")
+
+[node name="NPC Adam" parent="NPCs" instance=ExtResource("8_xwsjn")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(1, 1, 0.901961, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ypben")
+
+[node name="StrutturaGiardini" parent="." instance=ExtResource("5_2fmqh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.6532, 0, 8.96166)
+
+[node name="SceneSwapper" parent="." instance=ExtResource("6_bndii")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.44009, 0.475793, -2.87488)
+target_scene = ExtResource("6_2fmqh")
+
+[node name="SceneSwapper2" parent="." instance=ExtResource("6_bndii")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.08923, 0.475793, 23.9038)
+target_scene = ExtResource("6_2fmqh")
+
+[node name="SceneSwapper3" parent="." instance=ExtResource("6_bndii")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.86714, 1.01914, 9.06588)
+target_scene = ExtResource("5_gyw00")
+direzione = 70
+
+[node name="CameraInteraction" parent="." instance=ExtResource("7_7bxep")]
+secondary_rot = Vector3(-0.78, 0, 0)
+secondary_pos = Vector3(0.38, 1.8, 2.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraInteraction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45035, 1.24323, 10.9686)
+shape = SubResource("BoxShape3D_pkpkv")
+
+[node name="CameraInteraction2" parent="." instance=ExtResource("7_7bxep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1039, 0, 42.6687)
+secondary_rot = Vector3(-0.5, 0.5, 0)
+secondary_pos = Vector3(0.38, 2.5, 2.5)
+duration = 0.2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraInteraction2"]
+transform = Transform3D(0.729076, 0, 0.684433, 0, 1, 0, -0.684433, 0, 0.729076, 0.823935, 0.736033, 4.47038)
+shape = SubResource("BoxShape3D_ypben")
+
+[node name="Confini" type="Node3D" parent="."]
+
+[node name="ConfiniEST" parent="Confini" instance=ExtResource("8_vffra")]
+redirect = "down"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Confini/ConfiniEST"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.06485)
+shape = SubResource("BoxShape3D_t7a3l")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Confini/ConfiniEST"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5388, 0, 28.7402)
+shape = SubResource("BoxShape3D_t7a3l")
+
+[node name="ConfiniUP" parent="Confini" instance=ExtResource("8_vffra")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96019, 1.90735e-06, 30.4336)
+redirect = "right"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Confini/ConfiniUP"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13226, 0, -0.471672)
+shape = SubResource("BoxShape3D_op7dc")
+
+[node name="ConfiniDOWN" parent="Confini" instance=ExtResource("8_vffra")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8953, 1.90735e-06, 27.6749)
+redirect = "left"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Confini/ConfiniDOWN"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11267, 0, -4.77805)
+shape = SubResource("BoxShape3D_lfxcg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Confini/ConfiniDOWN"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.86304, 0.701771, 12.4992)
+shape = SubResource("BoxShape3D_4pblc")
+
+[node name="ConfiniOVEST" parent="Confini" instance=ExtResource("8_vffra")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96019, 1.90735e-06, 30.4336)
+redirect = "up"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Confini/ConfiniOVEST"]
+transform = Transform3D(0.645191, 0, 0.764021, 0, 1, 0, -0.764021, 0, 0.645191, 6.36506, -1.90735e-06, 16.9435)
+shape = SubResource("BoxShape3D_t57kq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Confini/ConfiniOVEST"]
+transform = Transform3D(0.645191, 0, 0.764021, 0, 1, 0, -0.764021, 0, 0.645191, 22.786, -3.8147e-06, 19.384)
+shape = SubResource("BoxShape3D_kpg17")
+
+[node name="Tutorial" type="Node" parent="."]
+script = ExtResource("7_m4ui0")
+
+[node name="NPC Adam" parent="Tutorial" instance=ExtResource("8_xwsjn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3006, 0.570178, 45.824)
+
+[node name="Percorso101" type="Path3D" parent="Tutorial"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1124, 0.847356, 45.563)
+curve = SubResource("Curve3D_t7a3l")
+
+[node name="PercorsoMentore" type="Path3D" parent="Tutorial"]
+curve = SubResource("Curve3D_t57kq")
+
+[node name="Mentore" parent="Tutorial" instance=ExtResource("9_fwne3")]
+transform = Transform3D(0.707321, 4.04426e-06, 0.706893, -2.27374e-13, 1, -5.72118e-06, -0.706893, 4.04671e-06, 0.707321, 13.9408, 0.847356, 45.4112)
+visible = false
+
+[node name="GameBoy" parent="." instance=ExtResource("11_gyw00")]
+transform = Transform3D(0.44172, 0.0100549, -0.897096, -0.0227571, 0.999741, 5.7944e-09, 0.896864, 0.0204153, 0.441835, 12.2492, 0.427182, 43.3152)
+collectible = ExtResource("12_2fmqh")
+mesh_reduction = 0.124224

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b81l5jqk6cv2m"]
+
+[ext_resource type="Script" uid="uid://6iot4o5ef361" path="res://Nodi/Pickuppable/pickuppable.gd" id="1_rvvyn"]
+[ext_resource type="PackedScene" uid="uid://cuk5m1bfqavha" path="res://Interaction/Interaction area/interactionArea.tscn" id="2_607sp"]
+
+[node name="Pickuppable" type="Node3D" node_paths=PackedStringArray("meshinstance")]
+script = ExtResource("1_rvvyn")
+meshinstance = NodePath("MeshInstance3D")
+is_mesh_visible = true
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_607sp")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]

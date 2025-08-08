@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bfbmvxl75fpdg"
+path="res://.godot/imported/ComputerVecchio.dialogue-97401813798a4f7e9fd29d1c0f3ea919.tres"
+
+[deps]
+
+source_file="res://Dialogues/Collectibles/ComputerVecchio.dialogue"
+dest_files=["res://.godot/imported/ComputerVecchio.dialogue-97401813798a4f7e9fd29d1c0f3ea919.tres"]
+
+[params]
+
+defaults=true

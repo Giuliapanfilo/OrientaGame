@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://clicmgjemuay1"
+path="res://.godot/imported/antonio.dialogue-597a2e5a4ae1e1f2e6d4d021c0db5083.tres"
+
+[deps]
+
+source_file="res://Dialogues/antonio.dialogue"
+dest_files=["res://.godot/imported/antonio.dialogue-597a2e5a4ae1e1f2e6d4d021c0db5083.tres"]
+
+[params]
+
+defaults=true

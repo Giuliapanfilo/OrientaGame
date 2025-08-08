@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Collectible" load_steps=3 format=3 uid="uid://b85n6mcuq7xy6"]
+
+[ext_resource type="ArrayMesh" uid="uid://dxd41fyje3yns" path="res://Oggetti/Collezionabili/mesh/caffe.tres" id="1_xi62y"]
+[ext_resource type="Script" uid="uid://gb1hhvebmrci" path="res://Oggetti/Collezionabili/collectible.gd" id="2_us0c6"]
+
+[resource]
+script = ExtResource("2_us0c6")
+name = "Caffè"
+description = ""
+mesh = ExtResource("1_xi62y")
+metadata/_custom_type_script = "uid://gb1hhvebmrci"

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cisx6frjaqxv5"]
+
+[ext_resource type="Script" uid="uid://dt2pbjya17u8s" path="res://Nodi/Scene Swapper/scene_loader.gd" id="1_vehmk"]
+[ext_resource type="PackedScene" uid="uid://dpqucqhq1ivpo" path="res://Scene/Esterno/livello_giardini.tscn" id="2_bs6fm"]
+[ext_resource type="PackedScene" uid="uid://cbrrkiulk8gem" path="res://Nodi/Player/Player.tscn" id="3_pfk1e"]
+
+[node name="SceneLoader" type="Node"]
+script = ExtResource("1_vehmk")
+first_scene = ExtResource("2_bs6fm")
+
+[node name="Player" parent="." instance=ExtResource("3_pfk1e")]
+
+[node name="CurrentScene" type="Node3D" parent="."]
