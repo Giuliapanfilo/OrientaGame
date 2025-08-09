@@ -107,32 +107,37 @@ offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("6_jpdkt")
 
-[node name="Musica" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
-layout_mode = 0
-offset_left = 167.0
-offset_top = 117.0
-offset_right = 1090.0
-offset_bottom = 459.0
-scale = Vector2(0.232726, 0.232726)
-text = "Musica"
-label_settings = ExtResource("5_we8wg")
-
-[node name="BarraMusica" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
-layout_mode = 0
+[node name="Master" type="Control" parent="CanvasLayer/Scaler/BaseGround"]
+anchors_preset = 0
 offset_left = 407.0
 offset_top = 101.0
-offset_right = 487.0
-offset_bottom = 443.0
+offset_right = 447.0
+offset_bottom = 141.0
+
+[node name="Master" type="Label" parent="CanvasLayer/Scaler/BaseGround/Master"]
+layout_mode = 0
+offset_left = -240.0
+offset_top = 16.0
+offset_right = 683.0
+offset_bottom = 358.0
+scale = Vector2(0.232726, 0.232726)
+text = "Generale"
+label_settings = ExtResource("5_we8wg")
+
+[node name="BarraMaster" type="Label" parent="CanvasLayer/Scaler/BaseGround/Master"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 342.0
 scale = Vector2(7.83366, 0.296331)
 text = "-"
 label_settings = SubResource("LabelSettings_15f0e")
 
-[node name="MusicSlider" type="HSlider" parent="CanvasLayer/Scaler/BaseGround"]
+[node name="MasterSlider" type="HSlider" parent="CanvasLayer/Scaler/BaseGround/Master"]
 layout_mode = 0
-offset_left = 470.0
-offset_top = 140.0
-offset_right = 670.0
-offset_bottom = 156.0
+offset_left = 63.0
+offset_top = 39.0
+offset_right = 263.0
+offset_bottom = 55.0
 scale = Vector2(2.46935, 2.46935)
 theme_override_styles/slider = SubResource("StyleBoxFlat_mwbc5")
 max_value = 1.0
@@ -140,20 +145,67 @@ step = 0.01
 value = 1.0
 ticks_on_borders = true
 
-[node name="Music" type="AudioStreamPlayer" parent="CanvasLayer/Scaler/BaseGround/MusicSlider"]
+[node name="Master" type="AudioStreamPlayer" parent="CanvasLayer/Scaler/BaseGround/Master/MasterSlider"]
 bus = &"Music"
 
-[node name="Suono" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+[node name="Musica" type="Control" parent="CanvasLayer/Scaler/BaseGround"]
+anchors_preset = 0
+offset_left = 167.0
+offset_top = 192.0
+offset_right = 207.0
+offset_bottom = 232.0
+
+[node name="Musica" type="Label" parent="CanvasLayer/Scaler/BaseGround/Musica"]
+layout_mode = 0
+offset_right = 923.0
+offset_bottom = 342.0
+scale = Vector2(0.232726, 0.232726)
+text = "Musica"
+label_settings = ExtResource("5_we8wg")
+
+[node name="BarraMusica" type="Label" parent="CanvasLayer/Scaler/BaseGround/Musica"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = -16.0
+offset_right = 320.0
+offset_bottom = 326.0
+scale = Vector2(7.83366, 0.296331)
+text = "-"
+label_settings = SubResource("LabelSettings_15f0e")
+
+[node name="MusicSlider" type="HSlider" parent="CanvasLayer/Scaler/BaseGround/Musica"]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 23.0
+offset_right = 503.0
+offset_bottom = 39.0
+scale = Vector2(2.46935, 2.46935)
+theme_override_styles/slider = SubResource("StyleBoxFlat_mwbc5")
+max_value = 1.0
+step = 0.01
+value = 1.0
+ticks_on_borders = true
+
+[node name="Music" type="AudioStreamPlayer" parent="CanvasLayer/Scaler/BaseGround/Musica/MusicSlider"]
+bus = &"Music"
+
+[node name="SFX" type="Control" parent="CanvasLayer/Scaler/BaseGround"]
+anchors_preset = 0
+offset_top = 50.0
+offset_right = 40.0
+offset_bottom = 90.0
+
+[node name="Effetti" type="Label" parent="CanvasLayer/Scaler/BaseGround/SFX"]
 layout_mode = 0
 offset_left = 169.0
 offset_top = 220.0
 offset_right = 1092.0
 offset_bottom = 562.0
 scale = Vector2(0.232726, 0.232726)
-text = "Suono"
+text = "Effetti"
 label_settings = ExtResource("5_we8wg")
 
-[node name="BarraSuoni" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+[node name="BarraEffetti" type="Label" parent="CanvasLayer/Scaler/BaseGround/SFX"]
 layout_mode = 0
 offset_left = 407.0
 offset_top = 208.0
@@ -163,11 +215,11 @@ scale = Vector2(7.83366, 0.296331)
 text = "-"
 label_settings = SubResource("LabelSettings_15f0e")
 
-[node name="SFXSlider" type="HSlider" parent="CanvasLayer/Scaler/BaseGround"]
+[node name="SFXSlider" type="HSlider" parent="CanvasLayer/Scaler/BaseGround/SFX"]
 layout_mode = 0
 offset_left = 470.0
 offset_top = 247.0
-offset_right = 478.0
+offset_right = 670.0
 offset_bottom = 263.0
 scale = Vector2(2.46935, 2.46935)
 theme_override_styles/slider = SubResource("StyleBoxFlat_t3obd")
@@ -175,10 +227,16 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="SFX" type="AudioStreamPlayer" parent="CanvasLayer/Scaler/BaseGround/SFXSlider"]
+[node name="SFX" type="AudioStreamPlayer" parent="CanvasLayer/Scaler/BaseGround/SFX/SFXSlider"]
 bus = &"SFX"
 
-[node name="Joystick" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+[node name="Joystick" type="Control" parent="CanvasLayer/Scaler/BaseGround"]
+anchors_preset = 0
+offset_top = 38.0
+offset_right = 40.0
+offset_bottom = 78.0
+
+[node name="Joystick" type="Label" parent="CanvasLayer/Scaler/BaseGround/Joystick"]
 layout_mode = 0
 offset_left = 169.0
 offset_top = 331.0
@@ -188,7 +246,7 @@ scale = Vector2(0.232726, 0.232726)
 text = "Joystick"
 label_settings = ExtResource("5_we8wg")
 
-[node name="JoystickActive" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
+[node name="JoystickActive" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround/Joystick"]
 layout_mode = 0
 offset_left = 457.0
 offset_top = 326.0
@@ -199,7 +257,7 @@ texture_normal = ExtResource("7_5gqfw")
 texture_pressed = ExtResource("8_aa7wy")
 texture_hover = ExtResource("9_ediq4")
 
-[node name="JoystickDeactive" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
+[node name="JoystickDeactive" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround/Joystick"]
 visible = false
 layout_mode = 0
 offset_left = 457.0
@@ -272,10 +330,11 @@ offset_bottom = 497.294
 text = "Esci"
 label_settings = ExtResource("14_1w4r8")
 
-[connection signal="value_changed" from="CanvasLayer/Scaler/BaseGround/MusicSlider" to="." method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="CanvasLayer/Scaler/BaseGround/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
-[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/JoystickActive" to="." method="_on_joystick_active_pressed"]
-[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/JoystickDeactive" to="." method="_on_joystick_deactive_pressed"]
+[connection signal="value_changed" from="CanvasLayer/Scaler/BaseGround/Master/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Scaler/BaseGround/Musica/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Scaler/BaseGround/SFX/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Joystick/JoystickActive" to="." method="_on_joystick_active_pressed"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Joystick/JoystickDeactive" to="." method="_on_joystick_deactive_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/Scaler/BaseGround/Save" to="." method="_on_save_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Scaler/BaseGround/Save" to="." method="_on_save_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Save" to="." method="_on_save_pressed"]

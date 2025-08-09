@@ -18,13 +18,13 @@ func _physics_process(delta):
 	var direction = joystick.posVector
 
 		# Input da tastiera
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("move_right"):
 		direction.x += 1
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("move_left"):
 		direction.x -= 1
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("move_down"):
 		direction.z += 1
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("move_up"):
 		direction.z -= 1
 
 	# Se il joystick è stato mosso più della deadzone

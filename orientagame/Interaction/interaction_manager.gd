@@ -58,7 +58,6 @@ func _input(event):
 
 
 func _on_interaction_button_pressed() -> void:
-	print("Interagisco")
 	interact_if_possible()
 
 

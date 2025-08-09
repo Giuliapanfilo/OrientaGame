@@ -29,7 +29,7 @@ func calculateVector():
 	
 	if abs((global_position.x - parent.global_position.x)) >= deadzone:
 		parent.posVector.x = (global_position.x - parent.global_position.x) / maxLength
-
+	
 	if abs((global_position.y - parent.global_position.y)) >= deadzone:
 		# Invertiamo Y per farlo diventare Z (a seconda di come il mondo è orientato)
 		parent.posVector.z = (global_position.y - parent.global_position.y) / maxLength
