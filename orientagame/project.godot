@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneLoader="*res://Nodi/Scene Swapper/scene_loader.tscn"
-GlobalUi="res://UI/global_ui.tscn"
 UI="*res://UI/ui.tscn"
 InteractionManager="*res://Interaction/InteractionManager.tscn"
 Savefile="*res://Nodi/savefile.gd"
