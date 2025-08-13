@@ -245,6 +245,7 @@ height = 0.497427
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("sprite") groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_6kcg6")
+speed = 10.0
 sprite = NodePath("Sprite")
 
 [node name="Sprite" type="AnimatedSprite3D" parent="."]

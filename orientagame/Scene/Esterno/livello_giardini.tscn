@@ -1,26 +1,344 @@
-[gd_scene load_steps=28 format=3 uid="uid://dpqucqhq1ivpo"]
+[gd_scene load_steps=209 format=3 uid="uid://dpqucqhq1ivpo"]
 
 [ext_resource type="Script" uid="uid://dhgb0o1x3kusr" path="res://Scene/Esterno/livello_giardini.gd" id="1_m4ui0"]
 [ext_resource type="Script" uid="uid://datdd1dirbgu1" path="res://Nodi/percorsi_npc.gd" id="2_xwsjn"]
+[ext_resource type="SpriteFrames" uid="uid://brs6dmx8u8yj3" path="res://Sprite/AnimatedSprites/Characters_1/Character_001.tres" id="4_0oa1u"]
 [ext_resource type="PackedScene" uid="uid://dlyq5fytid4wx" path="res://Scene/Esterno/struttura_giardini.tscn" id="5_2fmqh"]
 [ext_resource type="PackedScene" uid="uid://chqnuytnniok6" path="res://Scene/Pianterreno/livello_pianterreno.tscn" id="5_gyw00"]
+[ext_resource type="SpriteFrames" uid="uid://bscuhv17jdcnk" path="res://Sprite/AnimatedSprites/Characters_1/Character_002.tres" id="5_w348t"]
 [ext_resource type="PackedScene" uid="uid://bse528t5p5nns" path="res://Scene/Retro/RetroDib.tscn" id="6_2fmqh"]
 [ext_resource type="PackedScene" uid="uid://dpgxir70w4mvm" path="res://Nodi/Scene Swapper/scene_swapper.tscn" id="6_bndii"]
+[ext_resource type="SpriteFrames" uid="uid://cvp1dhog0v17k" path="res://Sprite/AnimatedSprites/Characters_1/Character_003.tres" id="6_hblcu"]
+[ext_resource type="SpriteFrames" uid="uid://d1g876ubbduoi" path="res://Sprite/AnimatedSprites/Characters_1/Character_004.tres" id="7_3gnor"]
 [ext_resource type="PackedScene" uid="uid://cmgr7xla5f2ar" path="res://Nodi/Camera Interaction/camera_interaction.tscn" id="7_7bxep"]
 [ext_resource type="Script" uid="uid://cs4nhixmy3y0e" path="res://Scene/Esterno/tutorial.gd" id="7_m4ui0"]
+[ext_resource type="SpriteFrames" uid="uid://cfbldymud86yy" path="res://Sprite/AnimatedSprites/Characters_1/Character_005.tres" id="8_h8twa"]
 [ext_resource type="PackedScene" uid="uid://mq8ukg1022ts" path="res://Nodi/Confini/confini.tscn" id="8_vffra"]
 [ext_resource type="PackedScene" uid="uid://bl2yovaetjo4k" path="res://Nodi/NPC/npc_adam.tscn" id="8_xwsjn"]
+[ext_resource type="SpriteFrames" uid="uid://dvynevuikgffn" path="res://Sprite/AnimatedSprites/Characters_1/Character_006.tres" id="9_4rr24"]
 [ext_resource type="PackedScene" uid="uid://c468defrbpsgv" path="res://Nodi/NPC/mentore.tscn" id="9_fwne3"]
+[ext_resource type="SpriteFrames" uid="uid://dknqowd0ycm7o" path="res://Sprite/AnimatedSprites/Characters_1/Character_007.tres" id="10_wbqx4"]
+[ext_resource type="SpriteFrames" uid="uid://c5qgf5tpppy8h" path="res://Sprite/AnimatedSprites/Characters_1/Character_008.tres" id="11_aaonj"]
 [ext_resource type="PackedScene" uid="uid://b81l5jqk6cv2m" path="res://Nodi/Pickuppable/pickuppable.tscn" id="11_gyw00"]
 [ext_resource type="Resource" uid="uid://c6n1db7vj0ode" path="res://Oggetti/Collezionabili/resources/GameBoy.tres" id="12_2fmqh"]
+[ext_resource type="SpriteFrames" uid="uid://bowfvc0qgn8ai" path="res://Sprite/AnimatedSprites/Characters_1/Character_009.tres" id="12_o5ruu"]
+[ext_resource type="SpriteFrames" uid="uid://crciij1762v0m" path="res://Sprite/AnimatedSprites/Characters_1/Character_010.tres" id="13_gcsbn"]
+[ext_resource type="SpriteFrames" uid="uid://bblnyn4gdkny6" path="res://Sprite/AnimatedSprites/Characters_1/Character_011.tres" id="14_fh08l"]
+[ext_resource type="SpriteFrames" uid="uid://cyg6h51ouegj1" path="res://Sprite/AnimatedSprites/Characters_1/Character_012.tres" id="15_sngi3"]
+[ext_resource type="SpriteFrames" uid="uid://ccpvjs5v7ssw0" path="res://Sprite/AnimatedSprites/Characters_1/Character_013.tres" id="16_jgw40"]
+[ext_resource type="SpriteFrames" uid="uid://cl8vo2dl3yx8q" path="res://Sprite/AnimatedSprites/Characters_1/Character_014.tres" id="17_ecjrk"]
+[ext_resource type="SpriteFrames" uid="uid://bpnoy5worhug1" path="res://Sprite/AnimatedSprites/Characters_1/Character_015.tres" id="18_4jpk0"]
+[ext_resource type="SpriteFrames" uid="uid://bi6v2vjdv0eof" path="res://Sprite/AnimatedSprites/Characters_1/Character_016.tres" id="19_w4mt1"]
+[ext_resource type="SpriteFrames" uid="uid://8aprnbqirxjc" path="res://Sprite/AnimatedSprites/Characters_1/Character_017.tres" id="20_pc64b"]
+[ext_resource type="SpriteFrames" uid="uid://cttj48ii2tr5n" path="res://Sprite/AnimatedSprites/Characters_1/Character_018.tres" id="21_wgmh4"]
+[ext_resource type="SpriteFrames" uid="uid://cgkbh8x6ndxbd" path="res://Sprite/AnimatedSprites/Characters_1/Character_019.tres" id="22_w2wlk"]
+[ext_resource type="SpriteFrames" uid="uid://wwr4nrld4mcd" path="res://Sprite/AnimatedSprites/Characters_1/Character_020.tres" id="23_eebj4"]
+[ext_resource type="SpriteFrames" uid="uid://deqlc4ce4jw6i" path="res://Sprite/AnimatedSprites/Characters_1/Character_021.tres" id="24_pa85h"]
+[ext_resource type="SpriteFrames" uid="uid://c46ocv4rdf878" path="res://Sprite/AnimatedSprites/Characters_1/Character_022.tres" id="25_82taj"]
+[ext_resource type="SpriteFrames" uid="uid://dj0b4xav01x4" path="res://Sprite/AnimatedSprites/Characters_1/Character_023.tres" id="26_frrle"]
+[ext_resource type="SpriteFrames" uid="uid://i41tjroy0yg1" path="res://Sprite/AnimatedSprites/Characters_1/Character_024.tres" id="27_fkua1"]
+[ext_resource type="SpriteFrames" uid="uid://b05dj2uqshhdl" path="res://Sprite/AnimatedSprites/Characters_1/Character_025.tres" id="28_55vxl"]
+[ext_resource type="SpriteFrames" uid="uid://dgrypj72lub46" path="res://Sprite/AnimatedSprites/Characters_1/Character_026.tres" id="29_ngks6"]
+[ext_resource type="SpriteFrames" uid="uid://baiu2xktb74es" path="res://Sprite/AnimatedSprites/Characters_1/Character_027.tres" id="30_520s0"]
+[ext_resource type="SpriteFrames" uid="uid://ba5dotjtpywh1" path="res://Sprite/AnimatedSprites/Characters_1/Character_028.tres" id="31_ubx84"]
+[ext_resource type="SpriteFrames" uid="uid://daqe1wnvx1rlt" path="res://Sprite/AnimatedSprites/Characters_1/Character_029.tres" id="32_j1qjq"]
+[ext_resource type="SpriteFrames" uid="uid://bwkmyhsmptje7" path="res://Sprite/AnimatedSprites/Characters_1/Character_030.tres" id="33_t5k6i"]
+[ext_resource type="SpriteFrames" uid="uid://bpp6jcj665lsy" path="res://Sprite/AnimatedSprites/Characters_1/Character_031.tres" id="34_yp4ph"]
+[ext_resource type="SpriteFrames" uid="uid://bagb8ne4j8wce" path="res://Sprite/AnimatedSprites/Characters_1/Character_032.tres" id="35_vg5hf"]
+[ext_resource type="SpriteFrames" uid="uid://dwt2x3o675yso" path="res://Sprite/AnimatedSprites/Characters_1/Character_033.tres" id="36_wbp6y"]
+[ext_resource type="SpriteFrames" uid="uid://c60ubyypalxbu" path="res://Sprite/AnimatedSprites/Characters_1/Character_034.tres" id="37_cfp5f"]
+[ext_resource type="SpriteFrames" uid="uid://bdq43umjqulw0" path="res://Sprite/AnimatedSprites/Characters_1/Character_035.tres" id="38_gicqj"]
+[ext_resource type="SpriteFrames" uid="uid://dw7hev218es8d" path="res://Sprite/AnimatedSprites/Characters_1/Character_036.tres" id="39_tjsj5"]
+[ext_resource type="SpriteFrames" uid="uid://c7qmg3msh8wa7" path="res://Sprite/AnimatedSprites/Characters_1/Character_037.tres" id="40_tmj8n"]
+[ext_resource type="SpriteFrames" uid="uid://t6vd4h2twts3" path="res://Sprite/AnimatedSprites/Characters_1/Character_038.tres" id="41_l5s85"]
+[ext_resource type="SpriteFrames" uid="uid://bpp1ul6j3uq8p" path="res://Sprite/AnimatedSprites/Characters_1/Character_039.tres" id="42_o68p5"]
+[ext_resource type="SpriteFrames" uid="uid://cemmrt2vn0mx6" path="res://Sprite/AnimatedSprites/Characters_1/Character_040.tres" id="43_b0xxn"]
+[ext_resource type="SpriteFrames" uid="uid://cjpob5fo76tr0" path="res://Sprite/AnimatedSprites/Characters_1/Character_041.tres" id="44_3dvf1"]
+[ext_resource type="SpriteFrames" uid="uid://37omy0kwod1e" path="res://Sprite/AnimatedSprites/Characters_2/Character_001.tres" id="44_71jlf"]
+[ext_resource type="SpriteFrames" uid="uid://bueaowde4pdlc" path="res://Sprite/AnimatedSprites/Characters_2/Character_002.tres" id="45_0oa1u"]
+[ext_resource type="SpriteFrames" uid="uid://cdede8uay3627" path="res://Sprite/AnimatedSprites/Characters_2/Character_003.tres" id="46_w348t"]
+[ext_resource type="SpriteFrames" uid="uid://jl3pcjytiojq" path="res://Sprite/AnimatedSprites/Characters_2/Character_004.tres" id="47_hblcu"]
+[ext_resource type="SpriteFrames" uid="uid://dpd04g6ga14kn" path="res://Sprite/AnimatedSprites/Characters_2/Character_005.tres" id="48_3gnor"]
+[ext_resource type="SpriteFrames" uid="uid://b5dv040atxvwq" path="res://Sprite/AnimatedSprites/Characters_2/Character_006.tres" id="49_h8twa"]
+[ext_resource type="SpriteFrames" uid="uid://broogtt6lrjfl" path="res://Sprite/AnimatedSprites/Characters_2/Character_007.tres" id="50_4rr24"]
+[ext_resource type="SpriteFrames" uid="uid://bvohwvu6k6rm2" path="res://Sprite/AnimatedSprites/Characters_2/Character_008.tres" id="51_wbqx4"]
+[ext_resource type="SpriteFrames" uid="uid://pl6rjq4c54em" path="res://Sprite/AnimatedSprites/Characters_2/Character_009.tres" id="52_aaonj"]
+[ext_resource type="SpriteFrames" uid="uid://dgtgk2htwao6f" path="res://Sprite/AnimatedSprites/Characters_2/Character_010.tres" id="53_o5ruu"]
+[ext_resource type="SpriteFrames" uid="uid://70lmckt0bhkj" path="res://Sprite/AnimatedSprites/Characters_2/Character_011.tres" id="54_gcsbn"]
+[ext_resource type="SpriteFrames" uid="uid://bitbx2smgp3vn" path="res://Sprite/AnimatedSprites/Characters_2/Character_012.tres" id="55_fh08l"]
+[ext_resource type="SpriteFrames" uid="uid://rdtv3m5741st" path="res://Sprite/AnimatedSprites/Characters_2/Character_013.tres" id="56_sngi3"]
+[ext_resource type="SpriteFrames" uid="uid://cj5ywfkg2v62t" path="res://Sprite/AnimatedSprites/Characters_2/Character_014.tres" id="57_jgw40"]
+[ext_resource type="SpriteFrames" uid="uid://cd8pbqebhu8ma" path="res://Sprite/AnimatedSprites/Characters_2/Character_015.tres" id="58_ecjrk"]
+[ext_resource type="SpriteFrames" uid="uid://w5fa03thb6wy" path="res://Sprite/AnimatedSprites/Characters_2/Character_016.tres" id="59_4jpk0"]
+[ext_resource type="SpriteFrames" uid="uid://dhf4028oyw7h5" path="res://Sprite/AnimatedSprites/Characters_2/Character_017.tres" id="60_w4mt1"]
+[ext_resource type="SpriteFrames" uid="uid://bo2m461v81hwe" path="res://Sprite/AnimatedSprites/Characters_2/Character_018.tres" id="61_pc64b"]
+[ext_resource type="SpriteFrames" uid="uid://o0no75w75ox1" path="res://Sprite/AnimatedSprites/Characters_2/Character_019.tres" id="62_wgmh4"]
+[ext_resource type="SpriteFrames" uid="uid://d3bt6ok7xy7ev" path="res://Sprite/AnimatedSprites/Characters_2/Character_020.tres" id="63_w2wlk"]
+[ext_resource type="SpriteFrames" uid="uid://cg06me4e4gc6p" path="res://Sprite/AnimatedSprites/Characters_2/Character_021.tres" id="64_eebj4"]
+[ext_resource type="SpriteFrames" uid="uid://bgdtd5ou2nmoq" path="res://Sprite/AnimatedSprites/Characters_2/Character_022.tres" id="65_pa85h"]
+[ext_resource type="SpriteFrames" uid="uid://susi67skdep1" path="res://Sprite/AnimatedSprites/Characters_2/Character_023.tres" id="66_82taj"]
+[ext_resource type="SpriteFrames" uid="uid://dlhwldxgo2lu6" path="res://Sprite/AnimatedSprites/Characters_2/Character_024.tres" id="67_frrle"]
+[ext_resource type="SpriteFrames" uid="uid://cbnilxqq88i1l" path="res://Sprite/AnimatedSprites/Characters_2/Character_025.tres" id="68_fkua1"]
+[ext_resource type="SpriteFrames" uid="uid://8ut74cu823io" path="res://Sprite/AnimatedSprites/Characters_2/Character_026.tres" id="69_55vxl"]
+[ext_resource type="SpriteFrames" uid="uid://cehakv84dlfba" path="res://Sprite/AnimatedSprites/Characters_2/Character_027.tres" id="70_ngks6"]
+[ext_resource type="SpriteFrames" uid="uid://b6kxgnyokixil" path="res://Sprite/AnimatedSprites/Characters_2/Character_028.tres" id="71_520s0"]
+[ext_resource type="SpriteFrames" uid="uid://gcdp2eti5bgm" path="res://Sprite/AnimatedSprites/Characters_2/Character_029.tres" id="72_ubx84"]
+[ext_resource type="SpriteFrames" uid="uid://wr00rnjcmrou" path="res://Sprite/AnimatedSprites/Characters_2/Character_030.tres" id="73_j1qjq"]
+[ext_resource type="SpriteFrames" uid="uid://bqm2dqqipf277" path="res://Sprite/AnimatedSprites/Characters_2/Character_031.tres" id="74_t5k6i"]
+[ext_resource type="SpriteFrames" uid="uid://cl3o0tyrqyp02" path="res://Sprite/AnimatedSprites/Characters_2/Character_032.tres" id="75_yp4ph"]
+[ext_resource type="SpriteFrames" uid="uid://uis76da4pddx" path="res://Sprite/AnimatedSprites/Characters_2/Character_033.tres" id="76_vg5hf"]
+[ext_resource type="SpriteFrames" uid="uid://c20causivryi" path="res://Sprite/AnimatedSprites/Characters_2/Character_034.tres" id="77_wbp6y"]
+[ext_resource type="SpriteFrames" uid="uid://cd840n30t1oja" path="res://Sprite/AnimatedSprites/Characters_2/Character_035.tres" id="78_cfp5f"]
+[ext_resource type="SpriteFrames" uid="uid://b4en0u6gkx2gt" path="res://Sprite/AnimatedSprites/Characters_2/Character_036.tres" id="79_gicqj"]
+[ext_resource type="SpriteFrames" uid="uid://7u0wnqwwejd" path="res://Sprite/AnimatedSprites/Characters_2/Character_037.tres" id="80_tjsj5"]
+[ext_resource type="SpriteFrames" uid="uid://bdnesnxu0h5t1" path="res://Sprite/AnimatedSprites/Characters_2/Character_038.tres" id="81_tmj8n"]
+[ext_resource type="SpriteFrames" uid="uid://c0sed7dtfx70q" path="res://Sprite/AnimatedSprites/Characters_2/Character_039.tres" id="82_l5s85"]
+[ext_resource type="SpriteFrames" uid="uid://cqwnbyrfm8bsw" path="res://Sprite/AnimatedSprites/Characters_2/Character_040.tres" id="83_o68p5"]
+[ext_resource type="SpriteFrames" uid="uid://cswdh21gmslkp" path="res://Sprite/AnimatedSprites/Characters_2/Character_041.tres" id="84_b0xxn"]
+[ext_resource type="SpriteFrames" uid="uid://bmbl1vjrd1444" path="res://Sprite/AnimatedSprites/Characters_3/Character_001.tres" id="85_3dvf1"]
+[ext_resource type="SpriteFrames" uid="uid://dj27tmxym102m" path="res://Sprite/AnimatedSprites/Characters_3/Character_002.tres" id="86_8i766"]
+[ext_resource type="SpriteFrames" uid="uid://f604fb3i8qpq" path="res://Sprite/AnimatedSprites/Characters_3/Character_003.tres" id="87_oag3g"]
+[ext_resource type="SpriteFrames" uid="uid://bbiqiwlq8hr2u" path="res://Sprite/AnimatedSprites/Characters_3/Character_004.tres" id="88_yuejk"]
+[ext_resource type="SpriteFrames" uid="uid://drawwkiyoggbq" path="res://Sprite/AnimatedSprites/Characters_3/Character_005.tres" id="89_8lei5"]
+[ext_resource type="SpriteFrames" uid="uid://3lscdo2vcl44" path="res://Sprite/AnimatedSprites/Characters_3/Character_006.tres" id="90_0bpq6"]
+[ext_resource type="SpriteFrames" uid="uid://f5b0a4hqbxu8" path="res://Sprite/AnimatedSprites/Characters_3/Character_007.tres" id="91_yuqjg"]
+[ext_resource type="SpriteFrames" uid="uid://cbeq5go0t24vi" path="res://Sprite/AnimatedSprites/Characters_3/Character_008.tres" id="92_48mho"]
+[ext_resource type="SpriteFrames" uid="uid://dho5xby0jym3b" path="res://Sprite/AnimatedSprites/Characters_3/Character_009.tres" id="93_b6ni0"]
+[ext_resource type="SpriteFrames" uid="uid://coalh1rl1hdnk" path="res://Sprite/AnimatedSprites/Characters_3/Character_010.tres" id="94_hfylk"]
+[ext_resource type="SpriteFrames" uid="uid://c23kghpgndix2" path="res://Sprite/AnimatedSprites/Characters_3/Character_011.tres" id="95_vxcw4"]
+[ext_resource type="SpriteFrames" uid="uid://54jw2rnpjcn1" path="res://Sprite/AnimatedSprites/Characters_3/Character_012.tres" id="96_oltpi"]
+[ext_resource type="SpriteFrames" uid="uid://dmsprajvrhcbo" path="res://Sprite/AnimatedSprites/Characters_3/Character_013.tres" id="97_e3eg5"]
+[ext_resource type="SpriteFrames" uid="uid://dxr3oliyotiie" path="res://Sprite/AnimatedSprites/Characters_3/Character_014.tres" id="98_g4t3l"]
+[ext_resource type="SpriteFrames" uid="uid://b68ru0ulbsbig" path="res://Sprite/AnimatedSprites/Characters_3/Character_015.tres" id="99_o2qwt"]
+[ext_resource type="SpriteFrames" uid="uid://c8gxe5hm6apcw" path="res://Sprite/AnimatedSprites/Characters_3/Character_016.tres" id="100_52nei"]
+[ext_resource type="SpriteFrames" uid="uid://3at660lgqcud" path="res://Sprite/AnimatedSprites/Characters_3/Character_017.tres" id="101_eeb40"]
+[ext_resource type="SpriteFrames" uid="uid://c6x8r1o545m0r" path="res://Sprite/AnimatedSprites/Characters_3/Character_018.tres" id="102_0nm2m"]
+[ext_resource type="SpriteFrames" uid="uid://boqgxitqjphy5" path="res://Sprite/AnimatedSprites/Characters_3/Character_019.tres" id="103_aan57"]
+[ext_resource type="SpriteFrames" uid="uid://cdcxtko08wr4" path="res://Sprite/AnimatedSprites/Characters_3/Character_020.tres" id="104_usav4"]
+[ext_resource type="SpriteFrames" uid="uid://cnif8kshxdf3n" path="res://Sprite/AnimatedSprites/Characters_3/Character_021.tres" id="105_8whvt"]
+[ext_resource type="SpriteFrames" uid="uid://coivci2sb8i2" path="res://Sprite/AnimatedSprites/Characters_3/Character_022.tres" id="106_iu54a"]
+[ext_resource type="SpriteFrames" uid="uid://ciyltbrk8co11" path="res://Sprite/AnimatedSprites/Characters_3/Character_023.tres" id="107_hjqud"]
+[ext_resource type="SpriteFrames" uid="uid://duwsy5bj42jgf" path="res://Sprite/AnimatedSprites/Characters_3/Character_024.tres" id="108_xuusr"]
+[ext_resource type="SpriteFrames" uid="uid://crh81wpq22tb" path="res://Sprite/AnimatedSprites/Characters_3/Character_025.tres" id="109_8oytp"]
+[ext_resource type="SpriteFrames" uid="uid://css5t02l548cc" path="res://Sprite/AnimatedSprites/Characters_3/Character_026.tres" id="110_sb4ca"]
+[ext_resource type="SpriteFrames" uid="uid://chdjmtluw343p" path="res://Sprite/AnimatedSprites/Characters_3/Character_027.tres" id="111_i6dig"]
+[ext_resource type="SpriteFrames" uid="uid://lf88jk7fndau" path="res://Sprite/AnimatedSprites/Characters_3/Character_028.tres" id="112_s4njd"]
+[ext_resource type="SpriteFrames" uid="uid://cw4lb1m85n7jx" path="res://Sprite/AnimatedSprites/Characters_3/Character_029.tres" id="113_jxcc7"]
+[ext_resource type="SpriteFrames" uid="uid://b75aaniu53exu" path="res://Sprite/AnimatedSprites/Characters_3/Character_030.tres" id="114_f2boa"]
+[ext_resource type="SpriteFrames" uid="uid://b42c3bpjyp6bo" path="res://Sprite/AnimatedSprites/Characters_3/Character_031.tres" id="115_yq4uk"]
+[ext_resource type="SpriteFrames" uid="uid://b46qvc71ljg2q" path="res://Sprite/AnimatedSprites/Characters_3/Character_032.tres" id="116_c1l8v"]
+[ext_resource type="SpriteFrames" uid="uid://codhsvcmr0oa1" path="res://Sprite/AnimatedSprites/Characters_3/Character_033.tres" id="117_5kpe0"]
+[ext_resource type="SpriteFrames" uid="uid://ch5u4ssx2xveq" path="res://Sprite/AnimatedSprites/Characters_3/Character_034.tres" id="118_jfvk4"]
+[ext_resource type="SpriteFrames" uid="uid://bnns07b6rrlys" path="res://Sprite/AnimatedSprites/Characters_3/Character_035.tres" id="119_8vxq7"]
+[ext_resource type="SpriteFrames" uid="uid://vbkyxwfh1ebs" path="res://Sprite/AnimatedSprites/Characters_3/Character_036.tres" id="120_ajvpd"]
+[ext_resource type="SpriteFrames" uid="uid://dcfop8ffik0i6" path="res://Sprite/AnimatedSprites/Characters_3/Character_037.tres" id="121_dwnmc"]
+[ext_resource type="SpriteFrames" uid="uid://u41ok863kexa" path="res://Sprite/AnimatedSprites/Characters_3/Character_038.tres" id="122_gr77a"]
+[ext_resource type="SpriteFrames" uid="uid://dh8laoxpbg37r" path="res://Sprite/AnimatedSprites/Characters_3/Character_039.tres" id="123_1d224"]
+[ext_resource type="SpriteFrames" uid="uid://pkmn0vmau8ml" path="res://Sprite/AnimatedSprites/Characters_3/Character_040.tres" id="124_x5rge"]
+[ext_resource type="SpriteFrames" uid="uid://dhu3wipb3hnjt" path="res://Sprite/AnimatedSprites/Characters_3/Character_041.tres" id="125_r3cu7"]
+[ext_resource type="SpriteFrames" uid="uid://c6y42qv0g2it5" path="res://Sprite/AnimatedSprites/Characters_4/Character_001.tres" id="126_mubcs"]
+[ext_resource type="SpriteFrames" uid="uid://dmw0mglasnav5" path="res://Sprite/AnimatedSprites/Characters_4/Character_002.tres" id="127_gvug5"]
+[ext_resource type="SpriteFrames" uid="uid://bu75sl2iphwlf" path="res://Sprite/AnimatedSprites/Characters_4/Character_003.tres" id="128_lne76"]
+[ext_resource type="SpriteFrames" uid="uid://0a3ny7nr64t2" path="res://Sprite/AnimatedSprites/Characters_4/Character_004.tres" id="129_86fwx"]
+[ext_resource type="SpriteFrames" uid="uid://b4wecqqlgigxi" path="res://Sprite/AnimatedSprites/Characters_4/Character_005.tres" id="130_elg25"]
+[ext_resource type="SpriteFrames" uid="uid://cr5n6sw4c38sk" path="res://Sprite/AnimatedSprites/Characters_4/Character_006.tres" id="131_fe8sy"]
+[ext_resource type="SpriteFrames" uid="uid://b347bg8hl0rk6" path="res://Sprite/AnimatedSprites/Characters_4/Character_007.tres" id="132_yoohu"]
+[ext_resource type="SpriteFrames" uid="uid://cv6b08h8be20u" path="res://Sprite/AnimatedSprites/Characters_4/Character_008.tres" id="133_m11e5"]
+[ext_resource type="SpriteFrames" uid="uid://bbfiscn5kiuwl" path="res://Sprite/AnimatedSprites/Characters_4/Character_009.tres" id="134_0fv2r"]
+[ext_resource type="SpriteFrames" uid="uid://e2ywlw2wc7fx" path="res://Sprite/AnimatedSprites/Characters_4/Character_010.tres" id="135_xmysv"]
+[ext_resource type="SpriteFrames" uid="uid://6of4fxpt8i7" path="res://Sprite/AnimatedSprites/Characters_4/Character_011.tres" id="136_rjwt6"]
+[ext_resource type="SpriteFrames" uid="uid://bnxhj02xb0xqe" path="res://Sprite/AnimatedSprites/Characters_4/Character_012.tres" id="137_7swuv"]
+[ext_resource type="SpriteFrames" uid="uid://cgr1w1gf1gae0" path="res://Sprite/AnimatedSprites/Characters_4/Character_013.tres" id="138_o652c"]
+[ext_resource type="SpriteFrames" uid="uid://b6r6ix8njh55b" path="res://Sprite/AnimatedSprites/Characters_4/Character_014.tres" id="139_min8e"]
+[ext_resource type="SpriteFrames" uid="uid://fa84lu7muwyj" path="res://Sprite/AnimatedSprites/Characters_4/Character_015.tres" id="140_577bd"]
+[ext_resource type="SpriteFrames" uid="uid://bnxgmd46n2jy6" path="res://Sprite/AnimatedSprites/Characters_4/Character_016.tres" id="141_23a6p"]
+[ext_resource type="SpriteFrames" uid="uid://bupialgsbxc10" path="res://Sprite/AnimatedSprites/Characters_4/Character_017.tres" id="142_fgwiu"]
+[ext_resource type="SpriteFrames" uid="uid://b28rmm0oso0hk" path="res://Sprite/AnimatedSprites/Characters_4/Character_018.tres" id="143_xllyb"]
+[ext_resource type="SpriteFrames" uid="uid://caoj2p0fo50di" path="res://Sprite/AnimatedSprites/Characters_4/Character_019.tres" id="144_6jy4k"]
+[ext_resource type="SpriteFrames" uid="uid://nfn83vry1b8y" path="res://Sprite/AnimatedSprites/Characters_4/Character_020.tres" id="145_6fnm4"]
+[ext_resource type="SpriteFrames" uid="uid://b6vqt7krpg8jk" path="res://Sprite/AnimatedSprites/Characters_4/Character_021.tres" id="146_sdcdm"]
+[ext_resource type="SpriteFrames" uid="uid://bjkpshvwowjaf" path="res://Sprite/AnimatedSprites/Characters_4/Character_022.tres" id="147_h6bfa"]
+[ext_resource type="SpriteFrames" uid="uid://cuty1saqeris3" path="res://Sprite/AnimatedSprites/Characters_4/Character_023.tres" id="148_powyo"]
+[ext_resource type="SpriteFrames" uid="uid://drjlgtyb4oplg" path="res://Sprite/AnimatedSprites/Characters_4/Character_024.tres" id="149_jum62"]
+[ext_resource type="SpriteFrames" uid="uid://bfi3ulppbhbe" path="res://Sprite/AnimatedSprites/Characters_4/Character_025.tres" id="150_t6u3u"]
+[ext_resource type="SpriteFrames" uid="uid://ql4xgjxk4s5c" path="res://Sprite/AnimatedSprites/Characters_4/Character_026.tres" id="151_dvwia"]
+[ext_resource type="SpriteFrames" uid="uid://yunx4r3nplvp" path="res://Sprite/AnimatedSprites/Characters_4/Character_027.tres" id="152_qufrd"]
+[ext_resource type="SpriteFrames" uid="uid://dkjsiqqhg1guy" path="res://Sprite/AnimatedSprites/Characters_4/Character_028.tres" id="153_s7pwa"]
+[ext_resource type="SpriteFrames" uid="uid://dkpv0mdjx6eci" path="res://Sprite/AnimatedSprites/Characters_4/Character_029.tres" id="154_668rp"]
+[ext_resource type="SpriteFrames" uid="uid://co8270ay0oupf" path="res://Sprite/AnimatedSprites/Characters_4/Character_030.tres" id="155_vi15j"]
+[ext_resource type="SpriteFrames" uid="uid://blb71ad1srm2e" path="res://Sprite/AnimatedSprites/Characters_4/Character_031.tres" id="156_u8u6s"]
+[ext_resource type="SpriteFrames" uid="uid://bm8jlmrdvu080" path="res://Sprite/AnimatedSprites/Characters_4/Character_032.tres" id="157_po8ai"]
+[ext_resource type="SpriteFrames" uid="uid://ecr6ov7dbb5q" path="res://Sprite/AnimatedSprites/Characters_4/Character_033.tres" id="158_0km7w"]
+[ext_resource type="SpriteFrames" uid="uid://b71xtapj2iyxi" path="res://Sprite/AnimatedSprites/Characters_4/Character_034.tres" id="159_iv74n"]
+[ext_resource type="SpriteFrames" uid="uid://cpk76ye7jhiso" path="res://Sprite/AnimatedSprites/Characters_4/Character_035.tres" id="160_mbtls"]
+[ext_resource type="SpriteFrames" uid="uid://rdc3hnpumssb" path="res://Sprite/AnimatedSprites/Characters_4/Character_036.tres" id="161_3jyi0"]
+[ext_resource type="SpriteFrames" uid="uid://derd2o8jqoo0p" path="res://Sprite/AnimatedSprites/Characters_4/Character_037.tres" id="162_m4svk"]
+[ext_resource type="SpriteFrames" uid="uid://iee0p6ekb8jj" path="res://Sprite/AnimatedSprites/Characters_4/Character_038.tres" id="163_njb7c"]
+[ext_resource type="SpriteFrames" uid="uid://bw7yabskg8665" path="res://Sprite/AnimatedSprites/Characters_4/Character_039.tres" id="164_t1mv2"]
+[ext_resource type="SpriteFrames" uid="uid://dttdu2mx0idpq" path="res://Sprite/AnimatedSprites/Characters_4/Character_040.tres" id="165_plpo0"]
+[ext_resource type="SpriteFrames" uid="uid://cov7hpilkha8s" path="res://Sprite/AnimatedSprites/Characters_4/Character_041.tres" id="166_x6wjo"]
+
+[sub_resource type="GDScript" id="GDScript_mtb7v"]
+script/source = "extends CharacterBody3D
+
+@export var speed: float = 2.0
+@onready var sprite: AnimatedSprite3D = $Sprite 
+
+func _ready():
+	if has_node(\"Sprite\"):
+		print(\"Nodo Sprite trovato:\", $Sprite)
+	else:
+		printerr(\"Nodo Sprite NON trovato: controlla nome e percorso\")
+
+func set_sprite_frames(frames: SpriteFrames) -> void:
+	if sprite:
+		sprite.sprite_frames = frames
+		sprite.play(\"idle\")
+	else:
+		push_error(\"Nodo Sprite non trovato nell'NPC_Base.tscn\")
+
+func update_animation(direction: Vector3) -> void:
+	if not sprite:
+		return
+	if direction.length() == 0:
+		sprite.play(\"idle\")
+		return
+	if abs(direction.x) > abs(direction.z):
+		sprite.play(\"move_right\" if direction.x > 0 else \"move_left\")
+	else:
+		sprite.play(\"move_down\" if direction.z > 0 else \"move_up\")
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5qeno"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eeync"]
+radius = 0.0426446
+height = 0.0852892
+
+[sub_resource type="PackedScene" id="PackedScene_fo5jg"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("NPC_Base", "script", "CharacterBody3D", "Sprite", "sprite_frames", "AnimatedSprite3D", "CollisionShape3D", "transform", "visible", "shape"),
+"node_count": 3,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 5, 3, -1, 1, 4, 1, 0, 0, 0, 6, 6, -1, 3, 7, 2, 8, 3, 9, 4, 0),
+"variants": [SubResource("GDScript_mtb7v"), SubResource("SpriteFrames_5qeno"), Transform3D(17.4999, 0, 0, 0, 17.4999, 0, 0, 0, 17.4999, 0, 0, 0), false, SubResource("CapsuleShape3D_eeync")],
+"version": 3
+}
 
 [sub_resource type="Curve3D" id="Curve3D_bndii"]
 bake_interval = 8.65
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.671662, 0, 9.11484, 0, 0, 0, 0, 0, 0, 0.0401247, 0, 15.5921, 0, 0, 0, 0, 0, 0, 4.59556, 0, 21.144, 0, 0, 0, 0, 0, 0, 12.1382, 0, 26.9174, 0, 0, 0, 0, 0, 0, 11.0252, 0, 34.7091),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.671662, 0, 9.11484, 0, 0, 0, 0, 0, 0, 0.0401247, 0, 15.5921, 0, 0, 0, 0, 0, 0, 4.59556, 0, 21.144, 0, 0, 0, 0, 0, 0, 9.19764, -0.0437756, 27.1887, 0, 0, 0, 0, 0, 0, 8.79687, 0, 34.2589),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_2fmqh"]
+closed = true
+bake_interval = 92.01
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.01223, 3.23018, 20.755, 0, 0, 0, 0, 0, 0, 0.364603, 3.16269, 22.4677, 0, 0, 0, 0, 0, 0, 0.340745, 3.22728, 27.2489, 0, 0, 0, 0, 0, 0, 1.73694, 3.15967, 30.8341, 0, 0, 0, 0, 0, 0, 3.51679, 3.08145, 31.6447, 0, 0, 0, 0, 0, 0, 4.49394, 3.08082, 29.9343, 0, 0, 0, 0, 0, 0, 4.76284, 3.16119, 26.5836, 0, 0, 0, 0, 0, 0, 4.13644, 3.12604, 22.2031),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="Curve3D" id="Curve3D_7bxep"]
+bake_interval = 512.0
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -25.0524, -0.0199814, 3.60171, 0, 0, 0, 0, 0, 0, -24.3859, -0.0224152, 17.3339, 0, 0, 0, 0, 0, 0, -22.7118, 0.52273, 28.0815, 0, 0, 0, 0, 0, 0, -18.5348, 0.198944, 30.4087, 0, 0, 0, 0, 0, 0, -13.719, 0.429525, 29.8546, 0, 0, 0, 0, 0, 0, -7.37321, 0.638712, 30.3957),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="Curve3D" id="Curve3D_vffra"]
+bake_interval = 512.0
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.64364, 0.00156784, 1.78912, 0, 0, 0, 0, 0, 0, 1.50926, 0.0021019, 5.87251, 0, 0, 0, 0, 0, 0, 1.4312, 0.00271606, 10.1629, 0, 0, 0, 0, 0, 0, 0.92146, 0.00272369, 12.703, 0, 0, 0, 0, 0, 0, -0.37833, 0.00204086, 14.7909, 0, 0, 0, 0, 0, 0, -1.54819, 0.00189209, 19.6452, 0, 0, 0, 0, 0, 0, -1.51235, 0.00235367, 22.3926, 0, 0, 0, 0, 0, 0, -0.309179, -0.312153, 24.1999, 0, 0, 0, 0, 0, 0, 1.59124, -0.310619, 24.4834, 0, 0, 0, 0, 0, 0, 2.90959, -0.309852, 22.7907, 0, 0, 0, 0, 0, 0, 5.11239, -0.308395, 21.0797, 0, 0, 0, 0, 0, 0, 7.06945, -0.306862, 21.081),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 12
+
+[sub_resource type="Curve3D" id="Curve3D_fwne3"]
+bake_interval = 3.63
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 12.3219, 3.66574, 17.9234, 0, 0, 0, 0, 0, 0, 10.1991, 1.7649, 17.6322, 0, 0, 0, 0, 0, 0, 9.86568, 1.61998, 17.49, 0, 0, 0, 0, 0, 0, 9.19556, 1.38871, 17.1535, 0, 0, 0, 0, 0, 0, 7.25445, 0.1955, 17.1907, 0, 0, 0, 0, 0, 0, 5.21659, -0.0140934, 17.134, 0, 0, 0, 0, 0, 0, 3.8016, -0.0764933, 17.1194, 0, 0, 0, 0, 0, 0, 3.90281, -0.0159779, 18.2761, 0, 0, 0, 0, 0, 0, 5.40631, -0.0162334, 18.2308, 0, 0, 0, 0, 0, 0, 7.60245, -0.0162334, 18.4135, 0, 0, 0, 0, 0, 0, 10.197, -0.0157528, 18.4252, 0, 0, 0, 0, 0, 0, 15.4948, -0.0151615, 18.49, 0, 0, 0, 0, 0, 0, 16.1236, -0.0138926, 18.429, 0, 0, 0, 0, 0, 0, 16.5204, -0.013092, 18.0263, 0, 0, 0, 0, 0, 0, 16.4788, -0.0121898, 17.2458, 0, 0, 0, 0, 0, 0, 16.3365, -0.00909996, 13.3256, 0, 0, 0, 0, 0, 0, 16.1734, -0.00363159, 6.39458),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 17
+
+[sub_resource type="Curve3D" id="Curve3D_7pypy"]
+bake_interval = 5.6
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 11.2463, 1.25044, 51.9483, 0, 0, 0, 0, 0, 0, -5.1411, 0.622276, 35.3657, 0, 0, 0, 0, 0, 0, -15.5361, 0.432392, 35.174, 0, 0, 0, 0, 0, 0, -17.2271, 0.42466, 36.2896, 0, 0, 0, 0, 0, 0, -17.7899, 0.437908, 37.4442, 0, 0, 0, 0, 0, 0, -18.0263, 0.493107, 40.3866, 0, 0, 0, 0, 0, 0, -17.2194, 0.605713, 45.2471),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="Curve3D" id="Curve3D_hjp7a"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 8.9167, -0.0188942, 34.2655, 0, 0, 0, 0, 0, 0, 9.10558, -0.0144329, 21.303),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_71jlf"]
+closed = true
+bake_interval = 2.1
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2.50123, 0.00200367, 0.776306, 0, 0, 0, 0, 0, 0, -2.51418, 0.00208759, 5.81507, 0, 0, 0, 0, 0, 0, -2.28928, 0.00192261, 6.69861, 0, 0, 0, 0, 0, 0, -1.57801, 0.00136185, 7.05118, 0, 0, 0, 0, 0, 0, -1.19602, 0.00105, 6.52212, 0, 0, 0, 0, 0, 0, -1.16041, 0.00100994, 5.60775, 0, 0, 0, 0, 0, 0, -1.14225, 0.000926971, 0.856058, 0, 0, 0, 0, 0, 0, -1.39135, 0.00111389, 0.0773889, 0, 0, 0, 0, 0, 0, -2.07131, 0.00165367, 0.0114139),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
+
+[sub_resource type="Curve3D" id="Curve3D_0oa1u"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.00199, 0.00106144, 1.19035, 0, 0, 0, 0, 0, 0, 4.0142, -0.00352001, -4.5681, 0, 0, 0, 0, 0, 0, 3.92904, -0.00421047, -5.4342, 0, 0, 0, 0, 0, 0, 3.4815, -0.00451279, -5.79851, 0, 0, 0, 0, 0, 0, 2.17751, -0.0045557, -5.80639, 0, 0, 0, 0, 0, 0, -8.03638, -0.00487995, -5.85007, 0, 0, 0, 0, 0, 0, -9.03908, -0.00485897, -5.7872, 0, 0, 0, 0, 0, 0, -9.45184, -0.00438213, -5.17497, 0, 0, 0, 0, 0, 0, -9.04696, -0.00381947, -4.48321, 0, 0, 0, 0, 0, 0, -8.17506, -0.00373268, -4.40562, 0, 0, 0, 0, 0, 0, -7.49884, -0.00377464, -4.48402, 0, 0, 0, 0, 0, 0, 1.70366, -0.00362396, -4.62162, 0, 0, 0, 0, 0, 0, 2.24714, -0.00360107, -4.61381, 0, 0, 0, 0, 0, 0, 2.58521, -0.00331879, -4.27276, 0, 0, 0, 0, 0, 0, 2.66941, -0.00264835, -3.43379, 0, 0, 0, 0, 0, 0, 2.63193, 0.00258255, 3.14037, 0, 0, 0, 0, 0, 0, 2.92637, 0.0031023, 3.78174, 0, 0, 0, 0, 0, 0, 3.46986, 0.00312519, 3.78954, 0, 0, 0, 0, 0, 0, 3.86323, 0.00282383, 3.39529, 0, 0, 0, 0, 0, 0, 4.19655, 0.00239277, 2.84021),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 20
+
+[sub_resource type="Curve3D" id="Curve3D_w348t"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 26.0046, 0.0267067, 21.6043, 0, 0, 0, 0, 0, 0, 25.9117, 0.0330544, 36.6001, 0, 0, 0, 0, 0, 0, 25.3963, 0.0334549, 38.3386, 0, 0, 0, 0, 0, 0, 24.3887, 0.0330124, 38.8784, 0, 0, 0, 0, 0, 0, 23.0085, 0.0321236, 38.9598, 0, 0, 0, 0, 0, 0, 17.6358, 0.0285072, 38.9369, 0, 0, 0, 0, 0, 0, 16.3988, 0.0274696, 38.4452, 0, 0, 0, 0, 0, 0, 16.0166, 0.026825, 37.5379, 0, 0, 0, 0, 0, 0, 15.8826, 0.0261345, 36.1243, 0, 0, 0, 0, 0, 0, 16.0395, 0.0245476, 32.1652, 0, 0, 0, 0, 0, 0, 15.4757, 0.0236053, 30.8472, 0, 0, 0, 0, 0, 0, 14.6925, 0.0229607, 30.5704, 0, 0, 0, 0, 0, 0, 12.381, 0.0214729, 30.7236, 0, 0, 0, 0, 0, 0, 11.2634, 0.0204811, 30.1603, 0, 0, 0, 0, 0, 0, 10.8095, 0.0197372, 29.1336, 0, 0, 0, 0, 0, 0, 10.7424, 0.0190468, 27.6149, 0, 0, 0, 0, 0, 0, 10.6599, 0.0159721, 20.5516, 0, 0, 0, 0, 0, 0, 10.9606, 0.015625, 19.2669, 0, 0, 0, 0, 0, 0, 11.6626, 0.015976, 18.9754, 0, 0, 0, 0, 0, 0, 12.7514, 0.0167198, 19.0039, 0, 0, 0, 0, 0, 0, 23.6733, 0.0234642, 17.6122, 0, 0, 0, 0, 0, 0, 25.5072, 0.0247574, 17.7456, 0, 0, 0, 0, 0, 0, 26.3623, 0.0258484, 18.9537, 0, 0, 0, 0, 0, 0, 26.3769, 0.0264893, 20.4389),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 24
+
+[sub_resource type="Curve3D" id="Curve3D_hblcu"]
+bake_interval = 15.5
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.29465, 0.0249252, 51.5568, 0, 0, 0, 0, 0, 0, -4.58984, 0.0174904, 48.225, 0, 0, 0, 0, 0, 0, -5.96147, 0.164833, 47.5298, 0, 0, 0, 0, 0, 0, -6.11262, 0.0157089, 46.3388, 0, 0, 0, 0, 0, 0, -5.98389, 0.0152664, 45.0923, 0, 0, 0, 0, 0, 0, -5.91324, 0.0129395, 39.5285, 0, 0, 0, 0, 0, 0, -5.22571, 0.0129967, 38.2878, 0, 0, 0, 0, 0, 0, -4.10341, 0.0137444, 38.5396, 0, 0, 0, 0, 0, 0, -3.678, 0.0149384, 40.6552, 0, 0, 0, 0, 0, 0, -3.99703, 0.0169754, 45.9134, 0, 0, 0, 0, 0, 0, -3.61051, 0.0705557, 46.9451, 0, 0, 0, 0, 0, 0, -2.23449, 0.0188675, 47.5511, 0, 0, 0, 0, 0, 0, 3.69731, 0.0236778, 49.4795),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 13
+
+[sub_resource type="Curve3D" id="Curve3D_3gnor"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -4.79365, 0.00153351, 11.4606, 0, 0, 0, 0, 0, 0, -5.05428, -0.0125046, 19.4419),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_h8twa"]
+bake_interval = 52.83
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -3.00171, 0.275121, 19.2209, 0, 0, 0, 0, 0, 0, -2.73868, 1.01866, 13.9766, 0, 0, 0, 0, 0, 0, -2.76063, 0.925135, 11.634, 0, 0, 0, 0, 0, 0, -3.58827, 0.97412, 11.6145, 0, 0, 0, 0, 0, 0, -3.40557, 1.13058, 13.4592),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_4rr24"]
+bake_interval = 6.7
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 11.4458, 0.021656, 53.3107, 0, 0, 0, 0, 0, 0, 12.0732, 0.0217304, 54.148, 0, 0, 0, 0, 0, 0, 12.9843, 0.0214767, 54.6869, 0, 0, 0, 0, 0, 0, 13.5613, 0.0209465, 54.3367, 0, 0, 0, 0, 0, 0, 13.7085, 0.0204926, 53.6513, 0, 0, 0, 0, 0, 0, 13.248, 0.0204411, 53.0462, 0, 0, 0, 0, 0, 0, 12.3999, 0.0204659, 52.1529, 0, 0, 0, 0, 0, 0, -3.16965, 0.021244, 36.3472),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c8aa1"]
 sky_top_color = Color(0.495406, 0.567488, 0.667837, 1)
@@ -86,25 +404,71 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.251
 
 [node name="NPCs" type="Node3D" parent="."]
 
-[node name="PathFollowers" type="Node" parent="NPCs" node_paths=PackedStringArray("NPCs")]
+[node name="PathFollowers" type="Node" parent="NPCs"]
 script = ExtResource("2_xwsjn")
-NPCs = [NodePath("../../Tutorial/Mentore"), NodePath("../../Tutorial/NPC Adam")]
+npc_base = SubResource("PackedScene_fo5jg")
+animation_sets = Array[SpriteFrames]([ExtResource("4_0oa1u"), ExtResource("5_w348t"), ExtResource("6_hblcu"), ExtResource("7_3gnor"), ExtResource("8_h8twa"), ExtResource("9_4rr24"), ExtResource("10_wbqx4"), ExtResource("11_aaonj"), ExtResource("12_o5ruu"), ExtResource("13_gcsbn"), ExtResource("14_fh08l"), ExtResource("15_sngi3"), ExtResource("16_jgw40"), ExtResource("17_ecjrk"), ExtResource("18_4jpk0"), ExtResource("19_w4mt1"), ExtResource("20_pc64b"), ExtResource("21_wgmh4"), ExtResource("22_w2wlk"), ExtResource("23_eebj4"), ExtResource("24_pa85h"), ExtResource("25_82taj"), ExtResource("26_frrle"), ExtResource("27_fkua1"), ExtResource("28_55vxl"), ExtResource("29_ngks6"), ExtResource("30_520s0"), ExtResource("31_ubx84"), ExtResource("32_j1qjq"), ExtResource("33_t5k6i"), ExtResource("34_yp4ph"), ExtResource("35_vg5hf"), ExtResource("36_wbp6y"), ExtResource("37_cfp5f"), ExtResource("38_gicqj"), ExtResource("39_tjsj5"), ExtResource("40_tmj8n"), ExtResource("41_l5s85"), ExtResource("42_o68p5"), ExtResource("43_b0xxn"), ExtResource("44_3dvf1"), ExtResource("44_71jlf"), ExtResource("45_0oa1u"), ExtResource("46_w348t"), ExtResource("47_hblcu"), ExtResource("48_3gnor"), ExtResource("49_h8twa"), ExtResource("50_4rr24"), ExtResource("51_wbqx4"), ExtResource("52_aaonj"), ExtResource("53_o5ruu"), ExtResource("54_gcsbn"), ExtResource("55_fh08l"), ExtResource("56_sngi3"), ExtResource("57_jgw40"), ExtResource("58_ecjrk"), ExtResource("59_4jpk0"), ExtResource("60_w4mt1"), ExtResource("61_pc64b"), ExtResource("62_wgmh4"), ExtResource("63_w2wlk"), ExtResource("64_eebj4"), ExtResource("65_pa85h"), ExtResource("66_82taj"), ExtResource("67_frrle"), ExtResource("68_fkua1"), ExtResource("69_55vxl"), ExtResource("70_ngks6"), ExtResource("71_520s0"), ExtResource("72_ubx84"), ExtResource("73_j1qjq"), ExtResource("74_t5k6i"), ExtResource("75_yp4ph"), ExtResource("76_vg5hf"), ExtResource("77_wbp6y"), ExtResource("78_cfp5f"), ExtResource("79_gicqj"), ExtResource("80_tjsj5"), ExtResource("81_tmj8n"), ExtResource("82_l5s85"), ExtResource("83_o68p5"), ExtResource("84_b0xxn"), ExtResource("85_3dvf1"), ExtResource("86_8i766"), ExtResource("87_oag3g"), ExtResource("88_yuejk"), ExtResource("89_8lei5"), ExtResource("90_0bpq6"), ExtResource("91_yuqjg"), ExtResource("92_48mho"), ExtResource("93_b6ni0"), ExtResource("94_hfylk"), ExtResource("95_vxcw4"), ExtResource("96_oltpi"), ExtResource("97_e3eg5"), ExtResource("98_g4t3l"), ExtResource("99_o2qwt"), ExtResource("100_52nei"), ExtResource("101_eeb40"), ExtResource("102_0nm2m"), ExtResource("103_aan57"), ExtResource("104_usav4"), ExtResource("105_8whvt"), ExtResource("106_iu54a"), ExtResource("107_hjqud"), ExtResource("108_xuusr"), ExtResource("109_8oytp"), ExtResource("110_sb4ca"), ExtResource("111_i6dig"), ExtResource("112_s4njd"), ExtResource("113_jxcc7"), ExtResource("114_f2boa"), ExtResource("115_yq4uk"), ExtResource("116_c1l8v"), ExtResource("117_5kpe0"), ExtResource("118_jfvk4"), ExtResource("119_8vxq7"), ExtResource("120_ajvpd"), ExtResource("121_dwnmc"), ExtResource("122_gr77a"), ExtResource("123_1d224"), ExtResource("124_x5rge"), ExtResource("125_r3cu7"), ExtResource("126_mubcs"), ExtResource("127_gvug5"), ExtResource("128_lne76"), ExtResource("129_86fwx"), ExtResource("130_elg25"), ExtResource("131_fe8sy"), ExtResource("132_yoohu"), ExtResource("133_m11e5"), ExtResource("134_0fv2r"), ExtResource("135_xmysv"), ExtResource("136_rjwt6"), ExtResource("137_7swuv"), ExtResource("138_o652c"), ExtResource("139_min8e"), ExtResource("140_577bd"), ExtResource("141_23a6p"), ExtResource("142_fgwiu"), ExtResource("143_xllyb"), ExtResource("144_6jy4k"), ExtResource("145_6fnm4"), ExtResource("146_sdcdm"), ExtResource("147_h6bfa"), ExtResource("148_powyo"), ExtResource("149_jum62"), ExtResource("150_t6u3u"), ExtResource("151_dvwia"), ExtResource("152_qufrd"), ExtResource("153_s7pwa"), ExtResource("154_668rp"), ExtResource("155_vi15j"), ExtResource("156_u8u6s"), ExtResource("157_po8ai"), ExtResource("158_0km7w"), ExtResource("159_iv74n"), ExtResource("160_mbtls"), ExtResource("161_3jyi0"), ExtResource("162_m4svk"), ExtResource("163_njb7c"), ExtResource("164_t1mv2"), ExtResource("165_plpo0"), ExtResource("166_x6wjo")])
 
 [node name="Path3D" type="Path3D" parent="NPCs/PathFollowers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.899823, 0.705496, 0.0630112)
-curve = SubResource("Curve3D_bndii")
-
-[node name="Path3D2" type="Path3D" parent="NPCs/PathFollowers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.995, 0.063)
 curve = SubResource("Curve3D_bndii")
 
 [node name="Path3D3" type="Path3D" parent="NPCs/PathFollowers"]
-curve = SubResource("Curve3D_bndii")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -2.576, -14.307)
+rotation_edit_mode = 1
+curve = SubResource("Curve3D_2fmqh")
+
+[node name="Path3D2" type="Path3D" parent="NPCs/PathFollowers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21, 0)
+curve = SubResource("Curve3D_7bxep")
 
 [node name="Path3D4" type="Path3D" parent="NPCs/PathFollowers"]
-curve = SubResource("Curve3D_bndii")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76, 0)
+curve = SubResource("Curve3D_vffra")
 
 [node name="Path3D5" type="Path3D" parent="NPCs/PathFollowers"]
-curve = SubResource("Curve3D_bndii")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48, 0)
+curve = SubResource("Curve3D_fwne3")
+
+[node name="Path3D6" type="Path3D" parent="NPCs/PathFollowers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+curve = SubResource("Curve3D_7pypy")
+
+[node name="Path3D7" type="Path3D" parent="NPCs/PathFollowers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.575, 0.516, 0.039)
+curve = SubResource("Curve3D_hjp7a")
+
+[node name="Path3D8" type="Path3D" parent="NPCs/PathFollowers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.616, 0)
+curve = SubResource("Curve3D_hjp7a")
+
+[node name="Path3D9" type="Path3D" parent="NPCs/PathFollowers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71, 0)
+curve = SubResource("Curve3D_71jlf")
+
+[node name="Path3D10" type="Path3D" parent="NPCs/PathFollowers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0)
+curve = SubResource("Curve3D_0oa1u")
+
+[node name="Path3D11" type="Path3D" parent="NPCs/PathFollowers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51, 0)
+curve = SubResource("Curve3D_w348t")
+
+[node name="Path3D12" type="Path3D" parent="NPCs/PathFollowers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+curve = SubResource("Curve3D_hblcu")
+
+[node name="Path3D13" type="Path3D" parent="NPCs/PathFollowers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33, -6.05)
+curve = SubResource("Curve3D_3gnor")
+
+[node name="Path3D14" type="Path3D" parent="NPCs/PathFollowers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34, 0)
+curve = SubResource("Curve3D_h8twa")
+
+[node name="Path3D15" type="Path3D" parent="NPCs/PathFollowers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+curve = SubResource("Curve3D_4rr24")
 
 [node name="NPC Adam" parent="NPCs" instance=ExtResource("8_xwsjn")]
 
