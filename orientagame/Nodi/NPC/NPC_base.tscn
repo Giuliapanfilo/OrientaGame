@@ -16,7 +16,7 @@ billboard = 1
 shaded = true
 double_sided = false
 alpha_scissor_threshold = 0.0
-texture_filter = 0
+texture_filter = 2
 sprite_frames = ExtResource("6_368ys")
 animation = &"idle"
 

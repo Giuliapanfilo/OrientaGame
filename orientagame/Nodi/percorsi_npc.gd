@@ -4,10 +4,15 @@ var percorsi: Array[Path3D] = []
 var previous_positions := {} # dizionario per memorizzare posizioni precedenti
 
 @export var npc_base: PackedScene
-@export var animation_sets: Array[SpriteFrames]
 @export var speed: float = 3
+@export var animation_sets: Array[SpriteFrames]
+var animation_selected: Array[bool] = []
+var selected = true
 
 func _ready() -> void:
+	animation_selected.resize(animation_sets.size())
+	animation_selected.fill(false)
+	
 	for n in get_children():
 		if n is Path3D:
 			percorsi.append(n)
@@ -25,7 +30,22 @@ func _ready() -> void:
 			sprite_node.scale = Vector3(3, 3, 3)
 
 		if sprite_node:
-			var chosen_frames: SpriteFrames = animation_sets.pick_random()
+			var available_indices := []
+			for i in range(animation_selected.size()):
+				if not animation_selected[i]:
+					available_indices.append(i)
+
+			if available_indices.is_empty():
+				push_warning("Tutte le animazioni sono state usate, resetto la lista.")
+				animation_selected.fill(false)
+				available_indices = range(animation_selected.size())
+
+			var chosen_index = available_indices.pick_random()
+
+			animation_selected[chosen_index] = true
+
+			var chosen_frames: SpriteFrames = animation_sets[chosen_index]
+			
 			sprite_node.sprite_frames = chosen_frames
 			sprite_node.play("idle")
 		else:
@@ -38,6 +58,8 @@ func _ready() -> void:
 
 		# inizializzazione della posizione precedente
 		previous_positions[follow] = follow.position
+	
+	print(animation_selected)
 
 func _process(delta: float) -> void:
 	for path3D in percorsi:
