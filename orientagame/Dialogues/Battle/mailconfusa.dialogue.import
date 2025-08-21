@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c2qax2lb60ft2"
+path="res://.godot/imported/mailconfusa.dialogue-d1e1d596042f991a56cb10fd4f460406.tres"
+
+[deps]
+
+source_file="res://Dialogues/Battle/mailconfusa.dialogue"
+dest_files=["res://.godot/imported/mailconfusa.dialogue-d1e1d596042f991a56cb10fd4f460406.tres"]
+
+[params]
+
+defaults=true

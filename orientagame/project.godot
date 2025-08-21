@@ -18,11 +18,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneLoader="*res://Nodi/Scene Swapper/scene_loader.tscn"
-GlobalUi="res://UI/global_ui.tscn"
 UI="*res://UI/ui.tscn"
 InteractionManager="*res://Interaction/InteractionManager.tscn"
 Savefile="*res://Nodi/savefile.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+runtime/balloon_path="uid://wsyioepe28ek"
 
 [dotnet]
 
@@ -75,7 +78,7 @@ pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogues/edge.dialogue", "res://Dialogues/main.dialogue", "res://Dialogues/tuttorial.dialogue", "res://Dialogues/antonio.dialogue", "res://Dialogues/main (2).dialogue", "res://Dialogues/scena1.dialogue", "res://Dialogues/scena2.dialogue", "res://Dialogues/scena3.dialogue", "res://Dialogues/scena4.dialogue", "res://Dialogues/Collectibles/collectibles.dialogue", "res://Dialogues/Collectibles/ComputerVecchio.dialogue", "res://Dialogues/Collectibles/appunti.dialogue", "res://Dialogues/Collectibles/Gameboy.dialogue", "res://Dialogues/Collectibles/caffe.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogues/edge.dialogue", "res://Dialogues/main.dialogue", "res://Dialogues/tuttorial.dialogue", "res://Dialogues/antonio.dialogue", "res://Dialogues/main (2).dialogue", "res://Dialogues/scena1.dialogue", "res://Dialogues/scena2.dialogue", "res://Dialogues/scena3.dialogue", "res://Dialogues/scena4.dialogue", "res://Dialogues/Collectibles/collectibles.dialogue", "res://Dialogues/Collectibles/ComputerVecchio.dialogue", "res://Dialogues/Collectibles/appunti.dialogue", "res://Dialogues/Collectibles/Gameboy.dialogue", "res://Dialogues/Collectibles/caffe.dialogue", "res://Dialogues/Battle/battle.dialogue", "res://Dialogues/Battle/mailconfusa.dialogue")
 
 [layer_names]
 

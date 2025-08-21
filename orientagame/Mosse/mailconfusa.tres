@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Mossa" load_steps=2 format=3 uid="uid://65yxm562akav"]
+
+[ext_resource type="Script" uid="uid://dcenu8ivg7kol" path="res://mossa.gd" id="1_p4rwy"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_p4rwy")
+name = "mailconfusa"
+expression = "target.confuse()
+target.take_damage(10)"
+metadata/_custom_type_script = "uid://dcenu8ivg7kol"

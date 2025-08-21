@@ -1,6 +1,5 @@
-[gd_scene load_steps=28 format=3 uid="uid://dpqucqhq1ivpo"]
+[gd_scene load_steps=27 format=3 uid="uid://dpqucqhq1ivpo"]
 
-[ext_resource type="Script" uid="uid://dhgb0o1x3kusr" path="res://Scene/Esterno/livello_giardini.gd" id="1_m4ui0"]
 [ext_resource type="Script" uid="uid://datdd1dirbgu1" path="res://Nodi/percorsi_npc.gd" id="2_xwsjn"]
 [ext_resource type="PackedScene" uid="uid://dlyq5fytid4wx" path="res://Scene/Esterno/struttura_giardini.tscn" id="5_2fmqh"]
 [ext_resource type="PackedScene" uid="uid://chqnuytnniok6" path="res://Scene/Pianterreno/livello_pianterreno.tscn" id="5_gyw00"]
@@ -79,10 +78,9 @@ _data = {
 point_count = 3
 
 [node name="LivelloGiardini" type="Node3D"]
-script = ExtResource("1_m4ui0")
 
 [node name="Spawn" type="Marker3D" parent="." groups=["spawn"]]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.2511, 0.875442, 47.0065)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.9503, 0.875442, 45.6564)
 
 [node name="NPCs" type="Node3D" parent="."]
 
