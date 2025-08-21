@@ -47,7 +47,6 @@ func _sort_by_distance_to_player(area1, area2):
 	var area2_to_player = player.global_position.distance_to(area2.global_position)
 	return area1_to_player < area2_to_player
 
-
 func _input(event):
-	if event.is_action_pressed("Interact") :
+	if event.is_action_pressed("Interact"):
 		await do_interact.call()

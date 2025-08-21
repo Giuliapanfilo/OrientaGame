@@ -1,0 +1,95 @@
+[gd_scene load_steps=13 format=3 uid="uid://dxktxpqtfqqqn"]
+
+[ext_resource type="Texture2D" uid="uid://dte0ublu7l4xq" path="res://Sprite/Book.png" id="1_kqsy0"]
+[ext_resource type="Script" uid="uid://c0woxw2fic5xm" path="res://Scene/BookMiniGame/book.gd" id="1_q6mnm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ikw7j"]
+radius = 11.0454
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6mnm"]
+atlas = ExtResource("1_kqsy0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxh4i"]
+atlas = ExtResource("1_kqsy0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkyc5"]
+atlas = ExtResource("1_kqsy0")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsj1i"]
+atlas = ExtResource("1_kqsy0")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq4pb"]
+atlas = ExtResource("1_kqsy0")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eovun"]
+atlas = ExtResource("1_kqsy0")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uphi3"]
+atlas = ExtResource("1_kqsy0")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qm74"]
+atlas = ExtResource("1_kqsy0")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpkxi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6mnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxh4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkyc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsj1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq4pb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eovun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uphi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qm74")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Book" type="Node2D"]
+script = ExtResource("1_q6mnm")
+
+[node name="StaticBody2D" type="Area2D" parent="."]
+scale = Vector2(0.640002, 0.640002)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_ikw7j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+position = Vector2(0, 37.4999)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_jpkxi")
+frame_progress = 0.630759
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(1.5, 1.5)
+
+[connection signal="body_entered" from="StaticBody2D" to="." method="_on_static_body_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

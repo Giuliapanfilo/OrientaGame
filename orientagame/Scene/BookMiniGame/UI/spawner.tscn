@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddhhni3oulhyr"]
+
+[ext_resource type="Script" uid="uid://jk4wulob2lxt" path="res://Scene/BookMiniGame/UI/spawner.gd" id="1_fhrcu"]
+[ext_resource type="PackedScene" uid="uid://bl03uhn0ryup" path="res://Scene/BookMiniGame/enemy.tscn" id="2_4gsjl"]
+[ext_resource type="Texture2D" uid="uid://cv40jeq4ljxep" path="res://UI/Elements/Button.PNG" id="2_b7brx"]
+[ext_resource type="PackedScene" uid="uid://d11yua138jep1" path="res://Scene/BookMiniGame/power_up.tscn" id="3_h340e"]
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_fhrcu")
+enemy = ExtResource("2_4gsjl")
+powerUp = ExtResource("3_h340e")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+scale = Vector2(0.139567, 0.139567)
+texture = ExtResource("2_b7brx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 34.0
+offset_top = 20.0
+offset_right = 76.0
+offset_bottom = 43.0
+scale = Vector2(2, 2)
+
+[node name="Minutes" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = ":"
+
+[node name="Seconds" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00"
+
+[node name="PowerUp" type="Timer" parent="."]
+autostart = true
+
+[node name="Elite" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Pattern" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="PowerUp" to="." method="_on_power_up_timeout"]
+[connection signal="timeout" from="Elite" to="." method="_on_elite_timeout"]
+[connection signal="timeout" from="Pattern" to="." method="_on_pattern_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

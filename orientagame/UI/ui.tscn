@@ -26,6 +26,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_h81ot")
+base_resolution = null
 
 [node name="Joystick" type="Control" parent="Scaler"]
 layout_mode = 3

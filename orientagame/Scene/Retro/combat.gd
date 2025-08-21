@@ -1,82 +1,95 @@
 extends Node
 
-@export var player_actor : Actor
-@export var segretaria_actor : Actor
-@export var player_mosse : Dictionary[String,Mossa]
-@export var segretaria_mosse : Dictionary[String,Mossa]
+@export var playerActor : Actor
+@export var segretariaActor : Actor
+@export var playerBar : ProgressBar
+@export var segretariaBar : ProgressBar
+#var dlog : Resource = load("res://Dialogues/Battle/battle.dialogue")
+@export var combat_GUI : CanvasLayer
 
-@export var move_picker : VBoxContainer
-
-func do_round(player_mossa):
-	player_mossa.agent = player_actor
-	player_mossa.target = segretaria_actor
-	var segretaria_mossa = segretaria_mosse.values().pick_random()
-	segretaria_mossa.agent = segretaria_actor
-	segretaria_mossa.target = player_actor
-	var starts_player
-	if segretaria_mossa == segretaria_mosse['protezione']:
-		starts_player = false
-	elif player_actor.temp_priority: 
-		starts_player = true
-	else: 
-		starts_player = bool(randi_range(0,1))
-
-	var initiative : = [0,1] if starts_player else [1,0] 
-
-	for i in initiative:
-		[player_mossa, segretaria_mossa][i].do()
+func start_battle():
+	UI.hide()
+	SceneLoader.player.can_move = false
+	combat_GUI.show()
+	var movepool := $CanvasLayer/Control/HSplitContainer/MovePool
+	var i := 0
+	for c in movepool.get_children():
+		if c is Button:
+			c.text = playerActor.mosse[i].name
+			c.pressed.connect(func():
+				var winner: Actor = await turno.bind(playerActor.mosse[i]).call()
+				# nascondi i pulsanti
+				if winner:
+					print(winner.name, " ha vinto!")
+				)
+			i += 1
+	playerActor.damaged.connect(displayDamage.bind(playerActor, playerBar))
+	segretariaActor.damaged.connect(displayDamage.bind(segretariaActor, segretariaBar))
 
 
+func turno(playerMossa : Mossa):
+	var playerPriority = false
+	var segretariaMossa : Mossa = segretariaActor.mosse.pick_random()
+	playerMossa.agent = playerActor
+	playerMossa.target = segretariaActor
+	segretariaMossa.agent = segretariaActor
+	segretariaMossa.target = playerActor
+	print("eseguo ", playerMossa.name, segretariaMossa.name)
+
+	if segretariaMossa.name == 'filecorrotto':
+		playerPriority = false
+	elif playerActor.temp_priority:
+		playerPriority = true
+		playerActor.temp_priority = false
+	else:
+		playerPriority = bool(randi_range(0,1))
+	
+	var iniziativa = [1,0] if playerPriority else [0,1]
+	for i in iniziativa:
+		var winner = await [segretariaMossa, playerMossa][i].do()
+		if winner:
+			end_combat(winner)
+
+func end_combat(winner) : 
+	combat_GUI.hide()
+
+ 
 func _ready() -> void:
-	pick_move()
+	combat_GUI.hide()
+	#UI.hide()
+	#SceneLoader.player.can_move = false
+	#var movepool := $CanvasLayer/Control/HSplitContainer/MovePool
+	#var i := 0
+	#for c in movepool.get_children():
+		#if c is Button:
+			#c.text = playerActor.mosse[i].name
+			#c.pressed.connect(func():
+				#var winner: Actor = turno.bind(playerActor.mosse[i]).call()
+				## nascondi i pulsanti
+				#if winner:
+					#print(winner.name, " ha vinto!")
+				#)
+			#i += 1
+	#playerActor.damaged.connect(displayDamage.bind(playerActor, playerBar))
+	#segretariaActor.damaged.connect(displayDamage.bind(segretariaActor, segretariaBar))
+
+func displayDamage(damage, actor : Actor, bar : ProgressBar):
+	actor.blink()
+	var tween = create_tween()
+	tween.tween_property(bar, "value", actor.hp, 0.5)
+	await tween.finished
+	
+	# costruisci scena
+		# crea i pulsanti delle mosse
+		# posiziona barre della vita
+	# avvia dialogo iniziale
+	# avvia musichetta
+	
+	# mostra mosse
+	# se premi un pulsante -> avvia mossa
+		# nascondi interfaccia
 	
 
-func pick_move() -> void:
-	move_picker.show()
-	move_picker.mouse_filter = Control.MOUSE_FILTER_STOP
-	for c in move_picker.get_children():
-		c.queue_free()
-	for mossa in player_mosse:
-		var mossa_button := Button.new()
-		mossa_button.text = mossa
-		mossa_button.pressed.connect( func():
-			move_picker.hide()
-			move_picker.mouse_filter = Control.MOUSE_FILTER_IGNORE
-			do_round(player_mosse[mossa])
-		)
-		move_picker.add_child(mossa_button)
-	
-
-
-# turno : 
-# scelta mossa
-# scelta iniziativa
-	# la segretaria ha fatto PROTEZIONE?
-	# il giocatore ha preso del caffè?
-	# altrimenti 50%
-# agisce actor 1
-	# è confuso? -> 50% che si colpisce e poi si leva da sola
-	# ci sono dei buff sui danni?
-	# applica i danni e gli effetti
-	# ha sconfitto actor 2?
-# agisce actor 2 
-	# è confuso? -> 50% che si colpisce e poi si leva da sola
-	# ci sono dei buff sui danni?
-	# applica i danni e gli effetti
-	# ha sconfitto actor 1?
-	
-
-
-
-#STUDENTE 
-# mail confusa   : CONFUSIONE(segretaria) + 10 DANNI(segretaria)
-	# confondi la segretaria con parole poco argute
-# allega JPEG    : 15 DANNI(segretaria)
-	# sai benissimo che devi mettere un pdf
-# Bevi caffè     : -30 DANNI(player) & COLPISCI PER PRIMO
-	# curati e affronta la giornata
-# Compila modulo : MINIGIOCO [5-30] DANNI(segretaria)
-	# prova a centrare ogni risposta
 
 #SEGRETARIA
 # modulo mancante : 15 DANNI(player) + 5 DANNI(player) DOPO
