@@ -5,15 +5,15 @@ class_name Player
 @export var gravity := 9.8
 @export var sprite : AnimatedSprite3D
 
-var can_move = true
+@export var can_move = true
 var lock_animation = false
 
 var last_direction = "up"
 var last_action = "idle"
 
-#func _ready() -> void:
-	#if OS.is_debug_build():
-		#speed = 10
+func _ready() -> void:
+	if OS.is_debug_build():
+		speed = 10
 
 func _physics_process(delta: float) -> void:
 	#var joystickVector = GlobalUi.getJoystickVec()
