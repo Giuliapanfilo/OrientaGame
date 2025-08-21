@@ -28,6 +28,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+
 [dotnet]
 
 project/assembly_name="OrientaGame"
@@ -76,7 +77,7 @@ pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogues/edge.dialogue", "res://Dialogues/main.dialogue", "res://Dialogues/tuttorial.dialogue", "res://Dialogues/antonio.dialogue", "res://Dialogues/main (2).dialogue", "res://Dialogues/scena1.dialogue", "res://Dialogues/scena2.dialogue", "res://Dialogues/scena3.dialogue", "res://Dialogues/scena4.dialogue", "res://Dialogues/Collectibles/collectibles.dialogue", "res://Dialogues/Collectibles/ComputerVecchio.dialogue", "res://Dialogues/Collectibles/appunti.dialogue", "res://Dialogues/Collectibles/Gameboy.dialogue", "res://Dialogues/Collectibles/caffe.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogues/edge.dialogue", "res://Dialogues/main.dialogue", "res://Dialogues/tuttorial.dialogue", "res://Dialogues/antonio.dialogue", "res://Dialogues/main (2).dialogue", "res://Dialogues/scena1.dialogue", "res://Dialogues/scena2.dialogue", "res://Dialogues/scena3.dialogue", "res://Dialogues/scena4.dialogue", "res://Dialogues/Collectibles/collectibles.dialogue", "res://Dialogues/Collectibles/ComputerVecchio.dialogue", "res://Dialogues/Collectibles/appunti.dialogue", "res://Dialogues/Collectibles/Gameboy.dialogue", "res://Dialogues/Collectibles/caffe.dialogue", "res://Dialogues/Battle/battle.dialogue", "res://Dialogues/Battle/mailconfusa.dialogue")
 
 [layer_names]
 

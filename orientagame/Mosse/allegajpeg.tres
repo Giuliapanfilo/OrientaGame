@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Mossa" load_steps=2 format=3 uid="uid://8hggmpg2i5wd"]
+
+[ext_resource type="Script" uid="uid://dcenu8ivg7kol" path="res://mossa.gd" id="1_arhiy"]
+
+[resource]
+script = ExtResource("1_arhiy")
+name = "allegajpeg"
+expression = "target.take_damage(15)
+"
+metadata/_custom_type_script = "uid://dcenu8ivg7kol"

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://nvg0jagxxr44"]
+
+[ext_resource type="Script" uid="uid://be4spavmdw86h" path="res://Nodi/NPC/NPC_base.gd" id="1_3tfoi"]
+[ext_resource type="SpriteFrames" uid="uid://brs6dmx8u8yj3" path="res://Sprite/AnimatedSprites/Characters_1/Character_001.tres" id="6_368ys"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tfoi"]
+
+[node name="NPC_Base" type="CharacterBody3D"]
+script = ExtResource("1_3tfoi")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0633534, 0)
+modulate = Color(0.988171, 0.870097, 0.838477, 1)
+pixel_size = 0.022
+billboard = 1
+shaded = true
+double_sided = false
+alpha_scissor_threshold = 0.0
+texture_filter = 2
+sprite_frames = ExtResource("6_368ys")
+animation = &"idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_3tfoi")

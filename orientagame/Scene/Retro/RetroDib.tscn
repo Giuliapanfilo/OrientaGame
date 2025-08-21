@@ -1,6 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://bse528t5p5nns"]
+[gd_scene load_steps=38 format=3 uid="uid://bse528t5p5nns"]
 
 [ext_resource type="PackedScene" uid="uid://ch11nqpyfy4ix" path="res://Scene/Retro/struttura_retro.tscn" id="2_cefek"]
+[ext_resource type="Script" uid="uid://u2r1583jtb3r" path="res://Scene/Retro/combat.gd" id="2_gn75f"]
+[ext_resource type="Script" uid="uid://dcenu8ivg7kol" path="res://mossa.gd" id="3_6oqyj"]
+[ext_resource type="Script" uid="uid://bawlhu2fems53" path="res://actor.gd" id="4_l4sxi"]
+[ext_resource type="Resource" uid="uid://65yxm562akav" path="res://Mosse/mailconfusa.tres" id="4_ws562"]
+[ext_resource type="Resource" uid="uid://8hggmpg2i5wd" path="res://Mosse/allegajpeg.tres" id="5_a4lnc"]
+[ext_resource type="Resource" uid="uid://dibldmnksbdt7" path="res://Mosse/bevicaffe.tres" id="6_a4lnc"]
+[ext_resource type="Texture2D" uid="uid://djulydr22saer" path="res://Sprite/segretariapiccola.png" id="8_q1c8p"]
+[ext_resource type="Texture2D" uid="uid://blrg6wotijhlh" path="res://Sprite/segretariapiccola2.png" id="9_dirtp"]
+[ext_resource type="Texture2D" uid="uid://cxgehaydx5jrd" path="res://Sprite/male_hero-idle.png" id="9_k4qpa"]
+[ext_resource type="FontFile" uid="uid://c0u5vq0gmnwwb" path="res://Font/DMSans-VariableFont_opsz,wght.ttf" id="9_obnvd"]
+[ext_resource type="Texture2D" uid="uid://h4i0pfn0r3uo" path="res://Sprite/templatebattle.png" id="10_pyau2"]
+[ext_resource type="Script" uid="uid://brhgcc3ri7ldg" path="res://Scene/Retro/portasegreteria.gd" id="12_1301a"]
+[ext_resource type="PackedScene" uid="uid://cuk5m1bfqavha" path="res://Interaction/Interaction area/interactionArea.tscn" id="13_1301a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0isvt"]
 sky_top_color = Color(0.690977, 0.796471, 0.833889, 1)
@@ -17,6 +30,217 @@ sky_material = SubResource("ProceduralSkyMaterial_0isvt")
 background_mode = 2
 sky = SubResource("Sky_wssxf")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_pyau2"]
+size = Vector3(1.28915, 1, 0.34436)
+
+[sub_resource type="Resource" id="Resource_q1c8p"]
+script = ExtResource("3_6oqyj")
+name = "vuota"
+expression = ""
+metadata/_custom_type_script = "uid://dcenu8ivg7kol"
+
+[sub_resource type="Resource" id="Resource_obnvd"]
+script = ExtResource("3_6oqyj")
+name = "mailconfusa"
+expression = ""
+metadata/_custom_type_script = "uid://dcenu8ivg7kol"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqrnb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohd2d"]
+bg_color = Color(0.0846899, 0.0846899, 0.0846899, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_obnvd"]
+bg_color = Color(0.443137, 0.843137, 0.647059, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dirtp"]
+atlas = ExtResource("8_q1c8p")
+region = Rect2(0, 0, 22, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1301a"]
+atlas = ExtResource("9_dirtp")
+region = Rect2(0, 0, 22, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1301a"]
+animations = [{
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_dirtp")
+}, {
+"duration": 0.1,
+"texture": null
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_1301a")
+}, {
+"duration": 0.1,
+"texture": null
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_dirtp")
+}],
+"loop": false,
+"name": &"blink",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dirtp")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1301a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyau2"]
+atlas = ExtResource("9_k4qpa")
+region = Rect2(39, 38, 40, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqrnb"]
+atlas = ExtResource("9_k4qpa")
+region = Rect2(167, 38, 40, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je31w"]
+atlas = ExtResource("9_k4qpa")
+region = Rect2(295, 38, 40, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3fpv"]
+atlas = ExtResource("9_k4qpa")
+region = Rect2(423, 38, 40, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84a26"]
+atlas = ExtResource("9_k4qpa")
+region = Rect2(551, 38, 40, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri2wb"]
+atlas = ExtResource("9_k4qpa")
+region = Rect2(679, 38, 40, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y56vd"]
+atlas = ExtResource("9_k4qpa")
+region = Rect2(807, 38, 40, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxvoo"]
+atlas = ExtResource("9_k4qpa")
+region = Rect2(935, 38, 40, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkrhp"]
+atlas = ExtResource("9_k4qpa")
+region = Rect2(1063, 38, 40, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj750"]
+atlas = ExtResource("9_k4qpa")
+region = Rect2(1191, 38, 40, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k4qpa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyau2")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqrnb")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je31w")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3fpv")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84a26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri2wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y56vd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxvoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkrhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj750")
+}],
+"loop": false,
+"name": &"blink",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyau2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqrnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je31w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3fpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84a26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri2wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y56vd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxvoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkrhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj750")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="RetroDib" type="Node3D"]
 
 [node name="Spawner" type="Marker3D" parent="." groups=["spawn"]]
@@ -26,3 +250,164 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.283354, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_cefek")
+
+[node name="Porta" type="Node3D" parent="." node_paths=PackedStringArray("combat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.55298)
+script = ExtResource("12_1301a")
+combat = NodePath("../Combat")
+
+[node name="PortaSegreteria" parent="Porta" instance=ExtResource("13_1301a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.914886, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Porta/PortaSegreteria"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00239563, 0, 0.15509)
+shape = SubResource("BoxShape3D_pyau2")
+debug_color = Color(0.940711, 0.0797408, 0.57127, 0.42)
+
+[node name="Combat" type="Node" parent="." node_paths=PackedStringArray("playerActor", "segretariaActor", "playerBar", "segretariaBar", "combat_GUI")]
+script = ExtResource("2_gn75f")
+playerActor = NodePath("PlayerActor")
+segretariaActor = NodePath("SegretariaActor")
+playerBar = NodePath("CanvasLayer/Control/HSplitContainer/Control/ProgressBarPlayer")
+segretariaBar = NodePath("CanvasLayer/Control/HSplitContainer/Control/ProgressBarSegretaria")
+combat_GUI = NodePath("CanvasLayer")
+
+[node name="PlayerActor" type="Node" parent="Combat" node_paths=PackedStringArray("playerSprite")]
+script = ExtResource("4_l4sxi")
+playerSprite = NodePath("../CanvasLayer/Control/HSplitContainer/Control/Player")
+mosse = Array[ExtResource("3_6oqyj")]([ExtResource("4_ws562"), ExtResource("5_a4lnc"), ExtResource("6_a4lnc"), SubResource("Resource_q1c8p")])
+metadata/_custom_type_script = "uid://bawlhu2fems53"
+
+[node name="SegretariaActor" type="Node" parent="Combat" node_paths=PackedStringArray("playerSprite")]
+script = ExtResource("4_l4sxi")
+playerSprite = NodePath("../CanvasLayer/Control/HSplitContainer/Control/Segretaria")
+mosse = Array[ExtResource("3_6oqyj")]([SubResource("Resource_obnvd")])
+metadata/_custom_type_script = "uid://bawlhu2fems53"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Combat"]
+
+[node name="Control" type="Control" parent="Combat/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Combat/CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_pyau2")
+
+[node name="HSplitContainer" type="VSplitContainer" parent="Combat/CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.691
+offset_left = 45.0
+offset_top = 14.0
+offset_right = -49.0
+offset_bottom = 173.232
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 155
+
+[node name="Control" type="Panel" parent="Combat/CanvasLayer/Control/HSplitContainer"]
+light_mask = 0
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_uqrnb")
+
+[node name="ProgressBarPlayer" type="ProgressBar" parent="Combat/CanvasLayer/Control/HSplitContainer/Control"]
+z_index = -1
+z_as_relative = false
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+offset_left = 791.0
+offset_top = 343.0
+offset_right = 1023.0
+offset_bottom = 373.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ohd2d")
+theme_override_styles/fill = SubResource("StyleBoxFlat_obnvd")
+step = 1.0
+value = 100.0
+rounded = true
+show_percentage = false
+
+[node name="ProgressBarSegretaria" type="ProgressBar" parent="Combat/CanvasLayer/Control/HSplitContainer/Control"]
+z_index = -1
+z_as_relative = false
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+offset_left = 205.0
+offset_top = 109.0
+offset_right = 437.0
+offset_bottom = 143.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ohd2d")
+theme_override_styles/fill = SubResource("StyleBoxFlat_obnvd")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Segretaria" type="AnimatedSprite2D" parent="Combat/CanvasLayer/Control/HSplitContainer/Control"]
+position = Vector2(804, 148)
+scale = Vector2(6.5, 6.5)
+sprite_frames = SubResource("SpriteFrames_1301a")
+autoplay = "default"
+
+[node name="Player" type="AnimatedSprite2D" parent="Combat/CanvasLayer/Control/HSplitContainer/Control"]
+position = Vector2(226, 326)
+scale = Vector2(6.5, 6.5)
+sprite_frames = SubResource("SpriteFrames_k4qpa")
+animation = &"blink"
+autoplay = "default"
+frame = 17
+frame_progress = 1.0
+
+[node name="MovePool" type="GridContainer" parent="Combat/CanvasLayer/Control/HSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+columns = 2
+
+[node name="Button" type="Button" parent="Combat/CanvasLayer/Control/HSplitContainer/MovePool"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/icon_pressed_color = Color(0.698039, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0.878431, 0, 1)
+theme_override_fonts/font = ExtResource("9_obnvd")
+theme_override_font_sizes/font_size = 40
+text = "Tralala"
+
+[node name="Button2" type="Button" parent="Combat/CanvasLayer/Control/HSplitContainer/MovePool"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("9_obnvd")
+theme_override_font_sizes/font_size = 40
+text = "Tralala"
+
+[node name="Button3" type="Button" parent="Combat/CanvasLayer/Control/HSplitContainer/MovePool"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("9_obnvd")
+theme_override_font_sizes/font_size = 40
+text = "Tralala"
+
+[node name="Button4" type="Button" parent="Combat/CanvasLayer/Control/HSplitContainer/MovePool"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("9_obnvd")
+theme_override_font_sizes/font_size = 40
+text = "Tralala"
+
+[node name="Timer" type="Timer" parent="Combat"]
+wait_time = 2.0
+one_shot = true
