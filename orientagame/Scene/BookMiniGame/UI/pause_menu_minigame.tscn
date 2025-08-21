@@ -1,0 +1,197 @@
+[gd_scene load_steps=13 format=3 uid="uid://45aej0f5e5rs"]
+
+[ext_resource type="Script" uid="uid://dp1686l4fyu16" path="res://Scene/BookMiniGame/UI/pause_menu_minigame.gd" id="1_4kaug"]
+[ext_resource type="Texture2D" uid="uid://boo708oh8l3il" path="res://UI/Elements/SfondoTrasparente.PNG" id="2_3qvmq"]
+[ext_resource type="Script" uid="uid://b6oyvjh5v0qrx" path="res://UI/scaler.gd" id="3_l68cw"]
+[ext_resource type="Texture2D" uid="uid://dwddp7p05q5ve" path="res://UI/Elements/IntestazioneMenu.PNG" id="4_o8ep3"]
+[ext_resource type="LabelSettings" uid="uid://brryaiyls24kv" path="res://UI/label_settings_Title.tres" id="5_tmvyw"]
+[ext_resource type="Texture2D" uid="uid://dpy5h8gnlmwhj" path="res://UI/Elements/SfondobaseProporzionato.PNG" id="6_e0hkl"]
+[ext_resource type="Texture2D" uid="uid://cv40jeq4ljxep" path="res://UI/Elements/Button.PNG" id="7_0rf2c"]
+[ext_resource type="Texture2D" uid="uid://bc3kkydy8u7vp" path="res://UI/Elements/ButtonSelected.PNG" id="8_ne03q"]
+[ext_resource type="LabelSettings" uid="uid://u1t7bqg5rvys" path="res://UI/label_settings_NOTPressed.tres" id="9_0r3uv"]
+[ext_resource type="LabelSettings" uid="uid://chn3wv4fpjoxo" path="res://UI/label_settings_Pressed.tres" id="10_58hr0"]
+[ext_resource type="Texture2D" uid="uid://bc25747bnkywl" path="res://UI/Elements/Gear.PNG" id="11_uieyu"]
+[ext_resource type="Texture2D" uid="uid://ia5p8o1uu4w5" path="res://UI/Elements/GearSelected.PNG" id="12_sddws"]
+
+[node name="Pause Menu Minigame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4kaug")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.7291, 4.7291)
+color = Color(0, 0, 0, 0.392157)
+
+[node name="GroundContainer" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="TransparentGround" type="TextureRect" parent="CanvasLayer/GroundContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_3qvmq")
+expand_mode = 3
+
+[node name="Scaler" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+script = ExtResource("3_l68cw")
+
+[node name="TitleMenu" type="TextureRect" parent="CanvasLayer/Scaler"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("4_o8ep3")
+
+[node name="Title" type="Label" parent="CanvasLayer/Scaler/TitleMenu"]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 16.0
+offset_right = 1210.0
+offset_bottom = 358.0
+scale = Vector2(0.232726, 0.232726)
+text = "Pausa"
+label_settings = ExtResource("5_tmvyw")
+
+[node name="BaseGround" type="TextureRect" parent="CanvasLayer/Scaler"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("6_e0hkl")
+
+[node name="BaseGroundDescription" type="TextureRect" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 93.0
+offset_right = 1258.0
+offset_bottom = 741.0
+scale = Vector2(0.476065, 0.772573)
+texture = ExtResource("6_e0hkl")
+
+[node name="Obiettivo" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 164.0
+offset_right = 1447.0
+offset_bottom = 506.0
+scale = Vector2(0.197303, 0.197303)
+text = "Obiettivo:"
+label_settings = ExtResource("5_tmvyw")
+
+[node name="Label" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 225.0
+offset_right = 4541.0
+offset_bottom = 567.0
+scale = Vector2(0.0990382, 0.0990382)
+text = "Inserisci la descrizione del minigioco"
+label_settings = ExtResource("9_0r3uv")
+
+[node name="Resume" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 198.0
+offset_right = 1866.0
+offset_bottom = 846.0
+scale = Vector2(0.226043, 0.226043)
+texture_normal = ExtResource("7_0rf2c")
+texture_hover = ExtResource("8_ne03q")
+
+[node name="ResumeLabel" type="Label" parent="CanvasLayer/Scaler/BaseGround/Resume"]
+layout_mode = 0
+offset_left = 145.99
+offset_top = 168.11
+offset_right = 1166.99
+offset_bottom = 510.11
+scale = Vector2(0.807853, 0.807853)
+text = "Riprendi"
+label_settings = ExtResource("9_0r3uv")
+
+[node name="ResumeLabelPressed" type="Label" parent="CanvasLayer/Scaler/BaseGround/Resume"]
+visible = false
+layout_mode = 0
+offset_left = 145.99
+offset_top = 168.11
+offset_right = 1248.99
+offset_bottom = 537.11
+scale = Vector2(0.807853, 0.807853)
+text = "Riprendi"
+label_settings = ExtResource("10_58hr0")
+
+[node name="Exit" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 333.0
+offset_right = 1822.0
+offset_bottom = 981.0
+scale = Vector2(0.226043, 0.226043)
+texture_normal = ExtResource("7_0rf2c")
+texture_hover = ExtResource("8_ne03q")
+flip_h = true
+
+[node name="ExitLabel" type="Label" parent="CanvasLayer/Scaler/BaseGround/Exit"]
+layout_mode = 0
+offset_left = 305.252
+offset_top = 132.718
+offset_right = 760.252
+offset_bottom = 474.718
+text = "Esci"
+label_settings = ExtResource("9_0r3uv")
+
+[node name="ExitLabelPressed" type="Label" parent="CanvasLayer/Scaler/BaseGround/Exit"]
+visible = false
+layout_mode = 0
+offset_left = 300.828
+offset_top = 128.294
+offset_right = 791.828
+offset_bottom = 497.294
+text = "Esci"
+label_settings = ExtResource("10_58hr0")
+
+[node name="Gear" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
+visible = false
+layout_mode = 0
+offset_left = 750.0
+offset_top = 413.0
+offset_right = 1902.0
+offset_bottom = 1061.0
+scale = Vector2(0.188347, 0.188347)
+texture_normal = ExtResource("11_uieyu")
+texture_hover = ExtResource("12_sddws")
+
+[connection signal="mouse_entered" from="CanvasLayer/Scaler/BaseGround/Resume" to="." method="_on_resume_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Scaler/BaseGround/Resume" to="." method="_on_resume_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Resume" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Scaler/BaseGround/Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Scaler/BaseGround/Exit" to="." method="_on_exit_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Gear" to="." method="_on_gear_pressed"]

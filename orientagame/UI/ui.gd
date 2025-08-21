@@ -2,6 +2,7 @@ extends Control
 
 @onready var item_preview: ItemPreview = $Scaler/ItemPreview
 @onready var joystick = $Scaler/Joystick
+@onready var interaction_button = $Scaler/InteractionButton
 
 
 func _on_interaction_button_pressed() -> void:

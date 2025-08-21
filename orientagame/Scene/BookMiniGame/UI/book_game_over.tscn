@@ -1,0 +1,155 @@
+[gd_scene load_steps=11 format=3 uid="uid://oskh6lgvxihl"]
+
+[ext_resource type="Texture2D" uid="uid://boo708oh8l3il" path="res://UI/Elements/SfondoTrasparente.PNG" id="1_1ugbw"]
+[ext_resource type="Script" uid="uid://w3ys0bks46a5" path="res://Scene/BookMiniGame/UI/book_game_over.gd" id="1_mnj6v"]
+[ext_resource type="Script" uid="uid://b6oyvjh5v0qrx" path="res://UI/scaler.gd" id="2_mnj6v"]
+[ext_resource type="Texture2D" uid="uid://dwddp7p05q5ve" path="res://UI/Elements/IntestazioneMenu.PNG" id="3_remq0"]
+[ext_resource type="LabelSettings" uid="uid://brryaiyls24kv" path="res://UI/label_settings_Title.tres" id="4_jkj6f"]
+[ext_resource type="Texture2D" uid="uid://dpy5h8gnlmwhj" path="res://UI/Elements/SfondobaseProporzionato.PNG" id="5_mjds4"]
+[ext_resource type="Texture2D" uid="uid://cv40jeq4ljxep" path="res://UI/Elements/Button.PNG" id="6_1o4l5"]
+[ext_resource type="Texture2D" uid="uid://bc3kkydy8u7vp" path="res://UI/Elements/ButtonSelected.PNG" id="7_2ns8x"]
+[ext_resource type="LabelSettings" uid="uid://u1t7bqg5rvys" path="res://UI/label_settings_NOTPressed.tres" id="8_3msos"]
+[ext_resource type="LabelSettings" uid="uid://chn3wv4fpjoxo" path="res://UI/label_settings_Pressed.tres" id="9_4r5j3"]
+
+[node name="Book Game Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mnj6v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.7291, 4.7291)
+color = Color(0, 0, 0, 0.392157)
+
+[node name="GroundContainer" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="TransparentGround" type="TextureRect" parent="CanvasLayer/GroundContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_1ugbw")
+expand_mode = 3
+
+[node name="Scaler" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+script = ExtResource("2_mnj6v")
+
+[node name="TitleMenu" type="TextureRect" parent="CanvasLayer/Scaler"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("3_remq0")
+
+[node name="Title" type="Label" parent="CanvasLayer/Scaler/TitleMenu"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 16.0
+offset_right = 1773.0
+offset_bottom = 358.0
+scale = Vector2(0.232726, 0.232726)
+text = "Game Over"
+label_settings = ExtResource("4_jkj6f")
+
+[node name="BaseGround" type="TextureRect" parent="CanvasLayer/Scaler"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("5_mjds4")
+
+[node name="Riprova" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 387.0
+offset_right = 1529.0
+offset_bottom = 1035.0
+scale = Vector2(0.321005, 0.321005)
+texture_normal = ExtResource("6_1o4l5")
+texture_hover = ExtResource("7_2ns8x")
+
+[node name="RiprovaLabel" type="Label" parent="CanvasLayer/Scaler/BaseGround/Riprova"]
+layout_mode = 0
+offset_left = 145.99
+offset_top = 168.11
+offset_right = 1166.99
+offset_bottom = 510.11
+scale = Vector2(0.807853, 0.807853)
+text = "Riprova"
+label_settings = ExtResource("8_3msos")
+
+[node name="RiprovaLabelPressed" type="Label" parent="CanvasLayer/Scaler/BaseGround/Riprova"]
+visible = false
+layout_mode = 0
+offset_left = 145.99
+offset_top = 168.11
+offset_right = 1248.99
+offset_bottom = 537.11
+scale = Vector2(0.807853, 0.807853)
+text = "Riprova"
+label_settings = ExtResource("9_4r5j3")
+
+[node name="Lose Description" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -70.0
+offset_right = 2645.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.260047, 0.260047)
+text = "Oh no! Hai perso il libro..."
+label_settings = ExtResource("4_jkj6f")
+
+[node name="Shadow Lose Description" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -404.0
+offset_top = -76.0
+offset_right = 2641.0
+offset_bottom = 266.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.260047, 0.260047)
+text = "Oh no! Hai perso il libro..."
+label_settings = ExtResource("8_3msos")
+
+[connection signal="mouse_entered" from="CanvasLayer/Scaler/BaseGround/Riprova" to="." method="_on_riprova_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Scaler/BaseGround/Riprova" to="." method="_on_riprova_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Riprova" to="." method="_on_riprova_pressed"]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://cise35nayreco"]
+
+[ext_resource type="Script" uid="uid://dl77po6elhvuh" path="res://Scene/BookMiniGame/player.gd" id="1_j5pxp"]
+[ext_resource type="SpriteFrames" uid="uid://dunaobhn4vj1v" path="res://Sprite/Player animation/Player.tres" id="1_vo8oh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vo8oh"]
+radius = 6.0
+height = 18.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_j5pxp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_vo8oh")
+animation = &"idle_down"
+frame = 5
+frame_progress = 0.60523
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_vo8oh")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 7
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_vo8oh")
+
+[node name="Immunità" type="Timer" parent="."]
+
+[node name="PowerUpDuration" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Immunità" to="." method="_on_immunità_timeout"]
+[connection signal="timeout" from="PowerUpDuration" to="." method="_on_power_up_duration_timeout"]
