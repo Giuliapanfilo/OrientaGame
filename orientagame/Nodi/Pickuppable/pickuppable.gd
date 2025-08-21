@@ -31,7 +31,7 @@ func _ready() -> void:
 	inst.call()
 	meshinstance.visible = is_mesh_visible
 	meshinstance.scale = Vector3.ONE / mesh_reduction
-	interactionArea.interact = Callable(self, "_on_interact")
+	interactionArea.interact = _on_interact
 	interactionArea.is_secret = not is_mesh_visible
 
 
