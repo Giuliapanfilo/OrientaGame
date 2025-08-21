@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce0yg1n3igiy8"]
+
+[ext_resource type="Script" uid="uid://dbi8uj12j27bf" path="res://Scene/BookMiniGame/UI/ui_book_minigame.gd" id="1_6pgdm"]
+[ext_resource type="Script" uid="uid://gjcbt5kmqjdd" path="res://addons/touch_screen_joystick/touch_screen_joystick.gd" id="3_prey8"]
+[ext_resource type="Texture2D" uid="uid://bndtwwhsec260" path="res://UI/Elements/BackJoystick.PNG" id="4_aas4o"]
+[ext_resource type="Texture2D" uid="uid://db1qwj7ik8kcc" path="res://UI/Elements/CursoreJoystick.PNG" id="5_bopnv"]
+[ext_resource type="Texture2D" uid="uid://p8hbs2lss34l" path="res://UI/Elements/Burger.png" id="6_n1f44"]
+[ext_resource type="Texture2D" uid="uid://c2r5vceg32arv" path="res://UI/Elements/BurgerSelected.png" id="7_y01pm"]
+
+[node name="UI Book Minigame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6pgdm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -222.0
+offset_right = 802.0
+offset_bottom = 593.0
+grow_horizontal = 0
+scale = Vector2(0.207898, 0.207898)
+size_flags_horizontal = 8
+size_flags_vertical = 2
+texture_normal = ExtResource("6_n1f44")
+texture_hover = ExtResource("7_y01pm")
+
+[node name="JoystickMove" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = -140.0
+offset_right = 138.0
+offset_bottom = -140.0
+grow_vertical = 0
+script = ExtResource("3_prey8")
+antialiased = true
+use_textures = true
+base_texture = ExtResource("4_aas4o")
+base_scale = Vector2(0.4, 0.4)
+knob_texture = ExtResource("5_bopnv")
+knob_scale = Vector2(0.5, 0.5)
+use_input_actions = true
+
+[node name="JoystickAim" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 999.0
+offset_top = 502.0
+offset_right = 999.0
+offset_bottom = 502.0
+script = ExtResource("3_prey8")
+antialiased = true
+use_textures = true
+base_texture = ExtResource("4_aas4o")
+base_scale = Vector2(0.4, 0.4)
+knob_texture = ExtResource("5_bopnv")
+knob_scale = Vector2(0.5, 0.5)
+use_input_actions = true
+action_left = &"ui_left"
+action_right = &"ui_right"
+action_up = &"ui_up"
+action_down = &"ui_down"
+
+[connection signal="pressed" from="CanvasLayer/PauseButton" to="." method="_on_pause_button_pressed"]

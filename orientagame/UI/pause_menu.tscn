@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dtn52gj6bcsxt" path="res://UI/pause_menu.gd" id="1_6b54m"]
 [ext_resource type="PackedScene" uid="uid://cqjs1xpx7gwlt" path="res://UI/fade_transition.tscn" id="2_03fe5"]
 [ext_resource type="Texture2D" uid="uid://boo708oh8l3il" path="res://UI/Elements/SfondoTrasparente.PNG" id="3_0b5ob"]
-[ext_resource type="Script" path="res://UI/scaler.gd" id="3_6b54m"]
+[ext_resource type="Script" uid="uid://b6oyvjh5v0qrx" path="res://UI/scaler.gd" id="3_6b54m"]
 [ext_resource type="Texture2D" uid="uid://dwddp7p05q5ve" path="res://UI/Elements/IntestazioneMenu.PNG" id="4_nben2"]
 [ext_resource type="LabelSettings" uid="uid://brryaiyls24kv" path="res://UI/label_settings_Title.tres" id="6_6b54m"]
 [ext_resource type="Texture2D" uid="uid://dpy5h8gnlmwhj" path="res://UI/Elements/SfondobaseProporzionato.PNG" id="6_mxjhc"]

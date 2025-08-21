@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://d11yua138jep1"]
+
+[ext_resource type="Script" uid="uid://b3fiuai3s5mes" path="res://Scene/BookMiniGame/power_up.gd" id="1_a7vhn"]
+[ext_resource type="Texture2D" uid="uid://dit3s1kt2ih2b" path="res://Sprite/Item_Powerup_Rocket_1.png" id="2_ypysf"]
+[ext_resource type="Texture2D" uid="uid://b2evkxugbeasd" path="res://Sprite/Item_Powerup_Shield_17.png" id="3_a1sds"]
+[ext_resource type="Texture2D" uid="uid://foec77xv764j" path="res://Sprite/Item_Powerup_Special_2.png" id="4_c1kk6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gq3j"]
+
+[node name="Power Up" type="Node2D"]
+script = ExtResource("1_a7vhn")
+power_up = Array[Texture2D]([ExtResource("2_ypysf"), ExtResource("3_a1sds"), ExtResource("4_c1kk6")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ypysf")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_5gq3j")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
