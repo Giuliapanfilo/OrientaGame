@@ -8,17 +8,18 @@ var dialog : Resource = load("res://Dialogues/edge.dialogue")
 func _on_body_entered(body: Node3D) -> void:
 	if body is Player:
 		print("Player oltrepassa i confini! andava verso ", body.last_direction)
-		Input.action_release("ui_up")
-		Input.action_release("ui_down")
-		Input.action_release("ui_left")
-		Input.action_release("ui_right")
+		Input.action_release("move_up")
+		Input.action_release("move_down")
+		Input.action_release("move_left")
+		Input.action_release("move_right")
+		
 		#SceneLoader.player.can_move = false
 		#SceneLoader.player.can_move = true
-		Input.action_press("ui_"+redirect)
+		Input.action_press("move_"+redirect)
 		
 		DialogueManager.show_dialogue_balloon(dialog, "start")
 		get_tree().create_timer(1.5).timeout.connect(func():
-			Input.action_release("ui_"+redirect)
+			Input.action_release("move_"+redirect)
 			DialogueManager.get_next_dialogue_line(dialog)
 			DialogueManager.dialogue_ended.emit(dialog))
 		

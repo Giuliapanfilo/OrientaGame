@@ -1,18 +1,13 @@
-[gd_scene load_steps=28 format=3 uid="uid://dpqucqhq1ivpo"]
+[gd_scene load_steps=23 format=3 uid="uid://dpqucqhq1ivpo"]
 
-[ext_resource type="Script" uid="uid://dhgb0o1x3kusr" path="res://Scene/Esterno/livello_giardini.gd" id="1_m4ui0"]
 [ext_resource type="Script" uid="uid://datdd1dirbgu1" path="res://Nodi/percorsi_npc.gd" id="2_xwsjn"]
 [ext_resource type="PackedScene" uid="uid://dlyq5fytid4wx" path="res://Scene/Esterno/struttura_giardini.tscn" id="5_2fmqh"]
-[ext_resource type="PackedScene" uid="uid://chqnuytnniok6" path="res://Scene/Pianterreno/livello_pianterreno.tscn" id="5_gyw00"]
-[ext_resource type="PackedScene" uid="uid://bse528t5p5nns" path="res://Scene/Retro/RetroDib.tscn" id="6_2fmqh"]
 [ext_resource type="PackedScene" uid="uid://dpgxir70w4mvm" path="res://Nodi/Scene Swapper/scene_swapper.tscn" id="6_bndii"]
 [ext_resource type="PackedScene" uid="uid://cmgr7xla5f2ar" path="res://Nodi/Camera Interaction/camera_interaction.tscn" id="7_7bxep"]
 [ext_resource type="Script" uid="uid://cs4nhixmy3y0e" path="res://Scene/Esterno/tutorial.gd" id="7_m4ui0"]
 [ext_resource type="PackedScene" uid="uid://mq8ukg1022ts" path="res://Nodi/Confini/confini.tscn" id="8_vffra"]
 [ext_resource type="PackedScene" uid="uid://bl2yovaetjo4k" path="res://Nodi/NPC/npc_adam.tscn" id="8_xwsjn"]
-[ext_resource type="PackedScene" uid="uid://c468defrbpsgv" path="res://Nodi/NPC/mentore.tscn" id="9_fwne3"]
 [ext_resource type="PackedScene" uid="uid://b81l5jqk6cv2m" path="res://Nodi/Pickuppable/pickuppable.tscn" id="11_gyw00"]
-[ext_resource type="Resource" uid="uid://c6n1db7vj0ode" path="res://Oggetti/Collezionabili/resources/GameBoy.tres" id="12_2fmqh"]
 
 [sub_resource type="Curve3D" id="Curve3D_bndii"]
 bake_interval = 8.65
@@ -39,7 +34,7 @@ sdfgi_enabled = true
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pkpkv"]
-size = Vector3(4.22119, 0.900635, 26.807)
+size = Vector3(4.22119, 0.0761719, 23.6027)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ypben"]
 size = Vector3(8.57616, 1.91504, 5.5925)
@@ -79,16 +74,22 @@ _data = {
 point_count = 3
 
 [node name="LivelloGiardini" type="Node3D"]
-script = ExtResource("1_m4ui0")
 
-[node name="Spawn" type="Marker3D" parent="." groups=["spawn"]]
+[node name="SpawnStart" type="Marker3D" parent="." groups=["spawn"]]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.2511, 0.875442, 47.0065)
 
+[node name="SpawnSegreteria" type="Marker3D" parent="." groups=["spawn"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.11819, 0.875442, 24.436)
+
+[node name="SpawnDIB" type="Marker3D" parent="." groups=["spawn"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.45504, 0.981524, 9.06233)
+
 [node name="NPCs" type="Node3D" parent="."]
+process_mode = 4
 
 [node name="PathFollowers" type="Node" parent="NPCs" node_paths=PackedStringArray("NPCs")]
 script = ExtResource("2_xwsjn")
-NPCs = [NodePath("../../Tutorial/Mentore"), NodePath("../../Tutorial/NPC Adam")]
+NPCs = [null, NodePath("../../Tutorial/NPC Adam")]
 
 [node name="Path3D" type="Path3D" parent="NPCs/PathFollowers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.899823, 0.705496, 0.0630112)
@@ -121,33 +122,36 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.65
 
 [node name="SceneSwapper" parent="." instance=ExtResource("6_bndii")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.44009, 0.475793, -2.87488)
-target_scene = ExtResource("6_2fmqh")
+target_scene_path = "uid://bse528t5p5nns"
 
 [node name="SceneSwapper2" parent="." instance=ExtResource("6_bndii")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.08923, 0.475793, 23.9038)
-target_scene = ExtResource("6_2fmqh")
+target_scene_path = "uid://bse528t5p5nns"
 
 [node name="SceneSwapper3" parent="." instance=ExtResource("6_bndii")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.86714, 1.01914, 9.06588)
-target_scene = ExtResource("5_gyw00")
-direzione = 70
+target_scene_path = "uid://chqnuytnniok6"
+direzione = 110
 
 [node name="CameraInteraction" parent="." instance=ExtResource("7_7bxep")]
-secondary_rot = Vector3(-0.78, 0, 0)
-secondary_pos = Vector3(0.38, 1.8, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22061, 0.877922, 9.09672)
+target_rotation_degrees = Vector3(30, 30, 0)
+target_position = Vector3(0, -2, 0)
+duration_in = 0.5
+duration_out = 0.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraInteraction"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45035, 1.24323, 10.9686)
 shape = SubResource("BoxShape3D_pkpkv")
 
 [node name="CameraInteraction2" parent="." instance=ExtResource("7_7bxep")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1039, 0, 42.6687)
-secondary_rot = Vector3(-0.5, 0.5, 0)
-secondary_pos = Vector3(0.38, 2.5, 2.5)
-duration = 0.2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4053, 0, 46.1861)
+target_rotation_degrees = Vector3(40, 10, 0)
+target_position = Vector3(0, -1.325, 0)
+duration_in = 0.2
+duration_out = 10.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraInteraction2"]
-transform = Transform3D(0.729076, 0, 0.684433, 0, 1, 0, -0.684433, 0, 0.729076, 0.823935, 0.736033, 4.47038)
+transform = Transform3D(0.729076, 0, 0.684433, 0, 1, 0, -0.684433, 0, 0.729076, 0, 0, 0)
 shape = SubResource("BoxShape3D_ypben")
 
 [node name="Confini" type="Node3D" parent="."]
@@ -208,11 +212,6 @@ curve = SubResource("Curve3D_t7a3l")
 [node name="PercorsoMentore" type="Path3D" parent="Tutorial"]
 curve = SubResource("Curve3D_t57kq")
 
-[node name="Mentore" parent="Tutorial" instance=ExtResource("9_fwne3")]
-transform = Transform3D(0.707321, 4.04426e-06, 0.706893, -2.27374e-13, 1, -5.72118e-06, -0.706893, 4.04671e-06, 0.707321, 13.9408, 0.847356, 45.4112)
-visible = false
-
 [node name="GameBoy" parent="." instance=ExtResource("11_gyw00")]
 transform = Transform3D(0.44172, 0.0100549, -0.897096, -0.0227571, 0.999741, 5.7944e-09, 0.896864, 0.0204153, 0.441835, 12.2492, 0.427182, 43.3152)
-collectible = ExtResource("12_2fmqh")
-mesh_reduction = 0.124224
+script = null
