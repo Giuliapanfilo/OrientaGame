@@ -1,6 +1,12 @@
 extends Node2D
 
 
+@onready var animation_immortal := $CanvasLayer/AnimationPlayer
+@onready var sprite_animation := $CanvasLayer/AnimationPlayer/Sprite2D
+@onready var player: CharacterBody2D = $Player
+@onready var song = $Song
+@onready var spawner = $CanvasLayer/Spawner
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_node("/root/DialogueManager").queue_free()
@@ -8,7 +14,24 @@ func _ready() -> void:
 	get_node("/root/Savefile").queue_free()
 	get_node("/root/SceneLoader").queue_free()
 	get_node("/root/UI").hide()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if player.get_immortal_state():
+		sprite_animation.show()
+		animation_immortal.play("Immortal")
+		
+	elif player.get_immortal_state() == false:
+		sprite_animation.hide()
+
+func restore():
+	for i in get_children():
+		if i.is_in_group("enemies") or i.is_in_group("power_up"):
+			i.queue_free()
+	
+	spawner.restore()
+	player.restore()
+	
+	song.stop()
+	song.play()

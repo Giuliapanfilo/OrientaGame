@@ -51,25 +51,4 @@ knob_texture = ExtResource("5_bopnv")
 knob_scale = Vector2(0.5, 0.5)
 use_input_actions = true
 
-[node name="JoystickAim" type="Control" parent="CanvasLayer"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 999.0
-offset_top = 502.0
-offset_right = 999.0
-offset_bottom = 502.0
-script = ExtResource("3_prey8")
-antialiased = true
-use_textures = true
-base_texture = ExtResource("4_aas4o")
-base_scale = Vector2(0.4, 0.4)
-knob_texture = ExtResource("5_bopnv")
-knob_scale = Vector2(0.5, 0.5)
-use_input_actions = true
-action_left = &"ui_left"
-action_right = &"ui_right"
-action_up = &"ui_up"
-action_down = &"ui_down"
-
 [connection signal="pressed" from="CanvasLayer/PauseButton" to="." method="_on_pause_button_pressed"]

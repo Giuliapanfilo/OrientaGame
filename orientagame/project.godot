@@ -28,7 +28,6 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
-
 [dotnet]
 
 project/assembly_name="OrientaGame"
@@ -42,6 +41,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 player=""
 spawn=""
 enemies=""
+power_up=""
 
 [input]
 

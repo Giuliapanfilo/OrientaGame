@@ -1,17 +1,25 @@
 extends Control
 
 var minigame_scene = preload("res://Scene/BookMiniGame/book_mini_game.tscn").instantiate()
+var song 
+
+
+func _ready() -> void:
+	for child in get_parent().get_child(1).get_children():
+		if child.name == "Song":
+			song = child
+			song.stream_paused = true
 
 
 func _on_riprova_pressed() -> void:
-	var player
-	for i in get_tree().get_nodes_in_group("player"):
-		player = i
+	song.stream_paused = false
 	
-	get_tree().root.add_child(minigame_scene)
+	for i in get_parent().get_children():
+		if i.has_method("restore"):
+			i.restore()
+	
 	Engine.time_scale = 1
-	if player.has_method("restore"):
-		player.restore()
+	
 	self.queue_free()
 
 

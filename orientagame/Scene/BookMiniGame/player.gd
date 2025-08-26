@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
+@onready var sound_shoot: AudioStreamPlayer = $SoundShoot
 @onready var sprite := $AnimatedSprite2D
+
+@onready var initial_position = self.global_position
 
 const MAX_HP = 3
 const SPEED = 300.0
@@ -16,7 +19,8 @@ var hp : int = 3
 
 var shoot_timer = 0.0
 var can_shoot = true
-var is_immune = false
+var is_immortal = false
+var is_hit = false
 var lock_animation = false
 
 var last_action = "idle"
@@ -59,6 +63,7 @@ func _physics_process(delta: float) -> void:
 
 
 func shoot(aim : Vector2):
+	sound_shoot.play(0.2)
 	var projectile = preload("res://Scene/BookMiniGame/book.tscn").instantiate()
 	projectile.global_position = global_position
 	projectile.direction = aim
@@ -80,13 +85,28 @@ func get_nearest_enemy() -> Node2D:
 
 
 func take_damage():
-	hp -= 1
-	if hp <= 0:
-		lose()
+	if not is_immortal and not is_hit:
+		start_blink()
+		hp -= 1
+		if hp <= 0:
+			lose()
 
 
 func restore():
 	hp = MAX_HP
+	self.global_position = initial_position
+	if powerup[0]:
+		print("annullo VELOCITÀ")
+		#powerup[0] = false
+		set_speed_powerup()
+	if powerup[1]:
+		print("annullo SPARO")
+		#powerup[1] = false
+		set_shoot_powerup()
+	if powerup[2]:
+		print("annullo INVINCIBILITÀ")
+		#powerup[2] = false
+		set_invicibilità_powerup()
 
 
 func lose():
@@ -96,14 +116,15 @@ func lose():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemies") and not is_immune:
+	if body.is_in_group("enemies") and not is_immortal and not is_hit:
 		take_damage()
-		is_immune = true
+		print(hp)
+		is_hit = true
 		$"Immunità".start()
 
-
 func _on_immunità_timeout() -> void:
-	is_immune = false
+	is_hit = false
+	stop_blink()
 
 
 func set_speed_powerup():
@@ -113,7 +134,9 @@ func set_speed_powerup():
 		$PowerUpDuration.start()
 	else:
 		powerup[0] = false
-		local_speed == SPEED
+		local_speed = SPEED
+	
+	print(local_speed)
 
 func set_shoot_powerup():
 	if local_shoot_interval == SHOOT_INTERVAL:
@@ -125,31 +148,40 @@ func set_shoot_powerup():
 		local_shoot_interval = SHOOT_INTERVAL
 
 func set_invicibilità_powerup():
-	if not is_immune:
+	if not is_immortal:
 		print("INVINCIBILE")
 		powerup[2] = true
-		is_immune = true
+		is_immortal = true
 		$PowerUpDuration.start()
+		start_blink()
 	else:
 		print("MORTALE")
 		powerup[2] = false
-		is_immune = false
+		is_immortal = false
+		stop_blink()
 
 
 func _on_power_up_duration_timeout() -> void:
 	print(powerup)
-	var pos = 0
-	for i in powerup:
-		pos += 1
-		if i == true:
-			if pos == 0:
-				print("annullo VELOCITA")
-				set_speed_powerup()
-			elif pos == 1:
-				print("annullo INVINCIBILITA")
-				set_invicibilità_powerup()
-			elif pos == 2:
-				print("annullo SPARO")
-				set_shoot_powerup()
-		i = false
+	if powerup[0]:
+		print("annullo VELOCITÀ")
+		#powerup[0] = false
+		set_speed_powerup()
+	if powerup[1]:
+		print("annullo SPARO")
+		#powerup[1] = false
+		set_shoot_powerup()
+	if powerup[2]:
+		print("annullo INVINCIBILITÀ")
+		#powerup[2] = false
+		set_invicibilità_powerup()
 	print(powerup)
+
+func start_blink():
+	sprite.modulate = Color(1,1,1,0.5) # semitrasparente
+
+func stop_blink():
+	sprite.modulate = Color(1,1,1,1)
+
+func get_immortal_state() -> bool:
+	return is_immortal

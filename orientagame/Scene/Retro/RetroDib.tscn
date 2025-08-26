@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bse528t5p5nns"]
+[gd_scene load_steps=39 format=3 uid="uid://bse528t5p5nns"]
 
 [ext_resource type="PackedScene" uid="uid://dpgxir70w4mvm" path="res://Nodi/Scene Swapper/scene_swapper.tscn" id="2_6oqyj"]
 [ext_resource type="PackedScene" uid="uid://ch11nqpyfy4ix" path="res://Scene/Retro/struttura_retro.tscn" id="2_cefek"]

@@ -2,10 +2,11 @@ extends CharacterBody2D
 
 @onready var area := $Area2D
 @onready var sprite := $AnimatedSprite2D
+@onready var hit_sound := $AudioStreamPlayer
 @export var sprites : Array[SpriteFrames]
 
-const HP_NORMAL = 3
-const HP_ELITE = 10
+const HP_NORMAL = 1
+const HP_ELITE = 5
 const SPEED_NORMAL = 100
 const SPEED_ELITE = 50
 
@@ -60,6 +61,7 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func take_damage():
+	hit_sound.play()
 	hp -= 1
 
 func set_is_elite(flag : bool = false):
