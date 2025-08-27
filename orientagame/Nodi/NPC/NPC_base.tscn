@@ -4,12 +4,15 @@
 [ext_resource type="SpriteFrames" uid="uid://brs6dmx8u8yj3" path="res://Sprite/AnimatedSprites/Characters_1/Character_001.tres" id="6_368ys"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tfoi"]
+margin = 0.1
+radius = 0.183865
+height = 0.497427
 
 [node name="NPC_Base" type="CharacterBody3D"]
 script = ExtResource("1_3tfoi")
 
 [node name="Sprite" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0633534, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.270568, 0)
 modulate = Color(0.988171, 0.870097, 0.838477, 1)
 pixel_size = 0.022
 billboard = 1
@@ -20,6 +23,6 @@ texture_filter = 2
 sprite_frames = ExtResource("6_368ys")
 animation = &"idle"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+[node name="CollisionShape2D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24547, -0.346123)
 shape = SubResource("CapsuleShape3D_3tfoi")

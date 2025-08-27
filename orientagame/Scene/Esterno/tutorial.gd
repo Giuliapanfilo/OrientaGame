@@ -1,7 +1,7 @@
 extends Node
 
 
-@onready var mentore : CharacterBody3D = $"NPC Adam"
+@onready var mentore : CharacterBody3D = $"Antonio"
 @onready var verso_inizio : Path3D = $PercorsoMentore
 @onready var verso_dib : Path3D = $Percorso101
 @export var visible : bool = false

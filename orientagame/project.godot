@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="OrientaGame"
-run/main_scene="uid://cisx6frjaqxv5"
+run/main_scene="uid://c6l8x53g5j3xi"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
@@ -27,7 +27,6 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-
 
 [dotnet]
 
