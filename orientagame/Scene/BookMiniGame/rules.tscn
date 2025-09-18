@@ -122,6 +122,7 @@ la tua sopravvivenza dipende da te![/i] 🕹️[/center]
 "
 
 [node name="Resume" type="TextureButton" parent="CanvasLayer/Scaler"]
+layout_mode = 0
 offset_left = 426.0
 offset_top = 457.0
 offset_right = 1578.0

@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 @onready var area := $Area2D
 @onready var sprite := $AnimatedSprite2D
-@onready var hit_sound := $AudioStreamPlayer
 @export var sprites : Array[SpriteFrames]
 
 const HP_NORMAL = 1
@@ -21,7 +20,13 @@ var last_direction = "idle"
 var last_action = "idle"
 
 func _ready() -> void:
-	sprite.sprite_frames = sprites.pick_random()
+	var sprites_dimension = sprites.size()
+	var random_index = randi() % sprites_dimension
+	
+	print("Index scelto: ", random_index) 
+	print("SpriteFrames resource path: ", sprites[random_index].resource_path)
+	
+	sprite.sprite_frames = sprites[random_index]
 	add_to_group("enemies")
 	
 	for i in get_parent().get_children():
@@ -61,7 +66,6 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func take_damage():
-	hit_sound.play()
 	hp -= 1
 
 func set_is_elite(flag : bool = false):
