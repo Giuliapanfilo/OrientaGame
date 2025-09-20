@@ -1,0 +1,3 @@
+[gd_scene load_steps=0 format=3 uid="uid://dcox0miou2olj"]
+
+[node name="NpcAdam" type="CharacterBody3D"]

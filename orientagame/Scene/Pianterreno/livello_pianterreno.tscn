@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://chqnuytnniok6"]
+
+[gd_scene load_steps=6 format=3 uid="uid://chqnuytnniok6"]
 
 [ext_resource type="PackedScene" uid="uid://brk5i3yh1hpie" path="res://Scene/Pianterreno/struttura_pian_terreno.tscn" id="1_g0lty"]
-[ext_resource type="PackedScene" uid="uid://bl2yovaetjo4k" path="res://Nodi/NPC/npc_adam.tscn" id="2_ygr0o"]
 [ext_resource type="PackedScene" uid="uid://cmgr7xla5f2ar" path="res://Nodi/Camera Interaction/camera_interaction.tscn" id="3_3liu4"]
-[ext_resource type="Texture2D" uid="uid://dsqpg2hjo7y20" path="res://Sprite/sparkles.png" id="4_k5r7x"]
 [ext_resource type="PackedScene" uid="uid://b81l5jqk6cv2m" path="res://Nodi/Pickuppable/pickuppable.tscn" id="5_ygr0o"]
 [ext_resource type="Resource" uid="uid://bdhnvyk4v74vj" path="res://Oggetti/Collezionabili/resources/ComputerVecchio.tres" id="6_3liu4"]
 [ext_resource type="PackedScene" uid="uid://dpgxir70w4mvm" path="res://Nodi/Scene Swapper/scene_swapper.tscn" id="7_k5r7x"]
@@ -11,58 +10,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_ssw88"]
 size = Vector3(3.30969, 1, 1.73926)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j1ohj"]
-atlas = ExtResource("4_k5r7x")
-region = Rect2(0, 0, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2i151"]
-atlas = ExtResource("4_k5r7x")
-region = Rect2(48, 0, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_44k1k"]
-atlas = ExtResource("4_k5r7x")
-region = Rect2(96, 0, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mw02t"]
-atlas = ExtResource("4_k5r7x")
-region = Rect2(144, 0, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_umrb4"]
-atlas = ExtResource("4_k5r7x")
-region = Rect2(192, 0, 48, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_j1ohj"]
-animations = [{
-"frames": [{
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_j1ohj")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_2i151")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_44k1k")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_mw02t")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_umrb4")
-}],
-"loop": true,
-"name": &"sparkle",
-"speed": 5.0
-}]
-
 [node name="LivelloPianTerreno" type="Node3D"]
 
 [node name="Spawn" type="Marker3D" parent="." groups=["spawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.181084, 4.59289)
 
 [node name="StrutturaPianTerreno" parent="." instance=ExtResource("1_g0lty")]
-
-[node name="NPC Adam" parent="." instance=ExtResource("2_ygr0o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.438608, 0.474246, 1.01961)
 
 [node name="CameraInteraction" parent="." instance=ExtResource("3_3liu4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32476, 0.685792, 1.84371)
@@ -74,16 +27,6 @@ shape = SubResource("BoxShape3D_ssw88")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="CameraInteraction"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.91153, 0, -0.166504)
 shape = SubResource("BoxShape3D_ssw88")
-
-[node name="AppuntiMentore#Sparkle" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0921258, 0)
-modulate = Color(1, 1, 1, 0.592157)
-billboard = 1
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_j1ohj")
-animation = &"sparkle"
-autoplay = "sparkle"
-speed_scale = 0.35
 
 [node name="ComputerVecchio" parent="." instance=ExtResource("5_ygr0o")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.25174, 0.545793, 3.13965)
