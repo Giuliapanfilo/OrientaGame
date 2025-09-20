@@ -1,12 +1,20 @@
 extends Control
 
 @onready var joystick_move = $CanvasLayer/JoystickMove
-@onready var joystick_aim = $CanvasLayer/JoystickAim
+@onready var song: AudioStreamPlayer = $"../Song"
+
+
+func _ready() -> void:
+	if UI.joystick.visible:
+		joystick_move.show()
+	else:
+		joystick_move.hide()
 
 func _on_pause_button_pressed() -> void:
 	#Blocco movimento personaggio
 	#can_move = false
 	#set_joystick(false)
+	#song.stream_paused = true
 	var pause_scene = preload("res://Scene/BookMiniGame/UI/pause_menu_minigame.tscn").instantiate()
 	pause_scene.set_previous_scene("res://Scene/BookMiniGame/book_mini_game.tscn")
 	

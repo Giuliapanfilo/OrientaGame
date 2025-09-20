@@ -8,6 +8,11 @@ class_name  ItemPreview
 @onready var _mesh_inst = $SubViewportContainer/SubViewport/Node3D/MeshInstance3D
 
 @export var material_silhouette : StandardMaterial3D
+var free_player : Callable = func(any):
+		hide()
+		SceneLoader.player.can_move = true
+		SceneLoader.player.can_animate = true
+	
 #@onready var _tex_rect  = $TextureRect
 
 func show_item(res : Collectible, silhouette:bool=false):
@@ -15,12 +20,10 @@ func show_item(res : Collectible, silhouette:bool=false):
 	_mesh_inst.material_override = material_silhouette if silhouette else null
 
 	show()
-	SceneLoader.player.can_move = false
-	SceneLoader.player.lock_animation = true
-	await get_tree().create_timer(5).timeout
-	SceneLoader.player.can_move = true
-	SceneLoader.player.lock_animation = false
-	hide()
+	var p :Player= SceneLoader.player
+	p.can_move = false
+	p.can_animate = false
+	get_tree().create_timer(5).timeout.connect(free_player)
 
 
 	
@@ -29,4 +32,4 @@ func _process(delta):
 	_mesh_inst.rotate_y(delta * rotate_speed * TAU)
 
 func _ready() -> void:
-	DialogueManager.dialogue_ended.connect(func(any):hide())
+	DialogueManager.dialogue_ended.connect(free_player)

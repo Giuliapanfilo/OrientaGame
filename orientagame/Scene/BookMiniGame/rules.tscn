@@ -1,0 +1,157 @@
+[gd_scene load_steps=11 format=3 uid="uid://drbfnfy4pwmls"]
+
+[ext_resource type="Script" uid="uid://c2spefbb6taih" path="res://Scene/BookMiniGame/rules.gd" id="1_ajn80"]
+[ext_resource type="Texture2D" uid="uid://boo708oh8l3il" path="res://UI/Elements/SfondoTrasparente.PNG" id="1_w6n2e"]
+[ext_resource type="Script" uid="uid://b6oyvjh5v0qrx" path="res://UI/scaler.gd" id="2_ajn80"]
+[ext_resource type="Texture2D" uid="uid://dwddp7p05q5ve" path="res://UI/Elements/IntestazioneMenu.PNG" id="3_wbpre"]
+[ext_resource type="LabelSettings" uid="uid://brryaiyls24kv" path="res://UI/label_settings_Title.tres" id="4_hbt3k"]
+[ext_resource type="Texture2D" uid="uid://dpy5h8gnlmwhj" path="res://UI/Elements/SfondobaseProporzionato.PNG" id="5_tlocm"]
+[ext_resource type="Texture2D" uid="uid://cv40jeq4ljxep" path="res://UI/Elements/Button.PNG" id="6_q70yk"]
+[ext_resource type="Texture2D" uid="uid://bc3kkydy8u7vp" path="res://UI/Elements/ButtonSelected.PNG" id="7_wctn3"]
+[ext_resource type="LabelSettings" uid="uid://u1t7bqg5rvys" path="res://UI/label_settings_NOTPressed.tres" id="8_htceu"]
+[ext_resource type="LabelSettings" uid="uid://chn3wv4fpjoxo" path="res://UI/label_settings_Pressed.tres" id="9_iqln2"]
+
+[node name="RulesBookMiniGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ajn80")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.7291, 4.7291)
+color = Color(0, 0, 0, 0.392157)
+
+[node name="GroundContainer" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="TransparentGround" type="TextureRect" parent="CanvasLayer/GroundContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_w6n2e")
+expand_mode = 3
+
+[node name="Scaler" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+script = ExtResource("2_ajn80")
+
+[node name="TitleMenu" type="TextureRect" parent="CanvasLayer/Scaler"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("3_wbpre")
+
+[node name="Title" type="Label" parent="CanvasLayer/Scaler/TitleMenu"]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 16.0
+offset_right = 1561.0
+offset_bottom = 358.0
+scale = Vector2(0.232726, 0.232726)
+text = "Obiettivo"
+label_settings = ExtResource("4_hbt3k")
+
+[node name="BaseGround" type="TextureRect" parent="CanvasLayer/Scaler"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("5_tlocm")
+
+[node name="Description" type="RichTextLabel" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 134.0
+offset_right = 989.0
+offset_bottom = 478.0
+bbcode_enabled = true
+text = "[center][font_size=24][b]📖 Mini Gioco – Regole 📖[/b][/font_size]
+
+[u][b][color=#ff8800]🎯 Obiettivo[/color][/b][/u]  
+Resisti il più a lungo possibile abbattendo gli altri studenti…  
+[b]Le tue armi?[/b] I libri che lancerai contro di loro!
+
+[u][b][color=#0055ff]👥 Nemici[/color][/b][/u]  
+• [color=#00aa00][b]Studenti piccoli[/b][/color] → meno vita, più facili da eliminare.  
+• [color=#aa0000][b]Studenti grandi[/b][/color] → più resistenti, richiedono più colpi.
+
+[u][b][color=#cc33ff]✨ Power-Up[/color][/b][/u]  
+• ⚡ [b]Velocità[/b] → ti muovi più rapidamente.  
+• 🔫 [b]Cadenza di sparo[/b] → i libri vengono lanciati più spesso.  
+• 👻 [b]Invisibilità[/b] → i nemici non possono colpirti per un breve periodo.
+
+[color=#ff2222][b]⚠ Attenzione![/b][/color]  
+Se raccogli di nuovo lo stesso power-up mentre è ancora attivo,  
+l’effetto si [u]disattiva immediatamente[/u]!
+
+[u][b][color=#00cc88]🧑‍🎓 Regole del Giocatore[/color][/b][/u]  
+• Hai [b]3 punti vita[/b]: se vieni colpito 3 volte perdi la partita.  
+• Puoi muoverti liberamente nello spazio di gioco.  
+• Lo sparo è [b]automatico[/b]: pensa solo a muoverti e schivare!
+
+[i]💡 Suggerimento: sfrutta i power-up al momento giusto  
+e scegli bene i tuoi movimenti...  
+la tua sopravvivenza dipende da te![/i] 🕹️[/center]
+"
+
+[node name="Resume" type="TextureButton" parent="CanvasLayer/Scaler"]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 457.0
+offset_right = 1578.0
+offset_bottom = 1105.0
+scale = Vector2(0.226043, 0.226043)
+texture_normal = ExtResource("6_q70yk")
+texture_hover = ExtResource("7_wctn3")
+
+[node name="ResumeLabel" type="Label" parent="CanvasLayer/Scaler/Resume"]
+layout_mode = 0
+offset_left = 291.98
+offset_top = 168.11
+offset_right = 1312.98
+offset_bottom = 510.11
+scale = Vector2(0.807853, 0.807853)
+text = "Inizia"
+label_settings = ExtResource("8_htceu")
+
+[node name="ResumeLabelPressed" type="Label" parent="CanvasLayer/Scaler/Resume"]
+visible = false
+layout_mode = 0
+offset_left = 269.86
+offset_top = 168.11
+offset_right = 1372.86
+offset_bottom = 537.11
+scale = Vector2(0.807853, 0.807853)
+text = "Inizia"
+label_settings = ExtResource("9_iqln2")
+
+[connection signal="mouse_entered" from="CanvasLayer/Scaler/Resume" to="." method="_on_resume_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Scaler/Resume" to="." method="_on_resume_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Scaler/Resume" to="." method="_on_resume_pressed"]

@@ -13,6 +13,10 @@ func _ready() -> void:
 	sprite.texture = power_up.get(idx)
 
 
+func _process(delta: float) -> void:
+	sprite.rotate(delta)
+
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		if idx == IDX_FAST:

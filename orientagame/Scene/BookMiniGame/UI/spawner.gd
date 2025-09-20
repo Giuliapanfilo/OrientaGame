@@ -19,8 +19,6 @@ var second : int:
 			minute += 1
 		%Seconds.text = str(second).lpad(2, "0")
 
-func _ready() -> void:
-	pass
 
 func spawn(pos : Vector2, is_elite : bool = false):
 	var enemy_istance = enemy.instantiate()
@@ -57,3 +55,8 @@ func spawn_powerup(pos : Vector2):
 	
 	powerup_istance.position = pos
 	get_tree().current_scene.add_child(powerup_istance)
+
+
+func restore():
+	second = 0
+	minute = 0

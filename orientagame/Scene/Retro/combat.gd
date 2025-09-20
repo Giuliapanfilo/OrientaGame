@@ -89,18 +89,7 @@ func displayDamage(damage, actor : Actor, bar : ProgressBar):
 	# se premi un pulsante -> avvia mossa
 		# nascondi interfaccia
 	
-	
 
-
-#STUDENTE 
-# mail confusa   : CONFUSIONE(segretaria) + 10 DANNI(segretaria)
-  # confondi la segretaria con parole poco argute
-# allega JPEG    : 15 DANNI(segretaria)
-  # sai benissimo che devi mettere un pdf
-# Bevi caffè     : -30 DANNI(player) & COLPISCI PER PRIMO
-  # curati e affronta la giornata
-# Compila modulo : MINIGIOCO [5-30] DANNI(segretaria)
-  # prova a centrare ogni risposta
 
 #SEGRETARIA
 # modulo mancante : 15 DANNI(player) + 5 DANNI(player) DOPO

@@ -106,15 +106,41 @@ scale = Vector2(0.197303, 0.197303)
 text = "Obiettivo:"
 label_settings = ExtResource("5_tmvyw")
 
-[node name="Label" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+[node name="Description" type="RichTextLabel" parent="CanvasLayer/Scaler/BaseGround"]
 layout_mode = 0
-offset_left = 162.0
-offset_top = 225.0
-offset_right = 4541.0
-offset_bottom = 567.0
-scale = Vector2(0.0990382, 0.0990382)
-text = "Inserisci la descrizione del minigioco"
-label_settings = ExtResource("9_0r3uv")
+offset_left = 163.0
+offset_top = 230.0
+offset_right = 598.0
+offset_bottom = 545.0
+bbcode_enabled = true
+text = "[center][font_size=24][b]📖 Mini Gioco – Regole 📖[/b][/font_size][/center]
+
+[center][u][b][color=#ffaa00]🎯 Obiettivo[/color][/b][/u][/center]
+Resisti il più a lungo possibile abbattendo gli altri studenti…  
+[b]Le tue armi?[/b] I libri che lancerai contro di loro!
+
+[center][u][b][color=#00ccff]👥 Nemici[/color][/b][/u][/center]
+• [color=blue][b]Studenti piccoli[/b][/color] → meno vita, più facili da eliminare.  
+• [color=red][b]Studenti grandi[/b][/color] → più resistenti, richiedono più colpi.
+
+[center][u][b][color=#ff77ff]✨ Power-Up[/color][/b][/u][/center]
+• ⚡ [b]Velocità[/b] → ti muovi più rapidamente.  
+• 🔫 [b]Cadenza di sparo[/b] → i libri vengono lanciati più spesso.  
+• 👻 [b]Invisibilità[/b] → i nemici non possono colpirti per un breve periodo.
+
+[color=red][b]⚠ Attenzione![/b][/color]  
+Se raccogli di nuovo lo stesso power-up mentre è ancora attivo,  
+l’effetto si [u]disattiva immediatamente[/u]!
+
+[center][u][b][color=blue]🧑‍🎓 Regole del Giocatore[/color][/b][/u][/center]
+• Hai [b]3 punti vita[/b]: se vieni colpito 3 volte perdi la partita.  
+• Puoi muoverti liberamente nello spazio di gioco.  
+• Lo sparo è [b]automatico[/b]: pensa solo a muoverti e schivare!
+
+[center][i]💡 Suggerimento: sfrutta i power-up al momento giusto  
+e scegli bene i tuoi movimenti...  
+la tua sopravvivenza dipende da te![/i] 🕹️[/center]
+"
 
 [node name="Resume" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
 layout_mode = 0

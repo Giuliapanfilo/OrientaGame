@@ -4,9 +4,10 @@ class_name Player
 @export var speed := 3.0
 @export var gravity := 9.8
 @export var sprite : AnimatedSprite3D
+@onready var camera = $Camera
 
-@export var can_move = true
-var lock_animation = false
+var can_move = true
+var can_animate = true
 
 var last_direction = "up"
 var last_action = "idle"
@@ -27,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	direction = direction.normalized()
 
 	# Animazioni
-	if not lock_animation:
+	if can_animate:
 		if direction != Vector3.ZERO:
 			last_action = "move"
 			if abs(direction.x) > abs(direction.z) :
@@ -50,3 +51,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
 		move_and_slide()
+
+func get_camera():
+	for c in get_children():
+		if c is Camera3D:
+			return c

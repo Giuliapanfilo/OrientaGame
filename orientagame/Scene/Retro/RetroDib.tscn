@@ -1,5 +1,6 @@
-[gd_scene load_steps=38 format=3 uid="uid://bse528t5p5nns"]
+[gd_scene load_steps=39 format=3 uid="uid://bse528t5p5nns"]
 
+[ext_resource type="PackedScene" uid="uid://dpgxir70w4mvm" path="res://Nodi/Scene Swapper/scene_swapper.tscn" id="2_6oqyj"]
 [ext_resource type="PackedScene" uid="uid://ch11nqpyfy4ix" path="res://Scene/Retro/struttura_retro.tscn" id="2_cefek"]
 [ext_resource type="Script" uid="uid://u2r1583jtb3r" path="res://Scene/Retro/combat.gd" id="2_gn75f"]
 [ext_resource type="Script" uid="uid://dcenu8ivg7kol" path="res://mossa.gd" id="3_6oqyj"]
@@ -250,6 +251,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.283354, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_cefek")
+
+[node name="SceneSwapper" parent="." instance=ExtResource("2_6oqyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.61307, 0.403342, 0)
+target_scene_path = "uid://dpqucqhq1ivpo"
+at = &"Segreteria"
 
 [node name="Porta" type="Node3D" parent="." node_paths=PackedStringArray("combat")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.55298)

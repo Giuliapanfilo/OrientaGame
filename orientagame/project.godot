@@ -41,6 +41,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 player=""
 spawn=""
 enemies=""
+power_up=""
 
 [input]
 

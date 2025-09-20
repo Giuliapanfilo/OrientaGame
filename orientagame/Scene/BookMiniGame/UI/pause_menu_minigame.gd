@@ -1,7 +1,7 @@
 extends Control
 
 var previous_scene_path: String
-
+var song
 
 func set_previous_scene(path: String) -> void:
 	previous_scene_path = path
@@ -12,6 +12,11 @@ func _ready() -> void:
 	for i in get_parent().get_children():
 		if i.has_method("set_joystick"):
 			i.set_joystick(false)
+	
+	for child in get_parent().get_children():
+		if child.name == "Song":
+			song = child
+			song.stream_paused = true
 
 func pause(enable: bool):
 	Engine.time_scale = 0 if enable else 1
@@ -23,6 +28,7 @@ func pause(enable: bool):
 
 func _on_resume_pressed() -> void:
 	#pause(false)
+	song.stream_paused = false
 	Engine.time_scale = 1
 	self.queue_free()
 	

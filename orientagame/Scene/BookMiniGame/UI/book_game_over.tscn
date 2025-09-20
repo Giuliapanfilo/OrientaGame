@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://oskh6lgvxihl"]
+[gd_scene load_steps=12 format=3 uid="uid://oskh6lgvxihl"]
 
 [ext_resource type="Texture2D" uid="uid://boo708oh8l3il" path="res://UI/Elements/SfondoTrasparente.PNG" id="1_1ugbw"]
 [ext_resource type="Script" uid="uid://w3ys0bks46a5" path="res://Scene/BookMiniGame/UI/book_game_over.gd" id="1_mnj6v"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bc3kkydy8u7vp" path="res://UI/Elements/ButtonSelected.PNG" id="7_2ns8x"]
 [ext_resource type="LabelSettings" uid="uid://u1t7bqg5rvys" path="res://UI/label_settings_NOTPressed.tres" id="8_3msos"]
 [ext_resource type="LabelSettings" uid="uid://chn3wv4fpjoxo" path="res://UI/label_settings_Pressed.tres" id="9_4r5j3"]
+[ext_resource type="AudioStream" uid="uid://c2skspf7qxxa8" path="res://Sounds/Music/GameOverSong.mp3" id="11_remq0"]
 
 [node name="Book Game Over" type="Control"]
 layout_mode = 3
@@ -149,6 +150,11 @@ grow_vertical = 2
 scale = Vector2(0.260047, 0.260047)
 text = "Oh no! Hai perso il libro..."
 label_settings = ExtResource("8_3msos")
+
+[node name="GameOverSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_remq0")
+volume_db = -15.0
+autoplay = true
 
 [connection signal="mouse_entered" from="CanvasLayer/Scaler/BaseGround/Riprova" to="." method="_on_riprova_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Scaler/BaseGround/Riprova" to="." method="_on_riprova_mouse_exited"]

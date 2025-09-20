@@ -1,9 +1,11 @@
+
 [gd_scene load_steps=6 format=3 uid="uid://chqnuytnniok6"]
 
 [ext_resource type="PackedScene" uid="uid://brk5i3yh1hpie" path="res://Scene/Pianterreno/struttura_pian_terreno.tscn" id="1_g0lty"]
 [ext_resource type="PackedScene" uid="uid://cmgr7xla5f2ar" path="res://Nodi/Camera Interaction/camera_interaction.tscn" id="3_3liu4"]
 [ext_resource type="PackedScene" uid="uid://b81l5jqk6cv2m" path="res://Nodi/Pickuppable/pickuppable.tscn" id="5_ygr0o"]
 [ext_resource type="Resource" uid="uid://bdhnvyk4v74vj" path="res://Oggetti/Collezionabili/resources/ComputerVecchio.tres" id="6_3liu4"]
+[ext_resource type="PackedScene" uid="uid://dpgxir70w4mvm" path="res://Nodi/Scene Swapper/scene_swapper.tscn" id="7_k5r7x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ssw88"]
 size = Vector3(3.30969, 1, 1.73926)
@@ -11,14 +13,12 @@ size = Vector3(3.30969, 1, 1.73926)
 [node name="LivelloPianTerreno" type="Node3D"]
 
 [node name="Spawn" type="Marker3D" parent="." groups=["spawn"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.181084, 3.41329)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.181084, 4.59289)
 
 [node name="StrutturaPianTerreno" parent="." instance=ExtResource("1_g0lty")]
 
 [node name="CameraInteraction" parent="." instance=ExtResource("3_3liu4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32476, 0.685792, 1.84371)
-secondary_rot = Vector3(-1.428, 0, 0)
-secondary_pos = Vector3(0, 2.21, 0.04)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraInteraction"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0526733, 0, -0.166504)
@@ -32,3 +32,9 @@ shape = SubResource("BoxShape3D_ssw88")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.25174, 0.545793, 3.13965)
 collectible = ExtResource("6_3liu4")
 mesh_reduction = 0.46729
+
+[node name="SceneSwapper" parent="." instance=ExtResource("7_k5r7x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.249475, 5.99567)
+target_scene_path = "uid://dpqucqhq1ivpo"
+at = &"dib"
+direzione = 110

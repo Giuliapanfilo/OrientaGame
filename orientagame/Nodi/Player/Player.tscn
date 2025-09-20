@@ -33,4 +33,3 @@ cull_mask = 1048543
 current = true
 fov = 90.0
 script = ExtResource("49_ewljp")
-smooth_speed = 0.05

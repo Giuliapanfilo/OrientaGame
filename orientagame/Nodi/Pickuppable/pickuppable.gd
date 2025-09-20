@@ -15,7 +15,6 @@ var dialogue = load("res://Dialogues/collectibles.dialogue")
 	get(): 
 		return meshinstance.visible
 	set(v):
-		
 		if meshinstance:
 			meshinstance.visible = v
 
@@ -45,13 +44,11 @@ func _on_interact():
 		push_error("Dialogue non trovato: %s" % path)
 		return
 
-	# 2) carico la risorsa (importata dal plugin come DialogueResource)
 	var dialogue_resource := load(path) as DialogueResource
 	if dialogue_resource == null:
 		push_error("Impossibile caricare come DialogueResource: %s" % path)
 		return
 
-	# 3) faccio partire il balloon (senza titolo interno, dato che il file è monosezione)
 	await DialogueManager.show_dialogue_balloon(dialogue_resource, "")
 	queue_free()
 	
