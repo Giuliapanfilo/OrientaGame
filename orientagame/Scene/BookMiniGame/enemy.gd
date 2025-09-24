@@ -23,9 +23,6 @@ func _ready() -> void:
 	var sprites_dimension = sprites.size()
 	var random_index = randi() % sprites_dimension
 	
-	print("Index scelto: ", random_index) 
-	print("SpriteFrames resource path: ", sprites[random_index].resource_path)
-	
 	sprite.sprite_frames = sprites[random_index]
 	add_to_group("enemies")
 	

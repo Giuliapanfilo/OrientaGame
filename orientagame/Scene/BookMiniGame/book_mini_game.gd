@@ -1,8 +1,8 @@
 extends Node2D
 
 
-@onready var animation_immortal := $CanvasLayer/AnimationPlayer
-@onready var sprite_animation := $CanvasLayer/AnimationPlayer/Sprite2D
+@onready var animation_immortal := $Player/AnimationPlayer
+@onready var sprite_animation := $Player/AnimationPlayer/Sprite2D
 @onready var player: CharacterBody2D = $Player
 @onready var song = $Song
 @onready var spawner = $CanvasLayer/Spawner
@@ -24,6 +24,8 @@ func _process(delta: float) -> void:
 		
 	elif player.get_immortal_state() == false:
 		sprite_animation.hide()
+	
+	sprite_animation.global_position = player.global_position - Vector2(0, 50)
 
 func restore():
 	for i in get_children():
@@ -35,3 +37,6 @@ func restore():
 	
 	song.stop()
 	song.play()
+
+func win():
+	self.queue_free()

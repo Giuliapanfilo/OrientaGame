@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://mlregawlaw8q"]
+
+[ext_resource type="Script" uid="uid://cs543w1fj302n" path="res://raccolta_libro.gd" id="1_58vtc"]
+[ext_resource type="Texture2D" uid="uid://dr31orgvn4msr" path="res://UI/Elements/Ground.PNG" id="2_qflqc"]
+[ext_resource type="PackedScene" uid="uid://bjp5wmq5llw2y" path="res://Oggetti/Collezionabili/Libro.glb" id="3_olhdo"]
+[ext_resource type="AudioStream" uid="uid://c4po12wnu2k5k" path="res://Sounds/Music/victory.mp3" id="4_qflqc"]
+
+[sub_resource type="FontFile" id="FontFile_qflqc"]
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="raccolta_libro" type="Node3D"]
+script = ExtResource("1_58vtc")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00067, 9.88218)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -5.45968)
+flip_v = true
+texture = ExtResource("2_qflqc")
+
+[node name="Libro" parent="." instance=ExtResource("3_olhdo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3724, 2.36474)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.84486, 0)
+pixel_size = 0.1
+modulate = Color(0.330011, 0.373319, 0.443664, 1)
+text = "Raccogli 
+il tuo premio"
+font = SubResource("FontFile_qflqc")
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.181667, 4.84486, 0.0914631)
+pixel_size = 0.1
+text = "Raccogli 
+il tuo premio"
+font = SubResource("FontFile_qflqc")
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.56675, 0)
+pixel_size = 0.1
+modulate = Color(0.330011, 0.373319, 0.443664, 1)
+text = "EROE"
+font = SubResource("FontFile_qflqc")
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.181667, -3.56675, 0.0914631)
+pixel_size = 0.1
+text = "EROE"
+font = SubResource("FontFile_qflqc")
+
+[node name="Song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qflqc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.863184, 0.504889, 0, -0.504889, 0.863184, 0, 3.06905, 6.42833)
+spot_range = 6.433
+spot_angle = 41.36
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

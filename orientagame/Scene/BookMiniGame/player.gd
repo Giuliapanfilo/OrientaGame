@@ -96,15 +96,12 @@ func restore():
 	hp = MAX_HP
 	self.global_position = initial_position
 	if powerup[0]:
-		print("annullo VELOCITÀ")
 		#powerup[0] = false
 		set_speed_powerup()
 	if powerup[1]:
-		print("annullo SPARO")
 		#powerup[1] = false
 		set_shoot_powerup()
 	if powerup[2]:
-		print("annullo INVINCIBILITÀ")
 		#powerup[2] = false
 		set_invicibilità_powerup()
 
@@ -114,11 +111,9 @@ func lose():
 	var gameover_scene = preload("res://Scene/BookMiniGame/UI/book_game_over.tscn").instantiate()
 	get_tree().root.add_child(gameover_scene)
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemies") and not is_immortal and not is_hit:
 		take_damage()
-		print(hp)
 		is_hit = true
 		$"Immunità".start()
 
@@ -135,8 +130,7 @@ func set_speed_powerup():
 	else:
 		powerup[0] = false
 		local_speed = SPEED
-	
-	print(local_speed)
+
 
 func set_shoot_powerup():
 	if local_shoot_interval == SHOOT_INTERVAL:
@@ -149,33 +143,26 @@ func set_shoot_powerup():
 
 func set_invicibilità_powerup():
 	if not is_immortal:
-		print("INVINCIBILE")
 		powerup[2] = true
 		is_immortal = true
 		$PowerUpDuration.start()
 		start_blink()
 	else:
-		print("MORTALE")
 		powerup[2] = false
 		is_immortal = false
 		stop_blink()
 
 
 func _on_power_up_duration_timeout() -> void:
-	print(powerup)
 	if powerup[0]:
-		print("annullo VELOCITÀ")
 		#powerup[0] = false
 		set_speed_powerup()
 	if powerup[1]:
-		print("annullo SPARO")
 		#powerup[1] = false
 		set_shoot_powerup()
 	if powerup[2]:
-		print("annullo INVINCIBILITÀ")
 		#powerup[2] = false
 		set_invicibilità_powerup()
-	print(powerup)
 
 func start_blink():
 	sprite.modulate = Color(1,1,1,0.5) # semitrasparente

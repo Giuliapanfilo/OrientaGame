@@ -10,6 +10,8 @@ var minute : int:
 	set(value):
 		minute = value
 		%Minutes.text = str(minute)
+		if %Minutes.text == "1":
+			win()
 
 var second : int:
 	set(value):
@@ -60,3 +62,9 @@ func spawn_powerup(pos : Vector2):
 func restore():
 	second = 0
 	minute = 0
+
+func win():
+	print("HAI VINTO!")
+	var win_scene = preload("res://Scene/BookMiniGame/book_win.tscn").instantiate()
+	get_tree().root.add_child(win_scene)
+	pass

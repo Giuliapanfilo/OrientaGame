@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=4 format=3 uid="uid://cgj8ttmtuqcrx"]
+[gd_scene load_steps=5 format=3 uid="uid://cgj8ttmtuqcrx"]
 
 [ext_resource type="Script" uid="uid://dt2pbjya17u8s" path="res://Nodi/Scene Swapper/scene_loader.gd" id="1_qskhs"]
 [ext_resource type="PackedScene" uid="uid://dpqucqhq1ivpo" path="res://Scene/Esterno/livello_giardini.tscn" id="2_vehmk"]

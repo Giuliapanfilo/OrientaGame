@@ -1,0 +1,174 @@
+[gd_scene load_steps=14 format=3 uid="uid://c36jbduav4m65"]
+
+[ext_resource type="Script" uid="uid://bjig6vy3fpm51" path="res://Scene/BookMiniGame/book_win.gd" id="1_iett5"]
+[ext_resource type="Texture2D" uid="uid://boo708oh8l3il" path="res://UI/Elements/SfondoTrasparente.PNG" id="1_uuyll"]
+[ext_resource type="Script" uid="uid://b6oyvjh5v0qrx" path="res://UI/scaler.gd" id="2_iett5"]
+[ext_resource type="Texture2D" uid="uid://dwddp7p05q5ve" path="res://UI/Elements/IntestazioneMenu.PNG" id="3_wuend"]
+[ext_resource type="LabelSettings" uid="uid://brryaiyls24kv" path="res://UI/label_settings_Title.tres" id="4_m4i7q"]
+[ext_resource type="Texture2D" uid="uid://dpy5h8gnlmwhj" path="res://UI/Elements/SfondobaseProporzionato.PNG" id="5_x8som"]
+[ext_resource type="Texture2D" uid="uid://cv40jeq4ljxep" path="res://UI/Elements/Button.PNG" id="6_umbuk"]
+[ext_resource type="Texture2D" uid="uid://bc3kkydy8u7vp" path="res://UI/Elements/ButtonSelected.PNG" id="7_frbyu"]
+[ext_resource type="LabelSettings" uid="uid://u1t7bqg5rvys" path="res://UI/label_settings_NOTPressed.tres" id="8_d1iuj"]
+[ext_resource type="LabelSettings" uid="uid://chn3wv4fpjoxo" path="res://UI/label_settings_Pressed.tres" id="9_pdhi2"]
+[ext_resource type="AudioStream" uid="uid://bj4ntdilt3x5p" path="res://Sounds/Music/8-bit-win-level-sound.mp3" id="10_d122o"]
+[ext_resource type="AudioStream" uid="uid://dita0hnk56cba" path="res://Sounds/SFX/button-hover.mp3" id="12_m4i7q"]
+[ext_resource type="AudioStream" uid="uid://c16e5umkfudq0" path="res://Sounds/SFX/button-click.mp3" id="13_x8som"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iett5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.7291, 4.7291)
+color = Color(0, 0, 0, 0.392157)
+
+[node name="GroundContainer" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="TransparentGround" type="TextureRect" parent="CanvasLayer/GroundContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_uuyll")
+expand_mode = 3
+
+[node name="Scaler" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+script = ExtResource("2_iett5")
+
+[node name="TitleMenu" type="TextureRect" parent="CanvasLayer/Scaler"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("3_wuend")
+
+[node name="Title" type="Label" parent="CanvasLayer/Scaler/TitleMenu"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 16.0
+offset_right = 1797.0
+offset_bottom = 358.0
+scale = Vector2(0.232726, 0.232726)
+text = "Hai vinto!"
+label_settings = ExtResource("4_m4i7q")
+
+[node name="BaseGround" type="TextureRect" parent="CanvasLayer/Scaler"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("5_x8som")
+
+[node name="Continua" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 387.0
+offset_right = 1529.0
+offset_bottom = 1035.0
+scale = Vector2(0.321005, 0.321005)
+texture_normal = ExtResource("6_umbuk")
+texture_hover = ExtResource("7_frbyu")
+
+[node name="ContinuaLabel" type="Label" parent="CanvasLayer/Scaler/BaseGround/Continua"]
+layout_mode = 0
+offset_left = 145.99
+offset_top = 168.11
+offset_right = 1166.99
+offset_bottom = 510.11
+scale = Vector2(0.748073, 0.748073)
+text = "Continua"
+label_settings = ExtResource("8_d1iuj")
+
+[node name="ContinuaLabelPressed" type="Label" parent="CanvasLayer/Scaler/BaseGround/Continua"]
+visible = false
+layout_mode = 0
+offset_left = 145.99
+offset_top = 168.11
+offset_right = 1248.99
+offset_bottom = 537.11
+scale = Vector2(0.709422, 0.709422)
+text = "Continua"
+label_settings = ExtResource("9_pdhi2")
+
+[node name="Lose Description" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -180.0
+offset_right = 2645.0
+offset_bottom = 852.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.260047, 0.260047)
+text = "          Complimenti! 
+   Hai lottato con onore!
+     Il libro è tutto tuo!"
+label_settings = ExtResource("4_m4i7q")
+
+[node name="Shadow Lose Description" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -404.0
+offset_top = -186.0
+offset_right = 2641.0
+offset_bottom = 846.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.260047, 0.260047)
+text = "          Complimenti! 
+   Hai lottato con onore!
+     Il libro è tutto tuo!"
+label_settings = ExtResource("8_d1iuj")
+
+[node name="WinSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_d122o")
+autoplay = true
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_m4i7q")
+bus = &"SFX"
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_x8som")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="CanvasLayer/Scaler/BaseGround/Continua" to="." method="_on_continua_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Scaler/BaseGround/Continua" to="." method="_on_continua_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Continua" to="." method="_on_continua_pressed"]

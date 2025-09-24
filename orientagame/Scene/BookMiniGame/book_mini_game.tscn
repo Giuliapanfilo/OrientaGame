@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bbf5grhb3sr0o"]
+[gd_scene load_steps=12 format=4 uid="uid://bbf5grhb3sr0o"]
 
 [ext_resource type="Script" uid="uid://dhv8kbnefnrly" path="res://Scene/BookMiniGame/book_mini_game.gd" id="1_bwpt0"]
 [ext_resource type="PackedScene" uid="uid://cise35nayreco" path="res://Scene/BookMiniGame/player.tscn" id="1_nq3h5"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ce0yg1n3igiy8" path="res://Scene/BookMiniGame/UI/ui_book_minigame.tscn" id="6_3p6rl"]
 [ext_resource type="AudioStream" uid="uid://xxsmnbi6bqoj" path="res://Sounds/Music/Song_MiniGame.mp3" id="6_cxbty"]
 [ext_resource type="Texture2D" uid="uid://b2evkxugbeasd" path="res://Sprite/Item_Powerup_Shield_17.png" id="6_iy63a"]
+[ext_resource type="PackedScene" uid="uid://drbfnfy4pwmls" path="res://Scene/BookMiniGame/rules.tscn" id="8_iy63a"]
 
 [sub_resource type="Animation" id="Animation_8hf23"]
 resource_name = "Immortal"
@@ -66,6 +67,24 @@ tile_set = ExtResource("2_iy63a")
 [node name="Player" parent="." instance=ExtResource("1_nq3h5")]
 position = Vector2(573, 322)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+root_node = NodePath("Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_4fuc0")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/AnimationPlayer"]
+visible = false
+position = Vector2(574, 280)
+scale = Vector2(0.477847, 0.477847)
+texture = ExtResource("6_iy63a")
+offset = Vector2(0, 0.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Spawner" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("5_vvjvs")]
+player = NodePath("../../Player")
+
 [node name="UI Book Minigame" parent="." instance=ExtResource("6_3p6rl")]
 anchors_preset = 1
 anchor_left = 1.0
@@ -76,26 +95,9 @@ grow_horizontal = 0
 grow_vertical = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
-root_node = NodePath("Sprite2D")
-libraries = {
-&"": SubResource("AnimationLibrary_4fuc0")
-}
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/AnimationPlayer"]
-visible = false
-position = Vector2(574, 280)
-scale = Vector2(0.477847, 0.477847)
-texture = ExtResource("6_iy63a")
-offset = Vector2(0, 0.5)
-
-[node name="Spawner" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("5_vvjvs")]
-player = NodePath("../../Player")
-
 [node name="Song" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_cxbty")
 volume_db = -15.0
-autoplay = true
 bus = &"Music"
+
+[node name="RulesBookMiniGame" parent="." instance=ExtResource("8_iy63a")]

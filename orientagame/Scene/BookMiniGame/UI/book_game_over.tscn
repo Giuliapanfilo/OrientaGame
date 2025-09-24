@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://oskh6lgvxihl"]
+[gd_scene load_steps=14 format=3 uid="uid://oskh6lgvxihl"]
 
 [ext_resource type="Texture2D" uid="uid://boo708oh8l3il" path="res://UI/Elements/SfondoTrasparente.PNG" id="1_1ugbw"]
 [ext_resource type="Script" uid="uid://w3ys0bks46a5" path="res://Scene/BookMiniGame/UI/book_game_over.gd" id="1_mnj6v"]
@@ -11,6 +11,8 @@
 [ext_resource type="LabelSettings" uid="uid://u1t7bqg5rvys" path="res://UI/label_settings_NOTPressed.tres" id="8_3msos"]
 [ext_resource type="LabelSettings" uid="uid://chn3wv4fpjoxo" path="res://UI/label_settings_Pressed.tres" id="9_4r5j3"]
 [ext_resource type="AudioStream" uid="uid://c2skspf7qxxa8" path="res://Sounds/Music/GameOverSong.mp3" id="11_remq0"]
+[ext_resource type="AudioStream" uid="uid://dita0hnk56cba" path="res://Sounds/SFX/button-hover.mp3" id="12_mjds4"]
+[ext_resource type="AudioStream" uid="uid://c16e5umkfudq0" path="res://Sounds/SFX/button-click.mp3" id="13_1o4l5"]
 
 [node name="Book Game Over" type="Control"]
 layout_mode = 3
@@ -155,6 +157,14 @@ label_settings = ExtResource("8_3msos")
 stream = ExtResource("11_remq0")
 volume_db = -15.0
 autoplay = true
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_mjds4")
+bus = &"SFX"
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_1o4l5")
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="CanvasLayer/Scaler/BaseGround/Riprova" to="." method="_on_riprova_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Scaler/BaseGround/Riprova" to="." method="_on_riprova_mouse_exited"]
