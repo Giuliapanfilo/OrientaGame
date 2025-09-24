@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://drbfnfy4pwmls"]
+[gd_scene load_steps=13 format=3 uid="uid://drbfnfy4pwmls"]
 
 [ext_resource type="Script" uid="uid://c2spefbb6taih" path="res://Scene/BookMiniGame/rules.gd" id="1_ajn80"]
 [ext_resource type="Texture2D" uid="uid://boo708oh8l3il" path="res://UI/Elements/SfondoTrasparente.PNG" id="1_w6n2e"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bc3kkydy8u7vp" path="res://UI/Elements/ButtonSelected.PNG" id="7_wctn3"]
 [ext_resource type="LabelSettings" uid="uid://u1t7bqg5rvys" path="res://UI/label_settings_NOTPressed.tres" id="8_htceu"]
 [ext_resource type="LabelSettings" uid="uid://chn3wv4fpjoxo" path="res://UI/label_settings_Pressed.tres" id="9_iqln2"]
+[ext_resource type="AudioStream" uid="uid://dita0hnk56cba" path="res://Sounds/SFX/button-hover.mp3" id="11_hbt3k"]
+[ext_resource type="AudioStream" uid="uid://xrjkn7dx45ib" path="res://Sounds/SFX/start-book-minigame.mp3" id="12_hbt3k"]
 
 [node name="RulesBookMiniGame" type="Control"]
 layout_mode = 3
@@ -151,6 +153,14 @@ offset_bottom = 537.11
 scale = Vector2(0.807853, 0.807853)
 text = "Inizia"
 label_settings = ExtResource("9_iqln2")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_hbt3k")
+bus = &"SFX"
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_hbt3k")
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="CanvasLayer/Scaler/Resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Scaler/Resume" to="." method="_on_resume_mouse_exited"]

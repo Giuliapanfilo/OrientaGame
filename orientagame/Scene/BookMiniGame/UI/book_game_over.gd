@@ -19,6 +19,8 @@ func _on_riprova_pressed() -> void:
 			i.restore()
 	
 	Engine.time_scale = 1
+	$ButtonClick.play()
+	await $ButtonClick.finished
 	
 	self.queue_free()
 
@@ -26,6 +28,7 @@ func _on_riprova_pressed() -> void:
 func _on_riprova_mouse_entered() -> void:
 	$CanvasLayer/Scaler/BaseGround/Riprova/RiprovaLabel.hide()
 	$CanvasLayer/Scaler/BaseGround/Riprova/RiprovaLabelPressed.show()
+	$ButtonHover.play()
 
 
 func _on_riprova_mouse_exited() -> void:

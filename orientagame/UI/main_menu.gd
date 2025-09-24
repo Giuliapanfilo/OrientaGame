@@ -67,8 +67,7 @@ func _on_fade_timer_timeout() -> void:
 	if button_type == "start" :
 		#Sblocco movimento player
 		#InteractionManager.can_move = true
-		
-		SceneLoader.swap(SceneLoader.first_scene)
+		SceneLoader.swap(SceneLoader.first_scene, "Start")
 		queue_free()
 	
 	#elif button_type == "options" :

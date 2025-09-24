@@ -1,0 +1,203 @@
+[gd_scene load_steps=13 format=3 uid="uid://36f5hcp5w6j6"]
+
+[ext_resource type="Texture2D" uid="uid://boo708oh8l3il" path="res://UI/Elements/SfondoTrasparente.PNG" id="1_stmgy"]
+[ext_resource type="Script" uid="uid://dfplrxp2wdv5n" path="res://Scene/BookMiniGame/schermata_conclusiva.gd" id="1_susxn"]
+[ext_resource type="Script" uid="uid://b6oyvjh5v0qrx" path="res://UI/scaler.gd" id="2_yg0f3"]
+[ext_resource type="Texture2D" uid="uid://dwddp7p05q5ve" path="res://UI/Elements/IntestazioneMenu.PNG" id="3_vm567"]
+[ext_resource type="LabelSettings" uid="uid://brryaiyls24kv" path="res://UI/label_settings_Title.tres" id="4_susxn"]
+[ext_resource type="Texture2D" uid="uid://dpy5h8gnlmwhj" path="res://UI/Elements/SfondobaseProporzionato.PNG" id="5_vvbih"]
+[ext_resource type="Texture2D" uid="uid://cv40jeq4ljxep" path="res://UI/Elements/Button.PNG" id="6_765p7"]
+[ext_resource type="Texture2D" uid="uid://bc3kkydy8u7vp" path="res://UI/Elements/ButtonSelected.PNG" id="7_x867a"]
+[ext_resource type="LabelSettings" uid="uid://u1t7bqg5rvys" path="res://UI/label_settings_NOTPressed.tres" id="8_hm6bg"]
+[ext_resource type="LabelSettings" uid="uid://chn3wv4fpjoxo" path="res://UI/label_settings_Pressed.tres" id="9_oxmwi"]
+[ext_resource type="AudioStream" uid="uid://dita0hnk56cba" path="res://Sounds/SFX/button-hover.mp3" id="11_vvbih"]
+[ext_resource type="AudioStream" uid="uid://c16e5umkfudq0" path="res://Sounds/SFX/button-click.mp3" id="12_765p7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_susxn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.7291, 4.7291)
+color = Color(0, 0, 0, 0.392157)
+
+[node name="GroundContainer" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="TransparentGround" type="TextureRect" parent="CanvasLayer/GroundContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_stmgy")
+expand_mode = 3
+
+[node name="Scaler" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+script = ExtResource("2_yg0f3")
+
+[node name="TitleMenu" type="TextureRect" parent="CanvasLayer/Scaler"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("3_vm567")
+
+[node name="Title" type="Label" parent="CanvasLayer/Scaler/TitleMenu"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 20.0
+offset_right = 2292.0
+offset_bottom = 362.0
+scale = Vector2(0.19695, 0.19695)
+text = "Congratulazioni"
+label_settings = ExtResource("4_susxn")
+
+[node name="BaseGround" type="TextureRect" parent="CanvasLayer/Scaler"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("5_vvbih")
+
+[node name="Esci" type="TextureButton" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 387.0
+offset_right = 1529.0
+offset_bottom = 1035.0
+scale = Vector2(0.321005, 0.321005)
+texture_normal = ExtResource("6_765p7")
+texture_hover = ExtResource("7_x867a")
+
+[node name="EsciLabel" type="Label" parent="CanvasLayer/Scaler/BaseGround/Esci"]
+layout_mode = 0
+offset_left = 364.48
+offset_top = 168.11
+offset_right = 1385.48
+offset_bottom = 510.11
+scale = Vector2(0.852188, 0.852188)
+text = "Esci"
+label_settings = ExtResource("8_hm6bg")
+
+[node name="EsciLabelPressed" type="Label" parent="CanvasLayer/Scaler/BaseGround/Esci"]
+visible = false
+layout_mode = 0
+offset_left = 370.711
+offset_top = 168.11
+offset_right = 1473.71
+offset_bottom = 537.11
+scale = Vector2(0.807853, 0.807853)
+text = "Esci"
+label_settings = ExtResource("9_oxmwi")
+
+[node name="Description" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -413.0
+offset_top = -189.0
+offset_right = 4538.0
+offset_bottom = 1533.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.245602, 0.245602)
+text = "Grazie per aver giocato alla 
+            nostra demo."
+label_settings = ExtResource("4_susxn")
+
+[node name="Shadow Description" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -418.0
+offset_top = -195.0
+offset_right = 4533.0
+offset_bottom = 1527.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.245602, 0.245602)
+text = "Grazie per aver giocato alla 
+            nostra demo."
+label_settings = ExtResource("8_hm6bg")
+
+[node name="Description2" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = -6.0
+offset_right = 4709.0
+offset_bottom = 1716.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.161954, 0.161954)
+text = "Ricordati di compilare 
+      il sondaggio <3"
+label_settings = ExtResource("4_susxn")
+
+[node name="Shadow Description2" type="Label" parent="CanvasLayer/Scaler/BaseGround"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.0
+offset_top = -12.0
+offset_right = 4704.0
+offset_bottom = 1710.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.161954, 0.161954)
+text = "Ricordati di compilare 
+      il sondaggio <3"
+label_settings = ExtResource("8_hm6bg")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_vvbih")
+bus = &"SFX"
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_765p7")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="CanvasLayer/Scaler/BaseGround/Esci" to="." method="_on_esci_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Scaler/BaseGround/Esci" to="." method="_on_esci_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Scaler/BaseGround/Esci" to="." method="_on_esci_pressed"]
