@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bl03uhn0ryup"]
+[gd_scene load_steps=46 format=3 uid="uid://bl03uhn0ryup"]
 
 [ext_resource type="SpriteFrames" uid="uid://brs6dmx8u8yj3" path="res://Sprite/AnimatedSprites/Characters_1/Character_001.tres" id="1_60fj6"]
 [ext_resource type="Script" uid="uid://di2d124x5vdsf" path="res://Scene/BookMiniGame/enemy.gd" id="1_okyk4"]
@@ -48,6 +48,16 @@
 radius = 4.0
 height = 14.0
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hmhn5"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+initial_velocity_min = -50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 5.0
+
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
 collision_mask = 2
@@ -71,3 +81,13 @@ collision_mask = 3
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_okyk4")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+scale = Vector2(10, 10)
+emitting = false
+amount = 100
+amount_ratio = 0.1
+lifetime = 0.2
+one_shot = true
+trail_lifetime = 0.01
+process_material = SubResource("ParticleProcessMaterial_hmhn5")

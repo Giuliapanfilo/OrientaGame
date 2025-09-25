@@ -27,17 +27,22 @@ func pause(enable: bool):
 	
 
 func _on_resume_pressed() -> void:
-	#pause(false)
-	song.stream_paused = false
-	Engine.time_scale = 1
-	self.queue_free()
+	$ButtonClick.play()
 	
 	for i in get_parent().get_children():
 		if i.has_method("set_joystick"):
 			i.set_joystick(true)
+	
+	await $ButtonClick.finished
+	song.stream_paused = false
+	Engine.time_scale = 1
+	self.queue_free()
 
 func _on_exit_pressed() -> void:
+	$ButtonClick.play()
+	await $ButtonClick.finished
 	get_tree().quit()
+	
 
 func _on_gear_pressed() -> void:
 	var option_scene = preload("res://UI/option_menu.tscn").instantiate()
@@ -49,6 +54,7 @@ func _on_gear_pressed() -> void:
 func _on_resume_mouse_entered() -> void:
 	$CanvasLayer/Scaler/BaseGround/Resume/ResumeLabel.hide()
 	$CanvasLayer/Scaler/BaseGround/Resume/ResumeLabelPressed.show()
+	$ButtonHover.play()
 
 func _on_resume_mouse_exited() -> void:
 	$CanvasLayer/Scaler/BaseGround/Resume/ResumeLabelPressed.hide()
@@ -57,6 +63,7 @@ func _on_resume_mouse_exited() -> void:
 func _on_exit_mouse_entered() -> void:
 	$CanvasLayer/Scaler/BaseGround/Exit/ExitLabel.hide()
 	$CanvasLayer/Scaler/BaseGround/Exit/ExitLabelPressed.show()
+	$ButtonHover.play()
 
 func _on_exit_mouse_exited() -> void:
 	$CanvasLayer/Scaler/BaseGround/Exit/ExitLabelPressed.hide()

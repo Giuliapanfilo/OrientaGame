@@ -10,7 +10,7 @@ var minute : int:
 	set(value):
 		minute = value
 		%Minutes.text = str(minute)
-		if %Minutes.text == "1":
+		if %Minutes.text == "3":
 			win()
 
 var second : int:

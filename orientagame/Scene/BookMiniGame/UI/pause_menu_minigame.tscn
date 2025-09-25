@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://45aej0f5e5rs"]
+[gd_scene load_steps=15 format=3 uid="uid://45aej0f5e5rs"]
 
 [ext_resource type="Script" uid="uid://dp1686l4fyu16" path="res://Scene/BookMiniGame/UI/pause_menu_minigame.gd" id="1_4kaug"]
 [ext_resource type="Texture2D" uid="uid://boo708oh8l3il" path="res://UI/Elements/SfondoTrasparente.PNG" id="2_3qvmq"]
@@ -12,6 +12,8 @@
 [ext_resource type="LabelSettings" uid="uid://chn3wv4fpjoxo" path="res://UI/label_settings_Pressed.tres" id="10_58hr0"]
 [ext_resource type="Texture2D" uid="uid://bc25747bnkywl" path="res://UI/Elements/Gear.PNG" id="11_uieyu"]
 [ext_resource type="Texture2D" uid="uid://ia5p8o1uu4w5" path="res://UI/Elements/GearSelected.PNG" id="12_sddws"]
+[ext_resource type="AudioStream" uid="uid://dita0hnk56cba" path="res://Sounds/SFX/button-hover.mp3" id="13_l68cw"]
+[ext_resource type="AudioStream" uid="uid://c16e5umkfudq0" path="res://Sounds/SFX/button-click.mp3" id="14_o8ep3"]
 
 [node name="Pause Menu Minigame" type="Control"]
 layout_mode = 3
@@ -213,6 +215,14 @@ offset_bottom = 1061.0
 scale = Vector2(0.188347, 0.188347)
 texture_normal = ExtResource("11_uieyu")
 texture_hover = ExtResource("12_sddws")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_l68cw")
+bus = &"SFX"
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_o8ep3")
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="CanvasLayer/Scaler/BaseGround/Resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Scaler/BaseGround/Resume" to="." method="_on_resume_mouse_exited"]

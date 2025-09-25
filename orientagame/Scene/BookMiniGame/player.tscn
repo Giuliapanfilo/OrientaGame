@@ -43,7 +43,7 @@ one_shot = true
 
 [node name="SoundShoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_kx6ol")
-volume_db = -15.0
+volume_db = -30.0
 bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
